@@ -1,0 +1,15 @@
+import {Component} from '@angular/core';
+import {IonApp, IonRouterOutlet} from '@ionic/angular/standalone';
+import {register} from "swiper/element/bundle";
+
+register()
+@Component({
+  selector: 'app-root',
+  standalone: true,
+  templateUrl: 'app.component.html',
+  imports: [IonApp, IonRouterOutlet],
+})
+export class AppComponent {
+  constructor() {
+  }
+}
