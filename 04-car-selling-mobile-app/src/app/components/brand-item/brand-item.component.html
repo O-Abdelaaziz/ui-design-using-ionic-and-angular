@@ -1,0 +1,23 @@
+<ion-card class="ion-padding">
+  @if (!isViewAll()) {
+
+    <ion-col class="ion-align-items-center ion-justify-content-center">
+      <ion-avatar class="ion-text-center">
+        <ion-badge
+          color="dark"
+          class="ion-align-items-center ion-justify-content-center"
+        >
+          {{ brand()?.carCount }}
+        </ion-badge>
+
+        <img [src]="brand()?.logo" [alt]="brand()?.name"/>
+      </ion-avatar>
+
+      <ion-label color="dark">{{ brand()?.name }}</ion-label>
+      <div class="increment">+{{ brand()?.increment }}</div>
+    </ion-col>
+
+  } @else {
+    <app-view-all-cards [route]="['/brands']"></app-view-all-cards>
+  }
+</ion-card>

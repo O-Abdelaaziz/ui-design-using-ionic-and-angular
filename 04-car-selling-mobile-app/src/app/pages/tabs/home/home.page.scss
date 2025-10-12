@@ -1,0 +1,100 @@
+ion-header {
+  ion-toolbar {
+    padding: 1rem;
+
+    .bordered-icon-button {
+      //border: 1px solid rgb(188, 186, 186);
+      color: var(--ion-color-primary);
+      border: 1px solid var(--ion-color-primary);
+      border-radius: 50%;
+      width: 40px;
+      height: 40px;
+
+      ion-icon {
+        font-size: var(--ion-font-size-xl);
+        //padding: 0.4rem 0.3rem;
+      }
+
+      &:hover {
+        --border-radius: 50%;
+        background: var(--ion-color-primary);
+        color: var(--ion-color-primary-contrast);
+      }
+    }
+
+    .me-2 {
+      margin-inline-end: 0.5rem;
+    }
+  }
+}
+
+ion-content {
+  ion-input {
+    --background: var(--ion-color-primary-contrast);
+    --border-radius: 50px;
+    --highlight-color-focused: none;
+    //height: 2rem;
+    ion-icon[slot="start"] {
+      font-size: 1.5rem;
+      margin-inline-start: 0.8rem;
+      margin-inline-end: 0.5rem;
+      border-inline-end: 1px solid var(--ion-color-light);
+    }
+
+    ion-button {
+      --border-radius: 50%;
+      margin-inline-end: 0.5rem;
+      width: 3rem;
+      height: 3rem;
+    }
+  }
+
+  ion-list {
+    background: transparent;
+    //margin-top: 3rem;
+  }
+
+  ion-card.featured-banner {
+    background: linear-gradient(
+        135deg,
+        var(--ion-color-primary),
+        var(--ion-color-primary-shade)
+    );
+    height: 10rem;
+    border-radius: 0.75rem;
+    margin: 3rem 0 0 0;
+
+    ion-card-content {
+      width: 100%;
+      height: 100%;
+      position: relative;
+      z-index: 1;
+      color: var(--ion-color-primary-contrast);
+
+      ion-label {
+        font-size: var(--ion-font-size-large);
+        font-weight: var(--ion-font-weight-bold);
+      }
+
+      p {
+        font-size: var(--ion-font-size-base);
+        opacity: 0.9;
+        margin: 0.4rem 0 1rem 0;
+      }
+
+      img {
+        position: absolute;
+        top: 0;
+        right: 0;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        opacity: 0.2;
+        z-index: -1;
+      }
+    }
+  }
+
+}
+
+

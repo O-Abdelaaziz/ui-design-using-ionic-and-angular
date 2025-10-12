@@ -1,0 +1,38 @@
+export const cars = [
+  {
+    id: '1',
+    brand: 'BMW',
+    brandLogo: 'assets/brands/bmw.png',
+    model: 'M4 Competition',
+    description: 'Experience pure adrenaline with the BMW M4 Competition',
+    price: 74900,
+    image: 'assets/cars/bmw-m4.png',
+  },
+  {
+    id: '2',
+    brand: 'Mercedes',
+    brandLogo: 'assets/brands/mercedes.png',
+    model: 'AMG GT',
+    description: 'Luxury meets performance in the Mercedes-AMG GT',
+    price: 89900,
+    image: 'assets/cars/mercedes-amg.png',
+  },
+  {
+    id: '3',
+    brand: 'Audi',
+    brandLogo: 'assets/brands/audi.png',
+    model: 'A5 Black Edition',
+    description: 'A sleek design with refined performance',
+    price: 57900,
+    image: 'assets/cars/audi-a5.png',
+  },
+  {
+    id: '4',
+    brand: 'Tesla',
+    brandLogo: 'assets/brands/tesla.png',
+    model: 'Model 3',
+    description: 'All-electric performance with cutting-edge tech',
+    price: 39990,
+    image: 'assets/cars/tesla.png',
+  },
+];

@@ -1,0 +1,28 @@
+@defer (when items()) {
+  <swiper-container
+    #swiper
+    [modules]="swiperModule"
+    [slidesPerView]="config()?.slidesPerView ?? 1"
+    [spaceBetween]="config()?.spaceBetween ?? 10"
+    (swiperslidechange)="onSlideChange()"
+  >
+    @for (item of items(); track $index) {
+      <swiper-slide>
+        <ng-container *ngTemplateOutlet="itemTemplate()!; context: {$implicit: item}"></ng-container>
+      </swiper-slide>
+    }
+
+    @if (isViewAll()) {
+      <swiper-slide>
+        <ng-container *ngTemplateOutlet="viewAllTemplate()!"></ng-container>
+      </swiper-slide>
+    }
+    <!--    <ng-container *ngFor="let item of items">-->
+    <!--      <ng-container *ngTemplateOutlet="itemTemplate; context: {$implicit: item}"></ng-container>-->
+    <!--    </ng-container>-->
+    <!--    @if(isViewAll()) {-->
+    <!--      <ng-container *ngTemplateOutlet="viewAllTemplate"></ng-container>-->
+    <!--    }-->
+
+  </swiper-container>
+}

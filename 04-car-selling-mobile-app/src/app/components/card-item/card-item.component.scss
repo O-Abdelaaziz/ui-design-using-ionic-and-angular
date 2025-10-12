@@ -1,0 +1,92 @@
+ion-card {
+  width: 100%;
+  height: 14rem;
+  border-radius: 1rem;
+  overflow: hidden;
+  //margin: 0;
+  margin: 10px 0;
+  padding: 0.5rem;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease-in-out;
+
+  &:hover {
+    transform: translateY(-5px);
+  }
+
+  ion-thumbnail {
+    position: relative;
+    width: 100%;
+    height: 7rem;
+    background: transparent;
+
+    ion-badge {
+      font-size: 0.7rem;
+      width: 5rem;
+      height: 1.3rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      img {
+        width: 0.9rem;
+        height: 0.9rem;
+        object-fit: contain;
+        margin-inline-start: 0.3rem;
+        background: var(--ion-color-light);
+        border-radius: 50%;
+      }
+    }
+
+    img.car-image {
+      width: 100%;
+      height: 90%;
+      padding: 0.5rem;
+      margin: auto;
+      object-fit: cover;
+    }
+  }
+}
+
+
+ion-item {
+  --padding-start: 5px;
+  --inner-padding-end: 0;
+
+  ion-label {
+    ion-text {
+      font-size: 0.8rem;
+      font-weight: var(--ion-font-weight-bold);
+    }
+
+    p.description {
+      font-size: 0.75rem;
+      color: var(--ion-color-medium);
+      display: -webkit-box;
+      -webkit-line-clamp: 2;
+      -webkit-box-orient: vertical;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      margin-top: 5px;
+    }
+
+    p.price {
+      ion-text {
+        font-size: 0.8rem !important;
+        font-weight: var(--ion-font-weight-bold);
+      }
+
+      //margin-top: 1rem;
+    }
+  }
+
+  ion-button {
+    width: 2rem;
+    height: 2rem;
+    //font-size: 1.125rem;
+    --color: var(--ion-color-primary);
+    align-self: end;
+    justify-self: end;
+    margin-inline-end: 0.5rem;
+    margin-bottom: 1rem;
+  }
+}

@@ -1,0 +1,9 @@
+<ion-item-divider class="ion-margin-bottom">
+  <ion-label color="dark"> {{heading()}}</ion-label>
+  <ion-button slot="end" fill="clear" [color]="buttonColor()">
+      <ion-icon slot="end" [name]="buttonIcon()"></ion-icon>
+      @if(buttonName()){
+        {{buttonName()}}
+      }
+  </ion-button>
+</ion-item-divider>

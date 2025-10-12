@@ -1,0 +1,109 @@
+<ion-header class="ion-no-border">
+  <ion-toolbar color="light">
+    <ion-buttons slot="start">
+      <ion-button class="bordered-icon-button">
+        <ion-icon name="menu-outline"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+
+    <ion-title class="ion-text-center">Home</ion-title>
+
+    <ion-buttons slot="end">
+      <ion-button class="bordered-icon-button me-2">
+        <ion-icon name="person-outline"></ion-icon>
+      </ion-button>
+
+      <ion-button class="bordered-icon-button">
+        <ion-icon name="notifications-outline"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content color="light" class="ion-padding">
+  <ion-input placeholder="Search">
+    <ion-icon slot="start" name="search" aria-hidden="true"></ion-icon>
+    <ion-button slot="end" color="primary">
+      <ion-icon slot="icon-only" name="paper-plane-outline"></ion-icon>
+    </ion-button>
+  </ion-input>
+
+
+  <!--  Recently Viewed List-->
+  <app-list-header
+    heading="Recently Viewed"
+    buttonName="See All"
+    buttonIcon="arrow-forward-outline"
+    buttonColor="medium"></app-list-header>
+
+  <app-horizontal-list
+    [items]="recentlyViewedCars()"
+    [itemTemplate]="rvTemplate"
+    [viewAllTemplate]="vAllTemplate"
+    [config]="{slidesPerView: 1.6, spaceBetween: 20}"></app-horizontal-list>
+
+  <ng-template #rvTemplate let-item>
+    <app-card-item [car]="item"></app-card-item>
+  </ng-template>
+  <ng-template #vAllTemplate>
+    <app-card-item [isViewAll]="true"></app-card-item>
+  </ng-template>
+
+
+  @let banner = featuredBanners()[0];
+
+  @if (banner) {
+    <ion-card class="featured-banner">
+      <ion-card-content>
+        <ion-label>{{ banner?.title }}</ion-label>
+        <p>{{ banner?.description }}</p>
+        <img [src]="banner?.image" alt="Featured Car" />
+      </ion-card-content>
+    </ion-card>
+  }
+
+  <!-- brand list -->
+  <ion-list>
+    <app-list-header
+      heading="Brands"
+      buttonIcon="grid-outline"
+      buttonColor="medium"
+    ></app-list-header>
+
+    <app-horizontal-list
+      [items]="brands()"
+      [itemTemplate]="brandTemplate"
+      [config]="{slidesPerView: 3.2, spaceBetween: 10}"
+      [viewAllTemplate]="viewAllBrandTemplate"
+    ></app-horizontal-list>
+
+    <ng-template #brandTemplate let-item>
+      <app-brand-item [brand]="item"></app-brand-item>
+    </ng-template>
+
+    <ng-template #viewAllBrandTemplate>
+      <app-brand-item [isViewAll]="true"></app-brand-item>
+    </ng-template>
+  </ion-list>
+
+  <!--  Featured List-->
+  <app-list-header
+    heading="Featured"
+    buttonName="See All"
+    buttonIcon="arrow-forward-outline"
+    buttonColor="medium"></app-list-header>
+
+  <app-horizontal-list
+    [items]="cars()"
+    [itemTemplate]="fvTemplate"
+    [viewAllTemplate]="vAllTemplate"
+    [config]="{slidesPerView: 1.6, spaceBetween: 20}"></app-horizontal-list>
+
+  <ng-template #fvTemplate let-item>
+    <app-card-item [car]="item"></app-card-item>
+  </ng-template>
+  <ng-template #vAllTemplate>
+    <app-card-item [isViewAll]="true"></app-card-item>
+  </ng-template>
+
+</ion-content>
