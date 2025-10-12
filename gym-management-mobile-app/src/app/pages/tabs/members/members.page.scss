@@ -1,0 +1,46 @@
+ion-header {
+  background: var(--ion-color-secondary);
+
+  ion-toolbar {
+    ion-grid {
+      ion-row {
+        margin: 0 10px 10px 10px;
+      }
+    }
+  }
+}
+
+.md {
+  ion-toolbar {
+    ion-row {
+      margin: 5px 10px 15px 10px;
+    }
+  }
+}
+
+div {
+  &.select {
+    border-radius: 5px;
+    background: var(--ion-color-light);
+    color: var(--ion-color-light-contrast);
+
+    ion-select {
+      font-size: 0.85rem;
+      font-weight: normal;
+    }
+  }
+
+  &.filter {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 3vh;
+  }
+}
+
+
+ion-content {
+  ion-list {
+    background: transparent;
+  }
+}

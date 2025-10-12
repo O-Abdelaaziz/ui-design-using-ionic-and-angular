@@ -1,0 +1,34 @@
+ion-item {
+  --padding-start: 5px;
+  --inner-padding-end: 0;
+
+  ion-avatar {
+    width: 3rem;
+    height: 3rem;
+    background: var(--ion-color-medium);
+    border-radius: 10px;
+
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      border-radius: 10px;
+    }
+  }
+
+  ion-label {
+    h2 {
+      font-size: medium;
+      font-weight: bold;
+    }
+
+    p {
+      font-size: small;
+      font-weight: normal;
+    }
+  }
+
+  ion-icon {
+    font-size: 1.5rem;
+  }
+}

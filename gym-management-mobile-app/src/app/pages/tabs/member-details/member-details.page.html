@@ -1,0 +1,171 @@
+<ion-header>
+  <ion-toolbar color="secondary">
+    <ion-title class="ion-text-center">Member Details</ion-title>
+    <ion-buttons slot="start">
+      <ion-back-button default-href="/tabs/members"></ion-back-button>
+    </ion-buttons>
+    <ion-buttons slot="end">
+      <ion-button>
+        <ion-icon name="notifications" slot="icon-only"></ion-icon>
+      </ion-button>
+      <ion-button>
+        <ion-icon name="add-circle" slot="icon-only"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content color="medium">
+  @defer (when member()) {
+    <ion-card>
+      <div>
+        <app-member-personal-details [member]="member()!" [isList]="false"></app-member-personal-details>
+
+        <ion-row class="business-info">
+          <ion-col size="6">
+            <app-info-card
+              heading="Training Type"
+              [value]="member()?.trainingType"
+            ></app-info-card>
+          </ion-col>
+
+          <ion-col size="6">
+            <app-info-card
+              heading="Gender"
+              [value]="member()?.gender"
+            ></app-info-card>
+          </ion-col>
+
+          <ion-col size="6">
+            <app-info-card
+              heading="Address"
+              [value]="member()?.address"
+            ></app-info-card>
+          </ion-col>
+
+          <ion-col size="6">
+            <app-info-card
+              heading="Batch Name"
+              [value]="member()?.batchName"
+            ></app-info-card>
+          </ion-col>
+
+          <ion-col size="6">
+            <app-info-card
+              heading="Batch Time"
+              [value]="member()?.batchTime"
+            ></app-info-card>
+          </ion-col>
+        </ion-row>
+      </div>
+
+      <ion-row class="ion-margin ion-padding-top borderTop">
+        <ion-col size="4">
+          <app-action-button icon="call" buttonName="Call"></app-action-button>
+        </ion-col>
+
+        <ion-col size="4">
+          <app-action-button
+            icon="logo-whatsapp"
+            buttonName="Whatsapp"
+          ></app-action-button>
+        </ion-col>
+
+        <ion-col size="4">
+          <app-action-button
+            icon="chatbox-ellipses"
+            buttonName="SMS"
+          ></app-action-button>
+        </ion-col>
+
+        <ion-col size="4">
+          <app-action-button
+            icon="person"
+            buttonName="Attendance"
+          ></app-action-button>
+        </ion-col>
+
+        <ion-col size="4">
+          <app-action-button
+            icon="barbell"
+            buttonName="Renew"
+          ></app-action-button>
+        </ion-col>
+
+        <ion-col size="4">
+          <app-action-button icon="ban" buttonName="Block"></app-action-button>
+        </ion-col>
+      </ion-row>
+    </ion-card>
+
+    <ion-item-divider class="ion-margin-top"> Packages</ion-item-divider>
+
+    <ion-card class="package">
+      <ion-card-header>
+        <ion-label color="primary">{{ member()?.package?.plan }}</ion-label>
+      </ion-card-header>
+
+      @let package = member()?.package ;
+
+      <ion-card-content>
+        <ion-row>
+          <ion-col size="4">
+            <div align="center">
+              <app-info-card
+                heading="Total Amount"
+                [value]="package?.totalAmount"
+              ></app-info-card>
+            </div>
+          </ion-col>
+
+          <ion-col size="4">
+            <div align="center">
+              <app-info-card
+                heading="Discount"
+                [value]="package?.discount"
+              ></app-info-card>
+            </div>
+          </ion-col>
+
+          <ion-col size="4">
+            <div align="center">
+              <app-info-card
+                heading="Purchase Date"
+                [value]="package?.purchaseDate"
+              ></app-info-card>
+            </div>
+          </ion-col>
+
+          <ion-col size="4">
+            <div align="center">
+              <app-info-card
+                heading="Paid"
+                [value]="package?.paid"
+              ></app-info-card>
+            </div>
+          </ion-col>
+
+          <ion-col size="4">
+            <div align="center">
+              <app-info-card
+                heading="Due Amount"
+                [value]="package?.dueAmount"
+              ></app-info-card>
+            </div>
+          </ion-col>
+
+          <ion-col size="4">
+            <div align="center">
+              <app-info-card
+                heading="Day Remaining"
+                [value]="package?.daysRemaining"
+              ></app-info-card>
+            </div>
+          </ion-col>
+        </ion-row>
+      </ion-card-content>
+    </ion-card>
+  }
+
+
+</ion-content>

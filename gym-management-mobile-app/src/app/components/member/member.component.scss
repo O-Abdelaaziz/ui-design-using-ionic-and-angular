@@ -1,0 +1,42 @@
+ion-card {
+  margin: 0.8vh 0;
+  //margin-left: 0;
+  //margin-top: 0.8vh;
+  //margin-bottom: 0.8vh;
+  border: 1px solid var(--ion-color-primary);
+  --border-radius: 10px;
+  transition: all 0.3s ease-in-out;
+
+  div {
+    //margin: 0.5vh;
+    margin: 0.8vh 0.2vh 0.8vh 1vh;
+
+
+    ion-grid {
+      ion-row {
+        width: 85%;
+        float: inline-end;
+
+        ion-col {
+          //display: flex;
+          //justify-content: start;
+          div {
+            ion-label {
+              font-size: 0.70rem;
+            }
+
+            p {
+              font-size: 0.78rem;
+              font-weight: bold;
+            }
+          }
+        }
+      }
+    }
+  }
+
+  &:hover {
+    transform: translateY(-5px);
+  }
+
+}

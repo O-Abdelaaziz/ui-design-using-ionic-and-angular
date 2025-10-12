@@ -1,0 +1,32 @@
+ion-content {
+  --padding-start: 0.5vh;
+  --padding-end: 0.5vh;
+  ion-card {
+    border-radius: 10px;
+    div {
+      margin: 1vh;
+    }
+  }
+
+  .borderTop {
+    border-top: 1px solid darkgray;
+  }
+
+  ion-item-divider {
+    padding-inline-start: 2vh;
+    --background: transparent;
+    font-weight: bold;
+  }
+
+  .package {
+    margin-top: 1vh;
+    ion-card-header {
+      ion-label {
+        margin-inline-start: 1vh;
+        font-size: 1.1rem;
+        font-weight: bold;
+      }
+    }
+  }
+
+}

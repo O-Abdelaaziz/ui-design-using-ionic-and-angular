@@ -1,0 +1,55 @@
+<ion-card [routerLink]="['/','tabs', 'members', member()?.id]">
+  <div>
+
+    <app-member-personal-details [member]="member()"></app-member-personal-details>
+    <ion-grid>
+      <ion-row>
+
+        <ion-col size="4">
+           <div class="ion-text-start">
+             <ion-label color="dark"> Plan Expiry</ion-label>
+             <p>
+               <ion-text color="dark">{{member()?.package?.planExpiryDate}}</ion-text>
+             </p>
+           </div>
+        </ion-col>
+
+        <ion-col size="4">
+          <div class="ion-text-start">
+            <ion-label color="dark"> Day Remaining</ion-label>
+            <p>
+              <ion-text color="dark">{{member()?.package?.daysRemaining}}</ion-text>
+            </p>
+          </div>
+        </ion-col>
+
+        <ion-col size="4">
+          <div class="ion-text-start">
+            <ion-label color="dark"> Due Amount</ion-label>
+            <p>
+              <ion-text color="dark">{{member()?.package?.dueAmount}}</ion-text>
+            </p>
+          </div>
+        </ion-col>
+
+<!--        <ion-col size="6">-->
+<!--          <ion-item lines="none">-->
+<!--            <ion-label>-->
+<!--              <h2>John Doe</h2>-->
+<!--              <p><ion-text color="dark">john.doegexample.com</ion-text></p>-->
+<!--            </ion-label>-->
+<!--          </ion-item>-->
+<!--        </ion-col>-->
+<!--        <ion-col size="6">-->
+<!--          <ion-item lines="none">-->
+<!--            <ion-label>-->
+<!--              <h2>John Doe</h2>-->
+<!--              <p><ion-text color="dark">john.doegexample.com</ion-text></p>-->
+<!--            </ion-label>-->
+<!--          </ion-item>-->
+<!--        </ion-col>-->
+      </ion-row>
+    </ion-grid>
+  </div>
+</ion-card>
+
