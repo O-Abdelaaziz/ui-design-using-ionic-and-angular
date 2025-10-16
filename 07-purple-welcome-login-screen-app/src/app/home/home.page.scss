@@ -1,0 +1,151 @@
+ion-content {
+  position: relative;
+  background: #f4f6fc;
+  overflow: hidden;
+}
+
+// Decorative Circles
+.circle-one,
+.circle-two {
+  width: 500px;
+  height: 500px;
+  background: linear-gradient(135deg, var(--ion-color-secondary), var(--ion-color-primary));
+  box-shadow: 0 4px 20px rgba(98, 140, 255, 0.3);
+  border-radius: 50%;
+  position: absolute;
+  z-index: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 2rem;
+  overflow: hidden;
+  animation: float 6s ease-in-out infinite;
+}
+
+//.circle-one {
+//  top: -50px;
+//  left: -50px;
+//}
+//
+//.circle-two {
+//  bottom: -50px;
+//  right: -50px;
+//}
+
+.circle-one {
+  top: -100px;
+  left: -100px;
+}
+
+.circle-two {
+  bottom: -100px;
+  right: -100px;
+}
+
+// Floating animation
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(10px); }
+}
+
+// Content inside circles
+.circle-one-content,
+.circle-two-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 80%;
+  max-width: 300px;
+  padding: 1rem;
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  border-radius: 20px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+  z-index: 2;
+}
+
+.circle-one-content{
+  margin-left: 80px;
+  margin-top: 20px;
+}
+
+.circle-two-content{
+  margin-right: 80px;
+  margin-bottom: 20px;
+}
+
+// Input styling
+.circle-item {
+  border: none;
+  border-radius: 12px;
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(5px);
+  margin: 0.5rem 0;
+  width: 100%;
+
+  ion-input {
+    color: #fff;
+    font-size: 1rem;
+  }
+}
+
+// Icon styling
+ion-icon[name="person-circle-outline"] {
+  font-size: 3rem;
+  margin-bottom: 1rem;
+  color: var(--ion-color-light);
+}
+
+// Button styling
+.circle-two-content ion-button {
+  margin-bottom: 1rem;
+  --background: var(--ion-color-light);
+  --border-radius: 20px;
+  font-weight: bold;
+  transition: transform 0.3s ease;
+}
+
+.circle-two-content ion-button:hover {
+  transform: scale(1.05);
+}
+
+// Text and social icons
+.circle-two-content ion-text {
+  font-size: 0.9rem;
+  margin-bottom: 1rem;
+  color: var(--ion-color-light);
+}
+
+.circle-two-content ion-row {
+  justify-content: center;
+  gap: 1rem;
+
+  ion-icon {
+    font-size: 2rem;
+    transition: transform 0.3s ease;
+
+    &:hover {
+      transform: scale(1.2);
+    }
+  }
+}
+
+// Responsive adjustments
+@media screen and (max-width: 400px) {
+  .circle-one,
+  .circle-two {
+    width: 350px;
+    height: 350px;
+  }
+
+  .circle-one-content,
+  .circle-two-content {
+    max-width: 250px;
+    padding: 0.5rem;
+  }
+
+  ion-icon[name="person-circle-outline"] {
+    font-size: 2.5rem;
+  }
+}

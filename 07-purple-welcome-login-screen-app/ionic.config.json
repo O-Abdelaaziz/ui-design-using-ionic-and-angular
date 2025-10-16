@@ -1,0 +1,7 @@
+{
+  "name": "07-purple-welcome-login-screen-app",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular-standalone"
+}
