@@ -1,0 +1,20 @@
+<ion-list>
+  @for(dummy of dummyData;track $index){
+    <ion-item lines="none">
+      <ion-thumbnail>
+        <ion-skeleton-text animated></ion-skeleton-text>
+      </ion-thumbnail>
+      <ion-label>
+        <h4>
+          <ion-skeleton-text animated style="width: 50%;"></ion-skeleton-text>
+        </h4>
+        <p>
+          <ion-skeleton-text animated style="width: 80%;"></ion-skeleton-text>
+        </p>
+        <p>
+          <ion-skeleton-text animated style="width: 60%;"></ion-skeleton-text>
+        </p>
+      </ion-label>
+    </ion-item>
+  }
+</ion-list>

@@ -1,0 +1,26 @@
+<ion-item lines="none">
+  <ion-thumbnail slot="start">
+    <img [src]="item?.cover ? item.cover : 'assets/imgs/1.jpg'" alt="cover">
+  </ion-thumbnail>
+
+  <ion-label>
+    <h4>{{ item?.name }}</h4>
+    <p class="ion-text-wrap">{{ item?.desc }}</p>
+    <ion-text><p>{{ item?.price | currency : '$' }}</p></ion-text>
+  </ion-label>
+
+  @if (!item?.quantity || item?.quantity <= 0) {
+    <ion-row>
+      <ion-text class="ion-padding-horizontal" color="success" (click)="onAddItem()"> Add
+      </ion-text>
+    </ion-row>
+  }
+
+  @if (item?.quantity > 0) {
+    <ion-row class="bordered">
+      <ion-icon name="remove-circle-outline" color="danger" (click)="onRemoveItem()"></ion-icon>
+      <ion-text class="ion-text-center quantity" color="success"> {{ item?.quantity }}</ion-text>
+      <ion-icon name="add-circle-outline" color="success" (click)="onAddItem()"></ion-icon>
+    </ion-row>
+  }
+</ion-item>

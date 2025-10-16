@@ -1,0 +1,47 @@
+<ion-header>
+  <ion-toolbar mode="md">
+    <ion-title>
+      <span>Home</span>
+      <ion-icon name="chevron-down-outline"></ion-icon>
+    </ion-title>
+    <!--    <ion-buttons slot="end">-->
+    <!--      <ion-button fill="clear" size="small">-->
+    <!--        <ion-icon slot="icon-only" name="notifications"></ion-icon>-->
+    <!--      </ion-button>-->
+    <!--    </ion-buttons>-->
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+
+  @if (isLoading()) {
+    <ion-skeleton-text animated style="height: 25vh"></ion-skeleton-text>
+  }
+
+  @if (isLoading()) {
+    <app-loading-restaurant></app-loading-restaurant>
+  }
+
+  @if (!isLoading()) {
+    <app-banner [bannerImages]="banners"></app-banner>
+  }
+
+  @if (!isLoading()) {
+    <ion-list>
+      <ion-list-header>
+        <ion-label class="ion-margin-bottom">
+          <h4>Restaurants Nearby</h4>
+          <p>Discover unique tastes near you</p>
+        </ion-label>
+      </ion-list-header>
+
+      <ion-item-group>
+        @for (restaurant of restaurants; track $index) {
+          <app-restaurant
+            [restaurant]="restaurant"
+            [routerLink]="['/', 'tabs', 'restaurants', restaurant.uid]"></app-restaurant>
+        }
+      </ion-item-group>
+    </ion-list>
+  }
+</ion-content>

@@ -1,0 +1,47 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Search</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-grid>
+    <ion-row>
+      <ion-col>
+        <ion-searchbar
+          placeholder="Search something ..."
+          animated="true"
+          debounce="500"
+          #searchInput
+          (ionChange)="onSearchChange($event)"
+        ></ion-searchbar>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+
+  @if (isLoading()) {
+    <app-loading-restaurant></app-loading-restaurant>
+  }
+
+  @if (!isLoading() && (restaurants.length === 0 || query?.length === 0)) {
+    <app-empty-screen [model]="model"></app-empty-screen>
+  }
+
+  @if (!isLoading() && restaurants.length > 0) {
+    <ion-list>
+      <ion-list-header>
+        <ion-label class="ion-margin-bottom">
+          <h4>Search results for "{{ query }}"</h4>
+          <h4>Restaurants Nearby</h4>
+          <p>Discover unique tastes near you</p>
+        </ion-label>
+      </ion-list-header>
+
+      <ion-item-group>
+        @for (restaurant of restaurants; track $index) {
+          <app-restaurant [restaurant]="restaurant" [routerLink]="['/', 'tabs', 'restaurants', restaurant.uid]"></app-restaurant>
+        }
+      </ion-item-group>
+    </ion-list>
+  }
+</ion-content>

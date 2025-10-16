@@ -1,0 +1,30 @@
+@mixin border-style($width: 1px, $side: bottom, $style: solid, $color: var(--ion-color-light)) {
+  @if $side == all {
+    border: $width $style $color;
+  } @else {
+    border-#{$side}: $width $style $color;
+  }
+}
+
+//1. Simple Border-Bottom
+//.border-bottom {
+//  @include border-style(1.5vh); // Defaults to 'bottom', 'solid', and var(--ion-color-light)
+//}
+//
+//.border-bottom-small {
+//  @include border-style(0.5vh); // Defaults to 'bottom', 'solid', and var(--ion-color-light)
+//}
+
+//2. Custom Side and Color
+//.border-top-red {
+//  @include border-style(2px, top, solid, red);
+//}
+//
+//.border-left-dashed {
+//  @include border-style(1px, left, dashed);
+//}
+
+//3. All Sides Border
+//.border-all-sides {
+//  @include border-style(5px, all, double, var(--ion-color-primary));
+//}

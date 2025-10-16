@@ -1,0 +1,47 @@
+h1 {
+  font-size: 1.2rem;
+  font-weight: bold;
+}
+
+.dashed-border-bottom {
+  border-bottom: 1px dashed var(--ion-color-medium);
+  padding-bottom: 1vh;
+  margin-bottom: 1vh;
+}
+
+.veg {
+  display: flex;
+  align-items: center;
+}
+
+ion-list-header {
+  font-size: 1rem;
+  font-weight: bold;
+  letter-spacing: 0.5px;
+}
+
+ion-text {
+  font-size: 0.85rem;
+
+  p {
+    margin-top: 0.1rem;
+  }
+}
+
+
+
+ion-footer {
+  h4, p {
+    margin-left: 3%;
+  }
+
+  p {
+    font-size: 0.6rem;
+    letter-spacing: 0.6px;
+    font-weight: normal;
+  }
+}
+
+.btn-border {
+  border: 0.2px solid var(--ion-color-white)
+}

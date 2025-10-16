@@ -1,0 +1,95 @@
+<ion-header class="ion-no-border">
+  <ion-toolbar>
+    <ion-title>Items</ion-title>
+    <ion-back-button slot="start" defaultHref="/tabs/home"></ion-back-button>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+
+  <app-restaurant-details [data]="data" [isLoading]="isLoading"></app-restaurant-details>
+
+  <app-empty-screen [model]="model" *ngIf="!isLoading() && categories?.length === 0"></app-empty-screen>
+
+  <ion-grid>
+    <ion-row class="ion-padding border-bottom-small">
+      @if (isLoading()) {
+        <ion-col size="12">
+          <div class="veg">
+            <ion-label>
+              <h4>
+                <ion-skeleton-text animated style="width: 60%"></ion-skeleton-text>
+              </h4>
+            </ion-label>
+            <p>
+              <ion-skeleton-text animated style="width: 30%"></ion-skeleton-text>
+            </p>
+          </div>
+        </ion-col>
+      }
+      @if (!isLoading()) {
+        <ion-col size="12">
+          <div class="veg">
+            <ion-label>
+              <h4>Vegetarian Only</h4>
+            </ion-label>
+            <ion-toggle
+              mode="md"
+              color="success"
+              class="ion-margin-start"
+              (ionChange)="onVegOnlyChange($event)"
+              [(ngModel)]="vegOnly">
+            </ion-toggle>
+          </div>
+        </ion-col>
+      }
+    </ion-row>
+
+    <ion-row>
+      <ion-col>
+        <app-loading-restaurant *ngIf="isLoading()"></app-loading-restaurant>
+        <ion-list *ngIf="!isLoading()">
+          @for (category of categories; track $index) {
+            <ion-list-header>
+              <ion-label>
+                <h4>{{ category?.name }}</h4>
+              </ion-label>
+            </ion-list-header>
+
+            <ng-container>
+              @for (item of items; track $index; let i = $index) {
+                @if (category.id === item.category_id) {
+                  <app-item [item]="item" (add)="onAddItem(i)" (remove)="onRemoveItem(i)"></app-item>
+                }
+              }
+            </ng-container>
+          }
+        </ion-list>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+
+</ion-content>
+
+@if (cartData?.totalItem > 0) {
+  <ion-footer>
+    <ion-toolbar class="ion-padding" color="success">
+      <ion-label color="white">
+        <h4>{{ cartData?.totalItem }} Item | <span *ngIf="cartData?.totalItem > 1">s</span> |
+          ₹{{ cartData?.totalPrice }}</h4>
+        <ion-text color="light">
+          <p>Extra charge may applay</p>
+        </ion-text>
+      </ion-label>
+      <ion-button slot="end" fill="clear" color="white" class="btn-border" (click)="viewCart()">
+        <ion-icon name="cart" slot="end" color="white" size="small"></ion-icon>
+        Checkout
+      </ion-button>
+      <!--    <ion-text>-->
+      <!--      <h4>Total</h4>-->
+      <!--      <p>{{ 'total' | currency : '$' }}</p>-->
+      <!--    </ion-text>-->
+      <!--    <ion-button expand="block">Checkout</ion-button>-->
+    </ion-toolbar>
+  </ion-footer>
+}

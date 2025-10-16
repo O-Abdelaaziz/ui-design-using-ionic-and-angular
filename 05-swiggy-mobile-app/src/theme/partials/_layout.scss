@@ -1,0 +1,39 @@
+//// Layout utilities
+//.container {
+//  width: 100%;
+//  max-width: 1200px;
+//  margin: 0 auto;
+//  padding: 0 var(--spacing-md);
+//}
+//
+//.page-container {
+//  min-height: 100vh;
+//  padding: var(--spacing-md);
+//}
+//
+//// Flex utilities
+//.flex-center {
+//  display: flex;
+//  align-items: center;
+//  justify-content: center;
+//}
+//
+//.flex-between {
+//  display: flex;
+//  align-items: center;
+//  justify-content: space-between;
+//}
+//
+//// Grid system
+//.grid {
+//  display: grid;
+//  gap: var(--spacing-md);
+//
+//  &--2 {
+//    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+//  }
+//
+//  &--3 {
+//    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+//  }
+//}

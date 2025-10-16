@@ -1,0 +1,58 @@
+/*
+ * App Global CSS
+ * ----------------------------------------------------------------------------
+ * Put style rules here that you want to apply globally. These styles are for
+ * the entire app and not just one component. Additionally, this file can be
+ * used as an entry point to import other CSS/Sass files to be included in the
+ * output CSS.
+ * For more information on global stylesheets, visit the documentation:
+ * https://ionicframework.com/docs/layout/global-stylesheets
+ */
+
+
+///* 1. UTILITIES AND SETTINGS (SASS Modules) */
+//// This section should only contain @use for SASS-level assets (mixins, functions, variables)
+//@use "./theme/partials/mixins" as mixin;
+//
+///* 2. EXTERNAL CSS IMPORTS */
+//// This must remain an @import because the Ionic files are pure CSS.
+////@use "./theme/partials/ionic-framework";
+//
+///* 3. CUSTOM STYLES (SASS Partials) */
+//// These are Sass partials, so we use @use for namespace support.
+//// Note: When you @use a file, you don't typically need a namespace if the file doesn't expose
+//// mixins, functions, or variables you need to call/reference.
+//// However, using the full path is fine.
+//
+//@use "./theme/partials/_typography.scss";
+//@use "./theme/partials/_general.scss";
+//
+//// If you have any final custom CSS that MUST live outside a partial, put it here:
+//// ion-title { font-weight: bold; }
+//
+//@use "./theme/partials/ionic-framework";
+
+
+// 1. Sass Modules/Base - Must come first
+@use "./theme/partials/mixins" as mixin;
+// 2. Framework Base - Foundation styles
+@use "./theme/partials/ionic-framework";
+// 3. Custom Overrides - Loaded last to win CSS cascade
+@use "./theme/partials/typography";
+@use "./theme/partials/general";
+
+//// 1. Sass Modules/Base
+//@use "./theme/partials/mixins" as mixin;
+//@use "./theme/partials/variables";
+//
+//// 2. Framework Base
+//@use "./theme/partials/ionic-framework";
+//
+//// 3. Custom Partials
+//@use "./theme/partials/typography";
+//@use "./theme/partials/layout";
+//@use "./theme/partials/components";
+//@use "./theme/partials/themes";
+//@use "./theme/partials/animations";
+//@use "./theme/partials/utilities";
+//@use "./theme/partials/general";

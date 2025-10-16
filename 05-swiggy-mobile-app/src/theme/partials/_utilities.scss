@@ -1,0 +1,22 @@
+//@each $size, $value in (xs: 4px, sm: 8px, md: 16px, lg: 24px, xl: 32px) {
+//  .p-#{$size} { padding: $value !important; }
+//  .m-#{$size} { margin: $value !important; }
+//  .pt-#{$size} { padding-top: $value !important; }
+//  .mb-#{$size} { margin-bottom: $value !important; }
+//}
+//
+//// Text utilities
+//.text-center { text-align: center !important; }
+//.text-uppercase { text-transform: uppercase !important; }
+//.font-bold { font-weight: 700 !important; }
+//.font-medium { font-weight: 500 !important; }
+//
+//// Color utilities
+//.text-primary { color: var(--primary-color) !important; }
+//.bg-primary { background-color: var(--primary-color) !important; }
+//.bg-light { background-color: var(--light-color) !important; }
+//
+//// Display utilities
+//.d-block { display: block !important; }
+//.d-none { display: none !important; }
+//.d-flex { display: flex !important; }

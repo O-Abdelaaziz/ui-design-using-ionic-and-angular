@@ -1,0 +1,24 @@
+<ion-item lines="none">
+  <ion-thumbnail slot="start">
+    <img [src]="restaurant?.cover ? restaurant.cover : 'assets/imgs/1.jpg'" alt="image">
+  </ion-thumbnail>
+
+  <ion-label>
+    <h4>{{ restaurant?.name }}</h4>
+    <ion-text color="medium">
+      <p class="paragraph">{{ getCuisine(restaurant?.cuisines) }}</p>
+      <span>
+            <ion-icon name="star" color="primary"></ion-icon>
+        {{ restaurant?.rating }}
+          </span>
+      {{ restaurant?.delivery_time }} mins . ${{ restaurant?.price }} for two
+      <ion-text color="tertiary">
+        @if (restaurant?.distance && restaurant?.distance !== 0) {
+          <p class="distance">
+            {{ restaurant?.distance | number: '0.0-2' }} kms away
+          </p>
+        }
+      </ion-text>
+    </ion-text>
+  </ion-label>
+</ion-item>

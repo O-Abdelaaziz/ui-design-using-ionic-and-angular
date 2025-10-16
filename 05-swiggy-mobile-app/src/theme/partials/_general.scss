@@ -1,0 +1,8 @@
+@use "mixins" as mixin;
+
+.border-bottom {
+  @include mixin.border-style(1.5vh);
+}
+.border-bottom-small {
+  @include mixin.border-style(0.5vh);
+}

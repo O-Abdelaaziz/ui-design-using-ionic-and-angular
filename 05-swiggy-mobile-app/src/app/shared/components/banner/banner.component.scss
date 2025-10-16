@@ -1,0 +1,34 @@
+div {
+  width: 94%;
+  height: 25vh;
+  //margin-top: 20px;
+  margin: auto;
+  transform: translateY(5%);
+
+  swiper-container {
+    --swiper-pagination-color: var(--ion-color-primary);
+
+    swiper-slide {
+      height: 22vh;
+
+      img {
+        width: 100%;
+        height: 18vh;
+        object-fit: cover;
+        object-position: center;
+        border-radius: 10px;
+        //box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        box-shadow: -1px 11px 13px -6px rgb(87, 86, 86);
+      }
+    }
+  }
+}
+
+@media (orientation: landscape) {
+  swiper-container {
+    swiper-slide {
+      height: 25vh !important;
+    }
+  }
+}
+

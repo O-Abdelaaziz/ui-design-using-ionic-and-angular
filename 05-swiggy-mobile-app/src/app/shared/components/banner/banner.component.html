@@ -1,0 +1,25 @@
+<ion-grid>
+  <ion-row class="border-bottom">
+
+    <ion-col size="12">
+      <div>
+        <swiper-container
+          [modules]="swiperModules"
+          [slidesPerView]="1.2"
+          [autoplay]="true"
+          [spaceBetween]="10"
+          (swiperdoubletap)="onDoubleTap($event)"
+          [keyboard]="true"
+          [pagination]="{ clickable: true ,dynamicBullets: true}"
+        >
+          @for(image of bannerImages; track $index){
+            <swiper-slide>
+              <img [src]="image?.banner" alt="image">
+            </swiper-slide>
+          }
+        </swiper-container>
+      </div>
+    </ion-col>
+
+  </ion-row>
+</ion-grid>

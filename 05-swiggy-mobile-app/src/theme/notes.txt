@@ -1,0 +1,162 @@
+ The Problem with vh in Mobile Browsers
+The main issue is that mobile browsers have dynamic viewport sizes due to:
+
+Address bars appearing/disappearing
+
+Navigation controls
+
+Keyboard opening/closing
+
+This can cause layout shifts and unexpected behavior.
+
+✅ Recommended Usage
+Good Uses for vh:
+scss
+// Full-screen sections or hero areas
+.hero-section {
+  height: 100vh; // Good for full-screen sections
+}
+
+// Fixed-position elements that should fill screen
+.modal-overlay {
+  height: 100vh;
+  width: 100vw;
+  position: fixed;
+  top: 0;
+  left: 0;
+}
+
+// Progress bars or indicators that span viewport width
+.progress-bar {
+  width: 100vw; // Spans entire viewport width
+  height: 4px;
+}
+Better Alternatives for Your Examples:
+scss
+// ❌ Avoid vh for small spacing
+.dashed-border-bottom {
+  border-bottom: 1px dashed var(--ion-color-medium);
+  padding-bottom: 1vh; // Problematic - changes with viewport
+  margin-bottom: 1vh;  // Problematic - changes with viewport
+}
+
+// ✅ Use consistent units
+.dashed-border-bottom {
+  border-bottom: 1px dashed var(--ion-color-medium);
+  padding-bottom: 8px; // Consistent across devices
+  margin-bottom: 8px;  // Consistent across devices
+}
+
+// ❌ Avoid vh for tiny spacing
+.distance {
+  font-size: 0.8rem;
+  padding-top: 0.2vh; // Very small and unpredictable
+}
+
+// ✅ Use rem/em for vertical rhythm
+.distance {
+  font-size: 0.8rem;
+  padding-top: 0.25rem; // Relates to typography
+}
+
+// ❌ Avoid vh for component dimensions
+ion-thumbnail {
+  width: 10vh; // Height-based width = unpredictable
+  height: 50px; // Mixed units = inconsistent aspect ratio
+}
+
+// ✅ Use consistent approach
+ion-thumbnail {
+  width: 60px;  // Fixed size
+  height: 60px; // Fixed size - square aspect ratio
+  // OR use CSS aspect-ratio
+  width: 60px;
+  aspect-ratio: 1; // Maintains square
+}
+
+// ✅ Better: Use container-relative units
+ion-thumbnail {
+  width: 15%;   // Relative to parent
+  height: auto; // Maintain aspect ratio
+  aspect-ratio: 1;
+}
+📏 Better Unit Strategy for Ionic
+For Spacing:
+scss
+// Use these instead of vh for padding/margin
+.paragraph {
+  padding-bottom: 0.5rem;    // Best - relates to typography
+  margin-top: 8px;           // Good - consistent
+  padding: var(--spacing-sm); // Best - design system
+}
+For Layouts:
+scss
+// Full-screen sections
+.fullscreen-section {
+  height: 100dvh; // New CSS unit - more reliable
+  min-height: -webkit-fill-available; // Safari fallback
+}
+
+// Aspect ratios
+.video-container {
+  aspect-ratio: 16 / 9;
+  width: 100%;
+}
+
+// Responsive containers
+.responsive-square {
+  width: 80%; // Relative to parent
+  aspect-ratio: 1;
+}
+For Typography:
+scss
+// Use relative units
+.heading {
+  font-size: clamp(1.5rem, 4vw, 2.5rem); // Responsive but bounded
+}
+
+.body-text {
+  font-size: 1rem; // Consistent base size
+  line-height: 1.6; // Unitless for accessibility
+}
+🎯 When to Actually Use vh/vw
+Full-screen layouts (hero sections, modals)
+
+Viewport-relative elements (progress bars, backgrounds)
+
+Responsive typography (with clamp() for boundaries)
+
+Aspect ratio maintenance (when height drives width or vice versa)
+
+🔧 Improved Version of Your Code
+scss
+// Use design system variables
+:root {
+  --spacing-xs: 4px;
+  --spacing-sm: 8px;
+  --spacing-md: 16px;
+}
+
+.dashed-border-bottom {
+  border-bottom: 1px dashed var(--ion-color-medium);
+  padding-bottom: var(--spacing-sm);
+  margin-bottom: var(--spacing-sm);
+}
+
+.distance {
+  font-size: 0.8rem;
+  padding-top: var(--spacing-xs);
+}
+
+.paragraph {
+  padding-bottom: var(--spacing-sm);
+}
+
+// Consistent thumbnail sizing
+ion-thumbnail {
+  --size: 60px;
+  width: var(--size);
+  height: var(--size);
+  border-radius: 8px;
+}
+Bottom line: Use vh/vw sparingly for large layout elements, and prefer consistent units (px, rem, design tokens`) for component-level styling and spacing.
