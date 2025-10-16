@@ -1,0 +1,37 @@
+<ion-content [fullscreen]="true">
+  <!--<div id="image">-->
+
+  <!--</div>-->
+  <div class="curved">
+    <ion-fab slot="fixed" vertical="bottom" horizontal="center">
+      <ion-fab-button color="light" (click)="onClose()">
+        <ion-icon name="close"></ion-icon>
+      </ion-fab-button>
+    </ion-fab>
+  </div>
+
+  <ion-list lines="none">
+    <ion-list-header>
+      <ion-label>Welcome Back!</ion-label>
+    </ion-list-header>
+    <ion-item class="ion-margin">
+      <ion-input type="text" placeholder="Email" clearInput="true" id="email">
+        <ion-icon slot="start" name="mail" color="plant" size="small"></ion-icon>
+      </ion-input>
+    </ion-item>
+    <ion-item class="ion-margin">
+      <!--      <ion-icon name="lock" color="primary"></ion-icon>-->
+      <ion-input type="password" value="NeverGonnaGiveYouUp" id="password">
+        <ion-icon slot="start" name="lock" color="plant" size="small"></ion-icon>
+        <ion-input-password-toggle slot="end" color="plant"></ion-input-password-toggle>
+      </ion-input>
+    </ion-item>
+
+    <ion-text color="plant"><p class="ion-margin-horizontal">Forgot Password?</p></ion-text>
+    <ion-button color="plant" shape="round" class="ion-margin" strong="true">
+      <span>Login</span>
+      <ion-icon slot="end" name="login"></ion-icon>
+    </ion-button>
+  </ion-list>
+
+</ion-content>

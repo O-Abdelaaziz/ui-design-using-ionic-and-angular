@@ -1,0 +1,27 @@
+ion-content {
+  --background: var(--ion-color-dark) url('../../assets/imgs/leaves.jpg') no-repeat center center/cover;
+}
+
+ion-list {
+  transform: translateY(30vh);
+  background: transparent;
+
+  ion-list-header {
+    margin-bottom: 15vh;
+    letter-spacing: 3px;
+
+    ion-label {
+      font-size: 25px;
+      font-weight: bold;
+      font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    }
+  }
+  ion-button {
+    font-weight: bold;
+    text-transform: none;
+    margin: 1vh 5vh;
+  }
+  p {
+    font-size: 0.9rem;
+  }
+}

@@ -1,0 +1,59 @@
+//#image {
+//  height: 50%;
+//  width: 600px;
+//  background: var(--ion-color-dark) url('../../../assets/imgs/leaves.jpg') no-repeat center center/cover;
+//  border-radius: 0 0 45% 45%;
+//  margin-left: -21vw;
+//  position: relative;
+//}
+.curved {
+  position: relative;
+  background: var(--ion-color-dark) url('../../../assets/imgs/leaves.jpg') no-repeat center center/cover;
+  height: 50vh;
+  width: 100%;
+  border-bottom-left-radius: 50% 20%;
+  border-bottom-right-radius: 50% 20%;
+
+
+  ion-fab {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    transform: translateY(40%);
+
+    ion-fab-button {
+      ion-icon {
+        //color: var(--ion-color-primary);
+        font-size: 2rem;
+      }
+    }
+  }
+}
+
+
+ion-list {
+  margin-top: 8vh;
+  background: transparent;
+
+  ion-list-header {
+    font-size: 1.5rem;
+    font-weight: bold;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+  }
+
+  ion-item {
+    //border: 1px solid var(--ion-color-medium);
+    border: 1px solid var(--ion-color-light);
+    border-radius: 10px;
+    //-webkit-box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    //box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    -webkit-box-shadow: 0 6px 4px -4px var(--ion-color-medium);
+    box-shadow: 0 6px 4px -4px var(--ion-color-medium);
+  }
+
+  p{
+    font-size: 0.9rem;
+    //font-weight: normal;
+    padding-left: 1vh;
+  }
+}
