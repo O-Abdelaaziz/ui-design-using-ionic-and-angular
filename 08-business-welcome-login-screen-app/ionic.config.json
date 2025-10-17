@@ -1,0 +1,7 @@
+{
+  "name": "08-business-welcome-login-screen-app",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular-standalone"
+}
