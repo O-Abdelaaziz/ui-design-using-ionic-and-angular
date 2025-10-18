@@ -1,0 +1,7 @@
+{
+  "name": "09-elearning-welcome-login-screen-app",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular-standalone"
+}
