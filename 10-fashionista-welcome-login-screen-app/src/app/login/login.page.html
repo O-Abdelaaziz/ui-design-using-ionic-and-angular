@@ -1,0 +1,33 @@
+<ion-content [fullscreen]="true">
+  <div class="login-section ion-padding">
+    <div class="heading ion-padding">
+      <h1>Welcome Fashionista!</h1>
+      <p>Sign in to continue</p>
+    </div>
+
+    <div class="login-form">
+      <div class="form-input">
+        <ion-icon name="mail-outline"></ion-icon>
+        <ion-item>
+          <ion-label position="floating">Email</ion-label>
+          <ion-input type="email"></ion-input>
+        </ion-item>
+      </div>
+
+      <div class="form-input">
+        <ion-icon name="lock-closed-outline"></ion-icon>
+        <ion-item>
+          <ion-label position="floating">Password</ion-label>
+          <ion-input type="password"></ion-input>
+        </ion-item>
+      </div>
+    </div>
+
+    <div class="action-buttons ion-padding">
+      
+      <ion-button size="large" class="login-button ion-margin-top">Login</ion-button>
+      <p>Don't have an account?</p>
+      <ion-button size="large" fill="outline" class="register-button ion-margin-top" routerLink="/register">Sign Up</ion-button>
+    </div>
+  </div>
+</ion-content>
