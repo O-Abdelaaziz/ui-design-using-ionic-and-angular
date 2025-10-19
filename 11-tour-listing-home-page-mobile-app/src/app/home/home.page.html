@@ -1,0 +1,70 @@
+<ion-header [translucent]="true" class="ion-no-border">
+  <ion-toolbar>
+    <ion-avatar>
+      <img src="assets/images/avatar.jpg" alt="avatar">
+    </ion-avatar>
+    <ion-icon name="briefcase" slot="end" class="ion-margin-end"></ion-icon>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <div class="heading">
+    <h1>Discover</h1>
+    <h1>Word with us!</h1>
+    <p>Find the best tours for you</p>
+  </div>
+  <div class="search">
+    <ion-input type="text" placeholder="Search something..." fill="clear"></ion-input>
+    <ion-icon name="search"></ion-icon>
+  </div>
+  <div class="tabs">
+    <div class="tab-icon active">
+      <ion-icon name="airplane"></ion-icon>
+    </div>
+    <div class="tab-icon">
+      <ion-icon name="business"></ion-icon>
+    </div>
+    <div class="tab-icon">
+      <ion-icon name="camera"></ion-icon>
+    </div>
+    <div class="tab-icon">
+      <ion-icon name="bus"></ion-icon>
+    </div>
+  </div>
+  <div class="categories">
+    <div class="category active">
+      <span>New</span>
+      <div></div>
+    </div>
+    <div class="category">
+      <span>Popular</span>
+    </div>
+    <div class="category">
+      <span>Top</span>
+    </div>
+    <div class="category">
+      <span>Best</span>
+    </div>
+  </div>
+
+  <div class="packages">
+    @for (packageOffer of packages; track $index) {
+      <div class="card"
+           [ngStyle]="{'backgroundImage': 'linear-gradient(rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.2) 50%, rgba(0, 0, 0, 0.95) 100%), url('+packageOffer.image+')'}">
+        <div class="info">
+          <h2>{{ packageOffer?.palace }}</h2>
+          <p>
+            <ion-icon name="location-outline"></ion-icon>
+            {{ packageOffer?.location }}
+          </p>
+          <p>
+            <ion-icon name="star"></ion-icon>
+            {{ packageOffer?.rating }}
+            <span>({{ packageOffer?.reviews }} reviews)</span>
+          </p>
+        </div>
+      </div>
+    }
+
+  </div>
+</ion-content>

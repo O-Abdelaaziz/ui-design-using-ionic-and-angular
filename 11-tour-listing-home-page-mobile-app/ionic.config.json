@@ -1,0 +1,7 @@
+{
+  "name": "11-tour-lsiting-home-page-mobile-app",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular-standalone"
+}
