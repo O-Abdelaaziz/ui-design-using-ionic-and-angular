@@ -1,0 +1,7 @@
+{
+  "name": "12-covid-home-page-mobile-app",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular-standalone"
+}

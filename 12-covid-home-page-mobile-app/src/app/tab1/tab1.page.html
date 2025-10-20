@@ -1,0 +1,76 @@
+<ion-content [fullscreen]="true">
+  <div class="top-section ion-padding">
+    <div class="top-menu">
+      <ion-icon name="menu"></ion-icon>
+      <ion-icon name="bell"></ion-icon>
+    </div>
+
+    <div class="title">
+      <ion-item slot="start" lines="none">
+        <h2>Covid-25</h2>
+      </ion-item>
+      <ion-item slot="end" lines="none">
+        <ion-select
+          [interfaceOptions]="customInterfaceOptions"
+          value="algeria"
+          interface="action-sheet"
+          placeholder="Select city"
+
+        >
+          <ion-select-option value="algeria">Algeria</ion-select-option>
+          <ion-select-option value="constantine">Constantine</ion-select-option>
+          <ion-select-option value="oran">Oran</ion-select-option>
+          <ion-select-option value="annaba">Annaba</ion-select-option>
+          <ion-select-option value="blida">Blida</ion-select-option>
+        </ion-select>
+      </ion-item>
+    </div>
+
+    <div class="sub-title">
+      <h3>Are you feeling sick today!</h3>
+      <!--    <p>Answer a few questions to know if you need to take a test</p>-->
+      <!--    <p>If you feel sick with any of the following symptoms, please take a test</p>-->
+      <p>If you feel sick with any of the following symptoms, please call or send sms us immediately</p>
+    </div>
+
+    <div class="action-buttons ion-no-padding">
+      <ion-button fill="clear" color="light" class="call">
+        <ion-icon slot="start" name="call"></ion-icon>
+        Call Us
+      </ion-button>
+      <ion-button fill="clear" color="light" class="sms">
+        <ion-icon slot="start" name="sms"></ion-icon>
+        Send SMS
+      </ion-button>
+    </div>
+  </div>
+
+  <div class="middle-section ion-padding">
+    <h3>Prevention</h3>
+    <div class="content">
+      <ion-row>
+        <ion-col size="4">
+          <img src="../assets/images/1.png" alt="">
+          <p>Avoid close contact with sick people</p>
+        </ion-col>
+        <ion-col size="4">
+          <img src="../assets/images/2.png" alt="">
+          <p>Wash your hands often and thoroughly</p>
+        </ion-col>
+        <ion-col size="4">
+          <img src="../assets/images/3.png" alt="">
+          <p>Wear a mask when you go out</p>
+        </ion-col>
+      </ion-row>
+    </div>
+  </div>
+
+  <div class="bottom-section ion-padding">
+    <img src="../assets/images/4.svg" alt="">
+    <div class="content">
+      <h3>Do you own test</h3>
+      <p>Follow the instructions to do your own test</p>
+      <!--      <p>Or answer a few questions to know if you need to take a test</p>-->
+    </div>
+  </div>
+</ion-content>
