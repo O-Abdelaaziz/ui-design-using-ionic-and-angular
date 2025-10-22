@@ -1,0 +1,145 @@
+ion-content {
+  position: relative;
+}
+
+.image-slider {
+  position: relative;
+
+  i {
+    position: absolute;
+    z-index: 5;
+    margin: 20px;
+    background: #fdfcfc;
+    padding: 3px 9px;
+    font-size: 1.7rem;
+    border-radius: 11px;
+    cursor: pointer;
+    color: #c3436c;
+    font-weight: 500;
+  }
+
+  swiper-slide {
+    width: 100%;
+    height: 50vh;
+
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+  }
+}
+
+.profile-info {
+  position: absolute;
+  border-top-left-radius: 20px;
+  border-top-right-radius: 20px;
+  background: #fff;
+  margin-top: -30px;
+  width: 100%;
+  z-index: 5;
+
+  .user-info {
+    padding: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    .basic-info {
+      display: flex;
+      flex-direction: column;
+
+      h1, p {
+        margin: 0 0 10px 0;
+      }
+
+      p {
+        font-size: 0.9rem;
+        color: #888;
+
+        i {
+          color: #c3436c;
+          margin-right: 5px;
+        }
+      }
+
+      h1 {
+        font-size: 1.5rem;
+        font-weight: 600;
+      }
+    }
+
+    .fi-rr-share {
+      background: #ef94d7;
+      padding: 15px;
+      color: #fff;
+      border-radius: 10px;
+    }
+  }
+
+  .about-me {
+    padding: 0 20px;
+
+    h5, p {
+      margin: 0 0 5px 0;
+    }
+
+    h5 {
+      font-weight: 800;
+      margin-bottom: 10px;
+    }
+
+    p {
+      color: #cacaca;
+      font-size: 18px;
+
+      .more-less {
+        cursor: pointer;
+        color: #c3436c;
+      }
+    }
+  }
+
+  .my-hobbies {
+    padding: 20px;
+    margin-bottom: 50px;
+
+    h5 {
+      font-weight: 800;
+      margin: 0 0 10px;
+    }
+
+    ion-chip {
+      margin: 0 30px 10px 0;
+      color: #fff;
+    }
+  }
+
+  .action-buttons {
+    position: fixed;
+    bottom: 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: none;
+
+    .accept-reject {
+      color: #fff;
+      background: #ef94d7;
+      padding: 15px 39px;
+      align-items: center;
+    }
+
+    .reject {
+      border-top-right-radius: 20px;
+      font-size: 1.2rem;
+      background: #c3436c;
+    }
+
+    .accept {
+      border-top-left-radius: 20px;
+      font-size: 1.2rem;
+      background: #ef94d7;
+    }
+  }
+}

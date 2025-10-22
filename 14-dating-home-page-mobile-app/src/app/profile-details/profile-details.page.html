@@ -1,0 +1,65 @@
+<ion-content [fullscreen]="true">
+  <div class="image-slider">
+    <i class="fi-rr-arrow-small-left" aria-hidden="true" routerLink="/tabs/tab1"></i>
+    <swiper-container>
+      <swiper-slide>
+        <img src="assets/images/profile-1.jpg" alt="profile">
+      </swiper-slide>
+      <swiper-slide>
+        <img src="assets/images/profile-2.jpg" alt="profile">
+      </swiper-slide>
+      <swiper-slide>
+        <img src="assets/images/profile-3.jpg" alt="profile">
+      </swiper-slide>
+    </swiper-container>
+  </div>
+
+  <div class="profile-info">
+    <div class="user-info">
+      <div class="basic-info">
+        <h1>Olivia, 23</h1>
+        <p><i class="fi-rr-location-alt" aria-hidden="true"></i> (2.5km away)</p>
+      </div>
+      <i class="fi-rr-share" aria-hidden="true"></i>
+    </div>
+
+    <div class="about-me">
+      <h5>About Me</h5>
+      <p *ngIf="!isShowMore">
+        {{
+          ('Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quod.\n' +
+            '        Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quod.\n' +
+            '        Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quod.').substring(0, 100)
+        }}
+        <span>...</span>
+        <span class="more-less" (click)="toggleShowMore()">See more</span>
+      </p>
+
+      <p *ngIf="isShowMore">
+        {{
+          ('Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quod.\n' +
+            '        Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quod.')
+        }}
+        <span class="more-less" (click)="toggleShowMore()">See less</span>
+      </p>
+    </div>
+
+    <div class="my-hobbies">
+      <h5>My Hobbies</h5>
+      <div class="hobbies-list">
+        <ion-chip *ngFor="let hobby of hobbies; let i = index" [ngStyle]="{backgroundColor: getColor(i)}">
+          <ion-label>{{ hobby }}</ion-label>
+        </ion-chip>
+      </div>
+    </div>
+
+    <ion-footer class="action-buttons">
+      <div class="accept-reject reject">
+        <i class="fi-rr-cross" aria-hidden="true"></i>
+      </div>
+      <div class="accept-reject accept">
+        <i class="fi-rr-heart" aria-hidden="true"></i>
+      </div>
+    </ion-footer>
+  </div>
+</ion-content>

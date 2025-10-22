@@ -1,0 +1,67 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <span slot="start"><i class="fi-rr-apps" aria-hidden="true"></i></span>
+    <span slot="end"><i class="fi-rr-bell" aria-hidden="true"></i></span>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <div class="heading">
+    <h3>Find Your <span>Perfect Match</span></h3>
+    <h3>Here <span><i class="fi-rr-heart" aria-hidden="true"></i></span></h3>
+  </div>
+
+  <div class="search-bar">
+    <ion-input placeholder="Search"></ion-input>
+    <i class="fi-rr-search" aria-hidden="true"></i>
+  </div>
+
+  <div class="profile-cards">
+    <ion-card routerLink="/profile-details">
+      <div class="like-info">
+        2.5k <i class="fi-rr-heart" aria-hidden="true"></i>
+      </div>
+      <img src="assets/images/profile-1.jpg" alt="profile">
+      <div class="profile-info">
+        <p>Olivia, 21</p>
+        <p><i class="fi-rr-location-alt" aria-hidden="true"></i> (2.5km away)</p>
+      </div>
+    </ion-card>
+
+    <ion-card routerLink="/profile-details">
+      <div class="like-info">
+        2.5k <i class="fi-rr-heart" aria-hidden="true"></i>
+      </div>
+      <img src="assets/images/profile-2.jpg" alt="profile">
+      <div class="profile-info">
+        <p>Ava, 23</p>
+        <p><i class="fi-rr-location-alt" aria-hidden="true"></i> (2.5km away)</p>
+      </div>
+    </ion-card>
+
+    <ion-card routerLink="/profile-details">
+      <div class="like-info">
+        2.5k <i class="fi-rr-heart" aria-hidden="true"></i>
+      </div>
+      <img src="assets/images/profile-3.jpg" alt="profile">
+      <div class="profile-info">
+        <p>Olivia, 21</p>
+        <p><i class="fi-rr-location-alt" aria-hidden="true"></i> (2.5km away)</p>
+      </div>
+    </ion-card>
+  </div>
+
+  <div class="story-section">
+    <div id="divider"><p></p></div>
+    <h3>Stories For You</h3>
+    <div class="stories">
+      <div class="story" *ngFor="let story of [].constructor(10); let i = index">
+        <ion-avatar>
+          <i class="fi-rr-plus-small" aria-hidden="true" *ngIf="i === 0"></i>
+          <img src="https://i.pravatar.cc/{{(i+ 10)*10}}" alt="profile">
+        </ion-avatar>
+        <p>User {{ i + 1 }}</p>
+      </div>
+    </div>
+  </div>
+</ion-content>

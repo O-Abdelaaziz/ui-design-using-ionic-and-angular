@@ -1,0 +1,223 @@
+::-webkit-scrollbar {
+  width: 0;
+  background: transparent;
+}
+
+ion-toolbar {
+  height: 6rem;
+  box-shadow: 0 11px 38px #f8f8f8;
+  display: flex;
+  padding: 0 26px;
+  align-items: center;
+
+  span {
+    //background: #f0bbe2;
+    //padding: 0.5rem;
+    //border-radius: 50%;
+    //margin: 0 0.5rem;
+
+    background: #e7e7e7;
+    padding: 10px;
+    border-radius: 10px;
+    margin: 0 0.5rem;
+    font-size: 1rem;
+    font-weight: 500;
+    cursor: pointer;
+  }
+}
+
+ion-header ion-toolbar:first-of-type {
+  padding-top: 0;
+}
+
+.heading-md::after, .heading-ios ion-toolbar:last-of-type {
+  background-image: none;
+  background-color: red;
+  --border-width: 5px;
+}
+
+.heading {
+  padding: 16px 16px 5px 35px;
+
+  h3 {
+    margin: 0;
+    font-size: 1.3rem;
+    font-weight: 600;
+    line-height: 1.2;
+
+
+    span, i {
+      color: #c3436c;
+    }
+  }
+}
+
+.search-bar {
+  padding: 15px 26px;
+  position: relative;
+
+  ion-input {
+    --background: #f6f6f6;
+    --border-radius: 10px;
+    --padding-start: 15px;
+    --padding-end: 10px;
+    --highlight-color-focused: none;
+    height: 50px;
+    color: #888;
+  }
+
+  i {
+    position: absolute;
+    top: 50%;
+    right: 35px;
+    transform: translateY(-50%);
+    background-color: #c3436c;
+    color: white;
+    font-size: 1.2rem;
+    font-weight: 500;
+    padding: 5px;
+    border-radius: 10px;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    //color: #888;
+    z-index: 100;
+  }
+}
+
+.profile-cards {
+  padding: 15px 0 5px 26px;
+  overflow: auto;
+  overflow-y: hidden;
+  margin: 0 auto;
+  white-space: nowrap;
+
+  ion-card {
+    display: inline-block;
+    position: relative;
+    height: 210px;
+    border-radius: 10px;
+    margin: 0 10px;
+
+    .like-info {
+      position: absolute;
+      top: 5px;
+      right: 5px;
+      font-size: 0.7rem;
+      font-weight: 500;
+      color: #fff;
+      background-color: #ef94d7;
+      padding: 5px;
+      border-radius: 25px;
+    }
+
+    img {
+      border-radius: 10px;
+      width: 150px;
+      height: 230px;
+      object-fit: cover;
+    }
+
+
+    .profile-info {
+      position: absolute;
+      width: 100%;
+      bottom: 0;
+      height: 50px;
+      background: inherit;
+      background-color: rgba(255, 255, 255, 0.1);
+      backdrop-filter: blur(3px);
+      -webkit-backdrop-filter: blur(3px);
+      font-weight: bolder;
+      z-index: 5;
+
+      p {
+        color: #fff;
+        padding-left: 4px;
+        margin-top: 5px;
+        margin-bottom: 0;
+      }
+
+      i {
+        color: #c3436c;
+      }
+    }
+  }
+
+
+  ion-card:first-child {
+    margin-left: 0;
+  }
+}
+
+.story-section {
+  padding: 16px 0 5px 30px;
+  height: 335px;
+  background: #fdf6ff;
+  border-top-left-radius: 20px;
+  border-top-right-radius: 20px;
+
+  #divider {
+    text-align: center;
+    text-align: -webkit-center;
+
+    p {
+      width: 29px;
+      height: 5px;
+      background: #c3436c;
+      margin: 0;
+    }
+  }
+
+  h3 {
+    font-size: 1rem;
+    font-weight: 900;
+    text-align: center;
+    margin: 24px;
+  }
+
+  .stories {
+    display: flex;
+    overflow: auto;
+    overflow-y: hidden;
+    margin: 30px auto;
+    white-space: nowrap;
+
+    .story {
+      display: inline-block;
+      margin: 0 10px;
+
+      ion-avatar {
+        position: relative;
+        margin: 0 20px 0 0;
+        border: 3px solid #f4b7e6;
+        padding: 3px;
+        width: 100% !important;
+        height: 100% !important;
+        max-width: 60px !important;
+        max-height: 60px !important;
+        min-width: 60px !important;
+        min-height: 60px !important;
+
+        i {
+          position: absolute;
+          bottom: 0;
+          right: -4px;
+          background: #94daec;
+          border-radius: 50%;
+          padding: 3px 3px 1px 3px;
+          font-size: 0.7rem;
+          font-weight: 500;
+          color: #fff;
+        }
+      }
+      p{
+        margin-left: 10px;
+        font-size: 0.9rem;
+        font-weight: bolder;
+      }
+    }
+  }
+}

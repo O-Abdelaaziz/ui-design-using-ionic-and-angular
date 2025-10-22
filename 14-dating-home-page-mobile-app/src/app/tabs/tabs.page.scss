@@ -1,0 +1,11 @@
+ion-tab-bar {
+  box-shadow: 0 11px 38px #f0bbe2;
+  height: 5rem;
+  i{
+    font-size: 1.5rem;
+  }
+
+  ion-tab-button{
+    --color-selected: #f0bbe2;
+  }
+}
