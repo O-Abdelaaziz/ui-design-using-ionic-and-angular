@@ -1,0 +1,26 @@
+
+ion-content {
+  --background: #F8F8FA !important;
+
+  ion-header {
+    background: transparent !important;
+
+    ion-toolbar {
+      --background: transparent !important;
+
+      ion-title {
+        font-weight: bolder;
+      }
+    }
+  }
+
+  //ion-row {
+  //  margin: 0 !important;
+  //  padding: 0 !important;
+  //}
+  //
+  //ion-col {
+  //  margin: 0 !important;
+  //  padding: 4px !important; // Optional: small spacing between items
+  //}
+}

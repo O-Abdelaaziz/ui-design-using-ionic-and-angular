@@ -1,0 +1,30 @@
+<ion-card class="card">
+  <ion-card-content class="ion-text-left">
+    <div class="img-wrapper">
+      <ion-img [src]="foodItem()?.imageUrl"></ion-img>
+    </div>
+
+    <ion-card-title class="title">{{ foodItem()?.title }}</ion-card-title>
+    <ion-card-subtitle>{{ foodItem()?.description }}</ion-card-subtitle>
+
+    <ion-card-subtitle>
+      <div class="card-info">
+        <div class="rating">
+          @for (star of getStarIcons(foodItem()?.rating); track star) {
+            <ion-icon [name]="star"></ion-icon>
+          }
+        </div>
+        <div class="distance">
+          <p>
+            <ion-icon name="location"></ion-icon>
+            {{ foodItem()?.distance }}m
+          </p>
+          <p>
+            <ion-icon name="time"></ion-icon>
+            {{ foodItem()?.preparationTime }}`
+          </p>
+        </div>
+      </div>
+    </ion-card-subtitle>
+  </ion-card-content>
+</ion-card>

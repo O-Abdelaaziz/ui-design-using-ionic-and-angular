@@ -1,0 +1,21 @@
+<ion-content [fullscreen]="true">
+ <ion-header class="ion-no-border ion-padding">
+   <ion-toolbar class="ion-text-center">
+     <ion-title>Categories</ion-title>
+     <ion-buttons slot="start">
+       <ion-back-button defaultHref="/home"></ion-back-button>
+     </ion-buttons>
+   </ion-toolbar>
+ </ion-header>
+
+
+  <ion-grid>
+    <ion-row >
+      @for (category of categories; track $index) {
+        <ion-col size="4">
+          <app-category [category]="category"></app-category>
+        </ion-col>
+      }
+    </ion-row>
+  </ion-grid>
+</ion-content>

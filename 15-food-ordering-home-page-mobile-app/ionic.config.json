@@ -1,0 +1,7 @@
+{
+  "name": "15-food-ordering-home-page-mobile-app",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular-standalone"
+}

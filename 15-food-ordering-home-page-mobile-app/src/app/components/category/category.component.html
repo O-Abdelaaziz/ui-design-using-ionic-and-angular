@@ -1,0 +1,11 @@
+<ion-card class="category" [style.--background]="category()?.color">
+  <ion-card-header class="ion-text-center">
+    <div class="category-icon">
+      <img src="{{ category()?.icon }}" [alt]="category()?.title">
+    </div>
+    <!--    <ion-icon src="assets/icon/food.svg"></ion-icon>-->
+    <!--    <ion-icon [name]="category()?.icon" class="category-icon"></ion-icon>-->
+    <ion-card-title>{{ category()?.title }}</ion-card-title>
+    <ion-card-subtitle>{{ category()?.places }} <span>Places</span></ion-card-subtitle>
+  </ion-card-header>
+</ion-card>

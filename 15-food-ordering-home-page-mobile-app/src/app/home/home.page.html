@@ -1,0 +1,93 @@
+<ion-header class="ion-no-border">
+  <ion-item lines="none">
+    <ion-avatar slot="end">
+      <img src="assets/images/avatar.png">
+    </ion-avatar>
+    <ion-label>
+      <h2>Restaurant Menu</h2>
+      <p>O.Abdelaaziz</p>
+    </ion-label>
+  </ion-item>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <div class="ion-padding wrapper">
+    <ion-searchbar placeholder="Search" showCancelButton="focus"></ion-searchbar>
+  </div>
+
+  <div class="ion-padding-horizontal wrapper">
+    <app-heading title="Popular Dishes" moreText="View more"></app-heading>
+  </div>
+  <ion-grid>
+    <ion-row>
+      <ion-col size="12">
+        <swiper-container
+          [slidesPerView]="1.2"
+          [keyboard]="true"
+          [centerSlides]="true">
+          @for (dish of popularDishes; track $index) {
+            <swiper-slide>
+              <app-card [foodItem]="dish"></app-card>
+            </swiper-slide>
+          }
+        </swiper-container>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+
+  <div class="ion-padding-horizontal wrapper">
+    <app-heading title="Explore Categories" moreText="Show more" moreLink="/categories"></app-heading>
+  </div>
+  <ion-grid>
+    <ion-row>
+      <ion-col size="12">
+        <swiper-container
+          [slidesPerView]="2.5"
+          [keyboard]="true"
+          [centerSlides]="true">
+          @for (category of categories; track $index) {
+            <swiper-slide class="ion-margin-end">
+              <app-category [category]="category"></app-category>
+            </swiper-slide>
+          }
+        </swiper-container>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+
+
+  <div class="ion-padding-horizontal wrapper">
+    <app-heading title="Recommended Drinks" moreText="Show more"></app-heading>
+  </div>
+  <ion-grid>
+    <ion-row>
+      <ion-col size="12">
+        <swiper-container
+          [slidesPerView]="1.2"
+          [keyboard]="true"
+          [centerSlides]="true">
+          @for (drink of recommendedDrinks; track $index) {
+            <swiper-slide>
+              <app-card [foodItem]="drink"></app-card>
+            </swiper-slide>
+          }
+        </swiper-container>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+
+  <div class="ion-padding">
+    <ion-row>
+      <ion-col size="6">
+        <ion-badge color="light" class="ion-margin-end">
+          O.Abdelaaziz
+        </ion-badge>
+      </ion-col>
+      <ion-col size="6" class="ion-text-end">
+        <ion-badge color="light">
+          Full Stack Developer
+        </ion-badge>
+      </ion-col>
+    </ion-row>
+  </div>
+</ion-content>
