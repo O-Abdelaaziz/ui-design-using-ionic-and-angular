@@ -1,0 +1,66 @@
+ion-toolbar {
+  --background: #316dd0;
+  color: #FFFFFF;
+  padding-bottom: 200px;
+  border-radius: 0 0 20% 20%;
+}
+
+ion-col {
+  padding: 0;
+}
+
+ion-content {
+  text-align: center;
+  --background: #f6f6f6;
+}
+
+.car-card-container {
+  position: relative;
+  margin-top: -200px;
+  margin-bottom: 20px;
+  z-index: 10;
+}
+
+.car-image-floating {
+  position: absolute;
+  top: -60px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 240px;
+  z-index: 1000;
+}
+
+.card-with-offset {
+  margin-top: -50px;
+  margin-bottom: 50px;
+  padding: 6px;
+  box-shadow: 0 3px 45px 0 rgba(0, 0, 0, 0.16);
+  border-radius: 40px;
+}
+
+ion-card-content {
+  margin-top: 50px;
+}
+
+ion-item {
+  border-radius: 14px;
+  box-shadow: 0 3px 45px 0 rgba(0, 0, 0, 0.08);
+
+  ion-icon:first-of-type {
+    background: #ed576b;
+    color: #FFFFFF;
+    padding: 4px;
+    border-radius: 12px;
+  }
+
+  ion-icon:last-of-type {
+    background: #316dd0;
+    color: #FFFFFF;
+    padding: 4px;
+    border-radius: 12px;
+  }
+}
+
+//ion-card ion-img {
+//  display: none;
+//}
