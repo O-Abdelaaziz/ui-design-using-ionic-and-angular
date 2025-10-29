@@ -1,0 +1,102 @@
+ion-content {
+  swiper-container {
+    height: 100%;
+    //--swiper-pagination-bullet-inactive-color: var(--ion-text-color-step-800, #cccccc);
+    //--swiper-pagination-bullet-active-width: 12px;
+    //--swiper-pagination-color: var(--ion-color-primary, #0054e9);
+    //--swiper-pagination-progressbar-bg-color: rgba(var(--ion-text-color-rgb, 0, 0, 0), 0.25);
+    //--swiper-scrollbar-bg-color: rgba(var(--ion-text-color-rgb, 0, 0, 0), 0.1);
+    //--swiper-scrollbar-drag-bg-color: rgba(var(--ion-text-color-rgb, 0, 0, 0), 0.5);
+
+    --swiper-pagination-bullet-border-radius: 5px !important;
+
+
+    //--swiper-pagination-color: var(--ion-color-primary);
+
+    /* Color of inactive bullets */
+    //--swiper-pagination-bullet-inactive-color: #ccc;
+
+    /* Size of all bullets */
+    //--swiper-pagination-bullet-size: 12px;
+    //--swiper-pagination-bullet-width: 10px;
+    //--swiper-pagination-bullet-height: 5px;
+
+    /* Inactive bullet opacity */
+    //--swiper-pagination-bullet-inactive-opacity: 1;
+
+    swiper-slide {
+      display: block;
+
+      img {
+        padding: 15%;
+      }
+
+      .slide-text {
+        padding-top: 20%;
+
+        .skip {
+          position: absolute;
+          top: 0;
+          left: 0;
+        }
+
+        h2 {
+          font-size: 24px;
+          font-weight: bold;
+          margin-bottom: 10px;
+        }
+
+        p {
+          font-size: 16px;
+          line-height: 24px;
+          margin-bottom: 20px;
+          color: var(--ion-color-medium);
+        }
+
+        .navigator {
+          position: absolute;
+          left: 0;
+          bottom: -5px;
+          display: flex;
+          justify-content: space-between;
+          width: 100%;
+        }
+      }
+    }
+  }
+}
+
+//swiper-container::part(bullet-active) {
+//  width: 30px !important;
+//  background: var(--ion-color-primary) !important;
+//}
+//
+//swiper-container::part(bullet) {
+//  background: #ccc;
+//  width: 12px !important;
+//  height: 12px !important;
+//  opacity: 1;
+//  transition: all 0.3s ease-in-out;
+//}
+
+swiper-container::part(bullet) {
+  // Base style for all bullets
+  width: 12px !important;
+  height: 12px !important;
+  border: 1px solid var(--ion-color-primary) !important;
+  background-color: transparent !important;
+  opacity: 1;
+
+  // Add the transition here so it applies to all bullets
+  // when their properties change.
+  transition: all 0.3s ease-in-out !important;
+}
+
+swiper-container::part(bullet-active) {
+  // Active state style
+  transform: scale(1);
+  width: 30px !important;
+  background-color: var(--ion-color-primary) !important;
+  border-color: var(--ion-color-primary) !important;
+  margin-bottom: 3px;
+}

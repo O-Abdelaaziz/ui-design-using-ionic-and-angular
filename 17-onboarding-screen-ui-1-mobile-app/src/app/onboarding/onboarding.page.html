@@ -1,0 +1,66 @@
+<ion-content [fullscreen]="true" class="ion-padding">
+  <swiper-container
+    [modules]="swiperModules"
+    [slidesPerView]="1"
+    [pagination]="{ clickable: true ,dynamicBullets: true}"
+    #swiper>
+    <swiper-slide class="ion-text-center">
+      <img src="/assets/images/slide1.png">
+      <div class="slide-text">
+        <div class="skip">
+          <ion-button color="primary" (click)="skip()">SKIP</ion-button>
+        </div>
+        <h2>Easy Exchange!</h2>
+        <p>
+          Exchange your crypto with ease and get the best rates,
+          Our platform is designed to make the process simple and secure,
+          With just a few clicks, you can exchange your crypto and get the best rates.
+        </p>
+        <div class="navigator">
+          <ion-button color="primary" fill="clear" (click)="prev()">PREV</ion-button>
+          <ion-button color="primary" fill="clear" (click)="next()">NEXT</ion-button>
+        </div>
+      </div>
+    </swiper-slide>
+
+    <swiper-slide class="ion-text-center">
+      <img src="/assets/images/slide2.png">
+      <div class="slide-text">
+        <div class="skip">
+          <ion-button color="primary" (click)="skip()">SKIP</ion-button>
+        </div>
+        <h2>Easy To Use!</h2>
+        <p>
+          Yes, it is easy to use,
+          you can use our platform to exchange your crypto with ease,
+          One click and you are done, and you get the best rates,
+          and the best part is that it is free.
+        </p>
+        <div class="navigator">
+          <ion-button color="primary" fill="clear" (click)="prev()">PREV</ion-button>
+          <ion-button color="primary" fill="clear" (click)="next()">NEXT</ion-button>
+        </div>
+      </div>
+    </swiper-slide>
+
+    <swiper-slide class="ion-text-center">
+      <img src="/assets/images/slide3.png">
+      <div class="slide-text">
+        <div class="skip">
+          <ion-button color="primary" (click)="skip()">SKIP</ion-button>
+        </div>
+        <h2>Connect with Others!</h2>
+        <p>
+          Connect with others and exchange your crypto with ease.
+          It's one of the best ways to exchange your crypto.
+          specially with others who are also using our platform.
+        </p>
+        <div class="navigator">
+          <ion-button color="primary" fill="clear" (click)="prev()">PREV</ion-button>
+          <ion-button color="primary" fill="clear" (click)="finish()">FINISH</ion-button>
+        </div>
+      </div>
+      <ion-button color="primary">GET STARTED</ion-button>
+    </swiper-slide>
+  </swiper-container>
+</ion-content>
