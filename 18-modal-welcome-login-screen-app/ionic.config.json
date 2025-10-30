@@ -1,0 +1,7 @@
+{
+  "name": "18-modal-welcome-login-screen-app",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular-standalone"
+}
