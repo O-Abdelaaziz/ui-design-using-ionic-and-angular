@@ -1,0 +1,44 @@
+<ion-content [fullscreen]="true">
+  <div class="header">
+    <div class="app-bar">
+      <ion-icon name="arrow-back"></ion-icon>
+    </div>
+
+    <div class="logo">
+      <img src="assets/images/logo.png" alt="">
+    </div>
+    <h2>APP ICON</h2>
+  </div>
+
+  <ion-card class="ion-padding">
+    <ion-card-content>
+      <h1>Welcome to the app</h1>
+      <p>Discover the best app for your daily needs.</p>
+      <ion-button expand="block" routerLink="/login">Sign in</ion-button>
+      <ion-button expand="block" fill="outline" color="primary" routerLink="/register">Sign up</ion-button>
+
+      <div class="line-text">
+        <span class="lines"></span>
+        <span class="text">or connect with</span>
+      </div>
+
+      <div class="socials">
+        <ion-button class="btn-facebook">
+          <ion-icon name="logo-facebook"></ion-icon>
+        </ion-button>
+        <ion-button class="btn-google">
+          <ion-icon name="logo-google"></ion-icon>
+        </ion-button>
+        <ion-button class="btn-twitter">
+          <ion-icon name="logo-twitter"></ion-icon>
+        </ion-button>
+        <ion-button class="btn-linkedin">
+          <ion-icon name="logo-linkedin"></ion-icon>
+        </ion-button>
+        <ion-button class="btn-instagram">
+          <ion-icon name="logo-instagram"></ion-icon>
+        </ion-button>
+      </div>
+    </ion-card-content>
+  </ion-card>
+</ion-content>

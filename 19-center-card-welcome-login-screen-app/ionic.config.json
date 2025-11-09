@@ -1,0 +1,7 @@
+{
+  "name": "19-center-card-welcome-login-screen-app",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular-standalone"
+}
