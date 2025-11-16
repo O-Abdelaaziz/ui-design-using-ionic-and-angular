@@ -1,0 +1,52 @@
+<ion-app>
+  <ion-menu menu-id="main-menu" contentId="main">
+    <ion-content>
+      <div class="menu-header-bg"></div>
+      <div class="header-content">
+        <img src="/assets/images/avatar.jpg" alt="avatar">
+        <ion-label>
+          <h2>Dr. Sami Ibrahim</h2>
+          <p>Doctor</p>
+        </ion-label>
+      </div>
+      <div class="action-button">
+        <ion-button>
+          <span>Add Branch</span>
+          <ion-icon slot="start" name="add"></ion-icon>
+        </ion-button>
+      </div>
+      <ion-list class="menu-items" lines="none">
+        <ion-item>
+          <span>Dashboard</span>
+          <ion-icon slot="start" name="pie-chart-outline"></ion-icon>
+        </ion-item>
+
+        <ion-item>
+          <span>Post Sessions</span>
+          <ion-icon slot="start" name="browser-outline"></ion-icon>
+        </ion-item>
+
+        <ion-item class="active">
+          <span>Live Sessions</span>
+          <ion-icon slot="start" name="flash-outline"></ion-icon>
+        </ion-item>
+
+        <ion-item>
+          <span>Messages</span>
+          <ion-icon slot="start" name="chatbubble-ellipses-outline"></ion-icon>
+        </ion-item>
+
+        <ion-item>
+          <span>Locum Library</span>
+          <ion-icon slot="start" name="heart-outline"></ion-icon>
+        </ion-item>
+
+        <ion-item>
+          <span>Sign Out</span>
+          <ion-icon slot="start" name="exit-outline"></ion-icon>
+        </ion-item>
+      </ion-list>
+    </ion-content>
+  </ion-menu>
+  <ion-router-outlet id="main"></ion-router-outlet>
+</ion-app>
