@@ -1,0 +1,7 @@
+{
+  "name": "21-ecommerce-welcome-login-screen-app",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular-standalone"
+}

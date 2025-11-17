@@ -1,0 +1,51 @@
+ion-header {
+  ion-toolbar {
+    .back-btn {
+      margin-left: 20px;
+    }
+  }
+}
+
+ion-content {
+  .container {
+    h1 {
+      margin-top: 0;
+    }
+
+    .form-container {
+      margin-top: 48px;
+
+      ion-item {
+        --padding-start: 0;
+        --border-color: #DADADA;
+
+        ion-label {
+          color: #A6A6A6;
+        }
+
+        ion-icon {
+          margin-top: auto;
+          color: #c6cbd4;
+        }
+      }
+
+      .main-button {
+        margin-top: 48px;
+      }
+
+      .sign-in {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+
+      .sign-in a {
+        text-transform: capitalize;
+        text-decoration: none;
+        margin: 5px 5px;
+      }
+    }
+
+  }
+}
+

@@ -1,0 +1,104 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-menu-button menu="menu-id">
+        <img src="./assets/menu_bar.svg" alt="menu">
+      </ion-menu-button>
+    </ion-buttons>
+
+    <ion-buttons slot="end">
+      <ion-button class="notification">
+        <ion-icon name="notifications-outline" color="dark"></ion-icon>
+        <span>&nbsp;</span>
+      </ion-button>
+
+      <ion-button class="filter">
+        <ion-icon name="funnel-outline" color="dark"></ion-icon>
+        <span>&nbsp;</span>
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <div class="search ion-padding">
+    <ion-item lines="none">
+      <ion-input placeholder="Search your product"></ion-input>
+      <ion-icon name="search-outline" slot="start"></ion-icon>
+    </ion-item>
+  </div>
+
+  <div class="title ion-padding">
+    <h2>Categories</h2>
+    <p>See all</p>
+  </div>
+
+  <div class="category-slider ion-padding-start">
+    <swiper-container [slidesPerView]="2.5" [loop]="false">
+      @for (category of categories(); track $index) {
+        <swiper-slide>
+          <ion-col>
+            <h4>{{ category.name }}</h4>
+            <img src="{{category.image}}" alt="{{category.name}}">
+          </ion-col>
+        </swiper-slide>
+      }
+    </swiper-container>
+  </div>
+
+
+  <div class="title ion-padding">
+    <h2 class="font-bold">Featured</h2>
+    <p>See all</p>
+  </div>
+
+  <div class="products-slider ion-padding-start">
+    <swiper-container [slidesPerView]="2.5" [loop]="false">
+      @for (featuredProduct of featuredProducts(); track $index) {
+        <swiper-slide>
+          <ion-col class="ion-text-left" routerLink="/item-details" routerDirection="forward">
+<!--            <div class="product-badge hot-badge">HOT</div>-->
+            @if (featuredProduct.isHot) {
+              <div class="product-badge hot-badge">HOT</div>
+            }
+
+            @if (featuredProduct.isOnSale) {
+              <div class="product-badge sale-badge">SALE</div>
+            }
+
+            @if (featuredProduct.isNew) {
+              <div class="product-badge new-badge">NEW</div>
+            }
+            <img src="{{featuredProduct.image}}" alt="{{featuredProduct.name}}">
+            <div class="product-info">
+              <h6>{{ featuredProduct.name }}</h6>
+              <p>{{ featuredProduct.price | currency }}</p>
+            </div>
+          </ion-col>
+        </swiper-slide>
+      }
+    </swiper-container>
+  </div>
+
+  <div class="title ion-padding">
+    <h2 >Best Sell</h2>
+    <p>See all</p>
+  </div>
+
+  <div class="products-slider ion-padding-start">
+    <swiper-container [slidesPerView]="2.5" [loop]="false">
+      @for (bestSellProduct of bestSellProducts(); track $index) {
+        <swiper-slide>
+          <ion-col class="ion-text-left">
+            <img src="{{bestSellProduct.image}}" alt="{{bestSellProduct.name}}">
+            <div class="product-info">
+              <h6>{{ bestSellProduct.name }}</h6>
+              <p>{{ bestSellProduct.price | currency }}</p>
+            </div>
+          </ion-col>
+        </swiper-slide>
+      }
+    </swiper-container>
+  </div>
+
+</ion-content>

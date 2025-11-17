@@ -1,0 +1,35 @@
+<ion-header [translucent]="true" class="ion-no-border">
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-button class="back-btn" routerLink="/welcome" routerDirection="back">
+        <img src="./assets/back.svg" alt="back-arrow"/>
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding">
+  <div class="ion-padding container">
+    <h1>Sign in</h1>
+
+    <div class="form-container">
+      <ion-item>
+        <ion-label position="floating">Email</ion-label>
+        <ion-input type="email"></ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-label position="floating">Password</ion-label>
+        <ion-input type="password"></ion-input>
+        <ion-icon name="eye" slot="end"></ion-icon>
+      </ion-item>
+
+      <ion-button expand="block" class="main-button" (click)="login()">Log in</ion-button>
+
+      <div class="sign-in">
+        Don't have an account?
+        <a  href="javascript:void(0)" routerLink="/register">Sign up</a>
+      </div>
+    </div>
+  </div>
+</ion-content>

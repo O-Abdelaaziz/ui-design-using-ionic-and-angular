@@ -1,0 +1,305 @@
+.header-md {
+  -webkit-box-shadow: none;
+  box-shadow: none;
+  border-bottom: #e7e7e7 solid 1px;
+}
+
+ion-header {
+  ion-toolbar {
+    //--background: none;
+    box-shadow: none;
+
+    ion-menu-button {
+      margin-left: 10px;
+    }
+
+    .notification {
+      span {
+        position: absolute;
+        top: -5%;
+        right: -2%;
+        width: 10px;
+        height: 10px;
+        background-color: #f5576c;
+        border-radius: 50%;
+      }
+    }
+
+    .filter {
+      margin-right: 10px;
+    }
+  }
+}
+
+ion-content {
+  .search {
+    margin-bottom: 10px;
+
+    ion-item {
+      border-radius: 10px;
+      box-shadow: 0 13px 30px 0 rgba(0, 0, 0, 0.09);
+      padding: 8px;
+
+      ion-input {
+        padding-left: 10px !important;
+        border-left: 1px solid #F4F4F4;
+      }
+
+      ion-icon {
+        margin-right: 16px;
+      }
+    }
+  }
+
+  .title {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-bottom: 32px;
+
+    h2 {
+      color: #434343;
+      margin: 0 0 0 16px;
+    }
+
+    p {
+      color: #656565;
+      margin: 0 16px 0 0;
+    }
+  }
+
+  .category-slider {
+    swiper-slide {
+      width: 150px;
+      height: 100px;
+      margin-left: 10px;
+      margin-right: 20px;
+      margin-bottom: 30px;
+
+      ion-col {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100%;
+
+        h4 {
+          color: #ffffff;
+          margin: 0;
+          opacity: 80%;
+        }
+
+        img {
+          position: absolute;
+          top: 0;
+          left: 0;
+          width: 100%;
+          height: 100%;
+          object-fit: cover;
+          border-radius: 8px;
+          box-shadow: 0 15px 20px 0 rgba(0, 0, 0, 0.16);
+          z-index: -1;
+        }
+
+      }
+    }
+  }
+
+  .font-bold {
+    font-weight: bold;
+  }
+
+  //.products-slider {
+  //  swiper-slide {
+  //    width: 150px;
+  //    height: auto;
+  //    /* Adjusting margins for better flow, using standard Ionic spacing variables if possible */
+  //    margin-right: 16px;
+  //
+  //    ion-col {
+  //      position: relative; /* Essential for absolute positioning of product-info */
+  //      padding: 0; /* Remove default ion-col padding to make the image flush */
+  //
+  //      img {
+  //        width: 100%;
+  //        height: 180px;
+  //        object-fit: cover;
+  //        border-radius: 8px;
+  //        display: block; /* Ensures no extra space below the image */
+  //      }
+  //
+  //      .product-info {
+  //        /* Positioning: Keep it at the bottom left */
+  //        position: absolute;
+  //        left: 0;
+  //        bottom: 0;
+  //
+  //        /* Appearance: Use a dark, semi-transparent background for better contrast */
+  //        background-color: rgba(0, 0, 0, 0.6); /* Black with 60% opacity */
+  //        color: white; /* White text for contrast */
+  //
+  //        /* Sizing and Spacing */
+  //        width: 100%; /* Make it span the full width of the image */
+  //        padding: 8px 10px; /* Internal padding for text */
+  //
+  //        /* Style adjustments for a cleaner look */
+  //        border-bottom-left-radius: 8px; /* Match image's bottom border radius */
+  //        border-bottom-right-radius: 8px;
+  //        /* Remove the top radius if you want it to look like a bottom bar */
+  //
+  //        /* Ensure text is aligned nicely */
+  //        text-align: left;
+  //
+  //        h6 {
+  //          /* Product Name */
+  //          margin: 0;
+  //          font-size: 0.95em;
+  //          font-weight: 600; /* Bolder name */
+  //          white-space: nowrap; /* Prevents wrapping if name is short */
+  //          overflow: hidden; /* Hides text that overflows */
+  //          text-overflow: ellipsis; /* Adds "..." for overflowed text */
+  //        }
+  //
+  //        p {
+  //          /* Product Price */
+  //          margin: 0;
+  //          font-size: 1em;
+  //          font-weight: 700; /* Make price stand out */
+  //          color: var(--ion-color-secondary, #92949c); /* Use a secondary color variable or a light accent color */
+  //        }
+  //      }
+  //    }
+  //  }
+  //}
+
+  //.products-slider {
+  //  swiper-slide {
+  //    width: 150px;
+  //    height: auto;
+  //    margin-right: 16px;
+  //
+  //    ion-col {
+  //      position: static; /* No need for position: relative if info is not overlaid */
+  //      padding: 0;
+  //      display: flex; /* Use flex to stack image and info vertically */
+  //      flex-direction: column;
+  //
+  //      img {
+  //        width: 100%;
+  //        height: 180px;
+  //        object-fit: cover;
+  //        border-radius: 8px;
+  //        /* No border-bottom-radius if product info is attached below */
+  //      }
+  //
+  //      .product-info {
+  //        /* Positioning is no longer absolute */
+  //        position: static;
+  //        width: 100%;
+  //        background-color: transparent; /* No background needed */
+  //        opacity: 100%; /* Full opacity */
+  //        padding: 8px 0 0; /* Add padding only above the text, no side padding */
+  //
+  //        text-align: left; /* Ensure text starts at the left */
+  //
+  //        h6 {
+  //          /* Product Name */
+  //          margin: 0 0 4px; /* Small margin below name */
+  //          font-size: 0.9em;
+  //          font-weight: 500;
+  //          color: var(--ion-color-dark, #000); /* Dark text for name */
+  //          white-space: nowrap;
+  //          overflow: hidden;
+  //          text-overflow: ellipsis;
+  //        }
+  //
+  //        p {
+  //          /* Product Price */
+  //          margin: 0;
+  //          font-size: 1em;
+  //          font-weight: 700;
+  //          color: var(--ion-color-primary, #3880ff); /* Use a distinct color for price */
+  //        }
+  //      }
+  //    }
+  //  }
+  //}
+
+  .products-slider {
+    swiper-slide {
+      width: 150px;
+      height: auto;
+      margin-right: 16px;
+
+      ion-col {
+        /* IMPORTANT: Set the container to relative position for the badge */
+        position: relative;
+        padding: 0;
+        display: flex;
+        flex-direction: column;
+
+        /* --- BADGE STYLES START --- */
+        .product-badge {
+          position: absolute;
+          top: 8px; /* 8px from the top edge */
+          left: 8px; /* 8px from the left edge */
+          z-index: 10; /* Ensures it sits above the image */
+
+          /* Appearance */
+          padding: 4px 8px;
+          border-radius: 4px;
+          font-size: 0.7em;
+          font-weight: 700;
+          text-transform: uppercase;
+          color: white;
+          box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+        }
+
+        /* Specific Badge Styles (e.g., for "HOT") */
+        .hot-badge {
+          background: var(--ion-color-danger, #eb445a); /* Bright red color */
+        }
+        .new-badge {
+          background: var(--ion-color-success, #2dd36f); /* Green color */
+        }
+        .sale-badge {
+          background: var(--ion-color-tertiary, #5260ff); /* Blue/Purple color */
+        }
+        /* --- BADGE STYLES END --- */
+
+        img {
+          width: 100%;
+          height: 180px;
+          object-fit: cover;
+          border-radius: 8px;
+          display: block;
+        }
+
+        .product-info {
+          position: static;
+          width: 100%;
+          padding: 8px 0 0;
+          text-align: left;
+
+          h6 {
+            /* Product Name */
+            margin: 0 0 4px; /* Small margin below name */
+            font-size: 0.9em;
+            font-weight: 500;
+            color: var(--ion-color-dark, #000); /* Dark text for name */
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+          }
+
+          p {
+            /* Product Price */
+            margin: 0;
+            font-size: 1em;
+            font-weight: 700;
+            color: var(--ion-color-primary, #3880ff); /* Use a distinct color for price */
+          }
+        }
+      }
+    }
+  }
+}
