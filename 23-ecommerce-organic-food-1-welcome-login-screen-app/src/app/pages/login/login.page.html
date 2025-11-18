@@ -1,0 +1,34 @@
+<ion-header [translucent]="true" class="ion-no-border">
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/onboarding"></ion-back-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true" class="ion-padding">
+  <div class="header">
+    <h1>
+      Login
+    </h1>
+    <p>Login to get started</p>
+  </div>
+
+  <form>
+    <div class="form-field">
+      <ion-icon name="mail-outline" slot="start"></ion-icon>
+      <ion-input placeholder="Email" type="email"></ion-input>
+    </div>
+    <div class="form-field">
+      <ion-icon name="lock-closed-outline" slot="start"></ion-icon>
+      <ion-input placeholder="Password" type="password"></ion-input>
+    </div>
+    <ion-button expand="block" class="ion-margin-top" routerLink="/home">Login</ion-button>
+    <ion-text>
+      <p>Don't have an account? <a href="javascript:void(0);" routerLink="/register">Register</a></p>
+    </ion-text>
+    <ion-text>
+      <p>Forgot Password? <a href="javascript:void(0);" routerLink="/forgot-password">Forgot Password</a></p>
+    </ion-text>
+  </form>
+</ion-content>

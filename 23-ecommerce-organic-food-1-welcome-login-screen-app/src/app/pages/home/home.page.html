@@ -1,0 +1,42 @@
+<ion-content [fullscreen]="true" class="ion-padding">
+  <div class="header ion-padding-top">
+    <ion-icon name="grid-outline" class="menu-icon"></ion-icon>
+    <div class="location">
+      <ion-icon name="location-outline"></ion-icon>
+      <p class="ion-no-margin">123 Main St, Anytown, USA</p>
+    </div>
+    <div class="avatar">
+      <ion-img src="./assets/avatar.png"></ion-img>
+    </div>
+  </div>
+
+  <ion-searchbar></ion-searchbar>
+
+  <div class="banner">
+    <ion-img src="./assets/banner.jpg"></ion-img>
+  </div>
+
+  <div class="list-title">
+    <h3 class="title">Top Categories</h3>
+    <p>See All</p>
+  </div>
+
+  <swiper-container [slidesPerView]="3.5" [loop]="true">
+    @for (category of categories; track $index) {
+      <swiper-slide>
+        <app-category-item [category]="category"></app-category-item>
+      </swiper-slide>
+    }
+  </swiper-container>
+
+  <div class="list-title">
+    <h3 class="title">Exclusive Offers</h3>
+    <p>See All</p>
+  </div>
+
+  <div class="product-list">
+    @for (product of products; track $index) {
+      <app-product-card [product]="product"></app-product-card>
+    }
+  </div>
+</ion-content>

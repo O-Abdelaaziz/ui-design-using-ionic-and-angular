@@ -1,0 +1,44 @@
+<ion-header [translucent]="true" class="ion-no-border">
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/onboarding"></ion-back-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true" class="ion-padding">
+  <div class="header">
+    <h1>
+      Register
+    </h1>
+    <p>Create an account to get started</p>
+  </div>
+
+  <form>
+    <div class="form-field">
+      <ion-icon name="person-outline" slot="start"></ion-icon>
+      <ion-input placeholder="First name" type="text"></ion-input>
+    </div>
+
+    <div class="form-field">
+      <ion-icon name="person-outline" slot="start"></ion-icon>
+      <ion-input placeholder="Last name" type="text"></ion-input>
+    </div>
+    <div class="form-field">
+      <ion-icon name="mail-outline" slot="start"></ion-icon>
+      <ion-input placeholder="Email" type="email"></ion-input>
+    </div>
+    <div class="form-field">
+      <ion-icon name="lock-closed-outline" slot="start"></ion-icon>
+      <ion-input placeholder="Password" type="password"></ion-input>
+    </div>
+    <div class="form-field">
+      <ion-icon name="lock-closed-outline" slot="start"></ion-icon>
+      <ion-input placeholder="Confirm Password" type="password"></ion-input>
+    </div>
+    <ion-button expand="block" class="ion-margin-top">Register</ion-button>
+    <ion-text>
+      <p>Already have an account? <a href="javascript:void(0);" routerLink="/login">Login</a></p>
+    </ion-text>
+  </form>
+</ion-content>

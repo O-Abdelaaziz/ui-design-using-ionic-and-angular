@@ -1,0 +1,7 @@
+{
+  "name": "23-ecommerce-organic-food-1-welcome-login-screen-app",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular-standalone"
+}

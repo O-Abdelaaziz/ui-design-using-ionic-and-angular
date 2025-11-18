@@ -1,0 +1,114 @@
+ion-content {
+  .image-container {
+    //margin-top: 8vh;
+    margin-top: 2vh;
+    align-content: center;
+
+    ion-img {
+      max-width: 70%;
+      margin: auto;
+      animation: float 3s ease-in-out infinite;
+
+      @keyframes float {
+        0% {
+          transform: translateY(0px);
+        }
+        50% {
+          transform: translateY(-20px);
+        }
+        100% {
+          transform: translateY(0px);
+        }
+      }
+    }
+  }
+
+  .message-container {
+    //margin-top: 6vh;
+    margin-top: 3vh;
+    //margin-bottom: 5vh;
+    margin-bottom: 3vh;
+    align-content: center;
+
+    h1 {
+      font-size: 2rem;
+      font-weight: 700;
+      text-align: center;
+      color: var(--ion-color-dark-tint);
+    }
+
+    .text-warning {
+      color: var(--ion-color-warning);
+    }
+
+    .text-danger {
+      color: var(--ion-color-danger);
+    }
+  }
+
+  .button-container {
+    //margin-top: 6vh;
+    margin-top: 3vh;
+    align-content: center;
+
+    ion-button {
+      margin-bottom: 1rem;
+
+      &.light {
+        --color: var(--ion-color-light);
+      }
+    }
+  }
+
+  .social-media-container {
+    //border-top: 1px solid var(--ion-color-light-tint);
+    border-top: 1px solid var(--ion-color-medium);
+    padding-top: 3vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    ion-text {
+      p {
+        top: 0;
+        margin: -35px 0 0;
+        background-color: #fff;
+        padding-left: 10px;
+        padding-right: 10px;
+        text-align: center;
+        font-size: small;
+        font-weight: 500;
+        color: var(--ion-color-dark-tint);
+      }
+    }
+
+    .social-media-icons {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin-top: 0.2rem;
+    }
+
+    ion-icon {
+      font-size: 2rem;
+      margin: 0 1rem;
+      color: var(--ion-color-dark-tint);
+
+      &.facebook {
+        color: #3b5998;
+      }
+
+      &.twitter {
+        color: #1DA1F2;
+      }
+
+      &.instagram {
+        color: #E1306C;
+      }
+
+      &.linkedin {
+        color: #0077B6;
+      }
+    }
+  }
+}
