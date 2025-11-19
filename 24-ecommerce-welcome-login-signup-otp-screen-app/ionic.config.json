@@ -1,0 +1,7 @@
+{
+  "name": "24-ecommerce-welcome-login-signup-otp-screen-app",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular-standalone"
+}

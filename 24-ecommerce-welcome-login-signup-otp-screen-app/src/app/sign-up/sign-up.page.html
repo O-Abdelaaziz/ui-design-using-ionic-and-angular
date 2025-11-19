@@ -1,0 +1,181 @@
+<ion-content [fullscreen]="true">
+  <ion-grid>
+    <ion-label color="white" class="ion-margin ion-padding-start">Let's Sign Up</ion-label>
+    <p>
+      <ion-text class="ion-margin ion-padding-start" color="white">
+        Sign up to your account
+      </ion-text>
+    </p>
+  </ion-grid>
+</ion-content>
+
+<ion-footer class="ion-no-border">
+  <ion-row>
+    <ion-fab vertical="top" horizontal="end">
+      <ion-fab-button color="danger" (click)="signUp()">
+        <ion-icon name="arrow-forward"></ion-icon>
+      </ion-fab-button>
+    </ion-fab>
+    <ion-list lines="none">
+      <ion-list-header>
+        <ion-label> Sign Up</ion-label>
+      </ion-list-header>
+
+      <ion-item-group class="ion-margin-horizontal ion-margin-bottom">
+        <form [formGroup]="registerFormGroup">
+          <div class="ion-margin-vertical">
+            <ion-item>
+              <ion-label position="floating">Name</ion-label>
+              <ion-input
+                type="text" placeholder="Enter your name"
+                required
+                formControlName="name"
+              ></ion-input>
+            </ion-item>
+            @if (!registerFormGroup.get('name')?.valid && registerFormGroup.get('name')?.touched) {
+              @if (registerFormGroup.get('name')?.hasError('required')) {
+                <ion-text color="danger" class="ion-margin-start">
+                  Name is required
+                </ion-text>
+              }
+            }
+          </div>
+          <div class="ion-margin-vertical">
+            <ion-item>
+              <ion-label position="floating">Phone Number</ion-label>
+              <ion-input
+                type="tel" placeholder="Enter your phone number"
+                minlength="10"
+                maxlength="10"
+                required
+                formControlName="phone"
+                (ionChange)="changeNumber($event)"
+              ></ion-input>
+              <!--              @if (verified) {-->
+              <!--                <ion-text color="success" class="ion-margin-start">-->
+              <!--                  Phone number verified-->
+              <!--                </ion-text>-->
+              <!--              }-->
+
+              @if (!verified) {
+                <ion-button slot="end" fill="clear" color="danger" (click)="sendOtp()">Verify</ion-button>
+              }
+              @if (verified){
+                <ion-text slot="end" color="success" class="ion-margin-start">
+                  Phone number verified
+                </ion-text>
+              }
+            </ion-item>
+            @if (!registerFormGroup.get('phone')?.valid && registerFormGroup.get('phone')?.touched) {
+              @if (registerFormGroup.get('phone')?.hasError('required')) {
+                <ion-text color="danger" class="ion-margin-start">
+                  Phone number is required
+                </ion-text>
+              }
+              @if (registerFormGroup.get('phone')?.hasError('minlength')) {
+                <ion-text color="danger" class="ion-margin-start">
+                  Phone number must be at least 10 characters long
+                </ion-text>
+              }
+              @if (registerFormGroup.get('phone')?.hasError('maxlength')) {
+                <ion-text color="danger" class="ion-margin-start">
+                  Phone number must be at most 10 characters long
+                </ion-text>
+              }
+            }
+          </div>
+
+          <div class="ion-margin-vertical">
+            <ion-item>
+              <ion-label position="floating">Email</ion-label>
+              <ion-input
+                type="email" placeholder="Enter your email"
+                required
+                formControlName="email"
+              ></ion-input>
+            </ion-item>
+            @if (!registerFormGroup.get('email')?.valid && registerFormGroup.get('email')?.touched) {
+              @if (registerFormGroup.get('email')?.hasError('required')) {
+                <ion-text color="danger" class="ion-margin-start">
+                  Email is required
+                </ion-text>
+              }
+              @if (registerFormGroup.get('email')?.hasError('email')) {
+                <ion-text color="danger" class="ion-margin-start">
+                  Email is invalid
+                </ion-text>
+              }
+            }
+          </div>
+
+          <div class="ion-margin-vertical">
+            <ion-item class="form-control">
+              <ion-label position="floating">Password</ion-label>
+              <ion-input
+                [type]="type() ? 'text' : 'password'" placeholder="Enter your password"
+                minlength="6"
+                maxlength="12"
+                required
+                formControlName="password"
+              ></ion-input>
+              <ion-icon slot="end" [name]="type() ? 'eye' : 'eye-off'" (click)="type.set(!type())"></ion-icon>
+            </ion-item>
+            @if (!registerFormGroup.get('password')?.valid && registerFormGroup.get('password')?.touched) {
+              @if (registerFormGroup.get('password')?.hasError('required')) {
+                <ion-text color="danger" class="ion-margin-start">
+                  Password is required
+                </ion-text>
+              }
+              @if (registerFormGroup.get('password')?.hasError('minlength')) {
+                <ion-text color="danger" class="ion-margin-start">
+                  Password must be at least 6 characters long
+                </ion-text>
+              }
+              @if (registerFormGroup.get('password')?.hasError('maxlength')) {
+                <ion-text color="danger" class="ion-margin-start">
+                  Password must be at most 12 characters long
+                </ion-text>
+              }
+            }
+          </div>
+
+          <div class="ion-margin-vertical">
+            <ion-item class="form-control">
+              <ion-label position="floating">Confirm Password</ion-label>
+              <ion-input
+                [type]="type() ? 'text' : 'password'" placeholder="Enter your confirm password"
+                minlength="6"
+                maxlength="12"
+                required
+                formControlName="confirmPassword"
+              ></ion-input>
+              <ion-icon slot="end" [name]="type() ? 'eye' : 'eye-off'" (click)="type.set(!type())"></ion-icon>
+            </ion-item>
+            @if (!registerFormGroup.get('confirmPassword')?.valid && registerFormGroup.get('confirmPassword')?.touched) {
+              @if (registerFormGroup.get('confirmPassword')?.hasError('required')) {
+                <ion-text color="danger" class="ion-margin-start">
+                  Confirm Password is required
+                </ion-text>
+              }
+              @if (registerFormGroup.get('confirmPassword')?.hasError('minlength')) {
+                <ion-text color="danger" class="ion-margin-start">
+                  Confirm Password must be at least 6 characters long
+                </ion-text>
+              }
+              @if (registerFormGroup.get('confirmPassword')?.hasError('maxlength')) {
+                <ion-text color="danger" class="ion-margin-start">
+                  Confirm Password must be at most 12 characters long
+                </ion-text>
+              }
+            }
+          </div>
+        </form>
+        <ion-item lines="none" class="ion-padding-top">
+          <ion-text color="danger" slot="start" routerLink="/sign-in">
+            Already have an account?
+          </ion-text>
+        </ion-item>
+      </ion-item-group>
+    </ion-list>
+  </ion-row>
+</ion-footer>

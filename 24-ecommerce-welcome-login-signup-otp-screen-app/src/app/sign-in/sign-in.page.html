@@ -1,0 +1,99 @@
+<ion-content [fullscreen]="true">
+  <ion-grid>
+    <ion-label color="white" class="ion-margin ion-padding-start">Welcome Back</ion-label>
+    <p>
+      <ion-text class="ion-margin ion-padding-start" color="white">
+        Login to your account
+      </ion-text>
+    </p>
+  </ion-grid>
+</ion-content>
+
+<ion-footer class="ion-no-border">
+  <ion-row>
+    <ion-fab vertical="top" horizontal="end">
+      <ion-fab-button color="danger" (click)="signIn()">
+        <ion-icon name="arrow-forward"></ion-icon>
+      </ion-fab-button>
+    </ion-fab>
+    <ion-list lines="none">
+      <ion-list-header>
+        <ion-label> Sign In</ion-label>
+      </ion-list-header>
+
+      <ion-item-group class="ion-margin-horizontal ion-margin-bottom">
+        <form [formGroup]="loginFormGroup">
+          <div class="ion-margin-vertical">
+            <ion-item class="form-control">
+              <ion-label position="floating">Phone Number</ion-label>
+              <ion-input
+                type="tel" placeholder="Enter your phone number"
+                minlength="10"
+                maxlength="10"
+                required
+                formControlName="phone"
+              ></ion-input>
+            </ion-item>
+            @if (!loginFormGroup.get('phone')?.valid && loginFormGroup.get('phone')?.touched) {
+              @if (loginFormGroup.get('phone')?.hasError('required')) {
+                <ion-text color="danger" class="ion-margin-start">
+                  Phone number is required
+                </ion-text>
+              }
+              @if (loginFormGroup.get('phone')?.hasError('minlength')) {
+                <ion-text color="danger" class="ion-margin-start">
+                  Phone number must be at least 10 characters long
+                </ion-text>
+              }
+              @if (loginFormGroup.get('phone')?.hasError('maxlength')) {
+                <ion-text color="danger" class="ion-margin-start">
+                  Phone number must be at most 10 characters long
+                </ion-text>
+              }
+            }
+          </div>
+
+          <div class="ion-margin-vertical">
+            <ion-item class="form-control">
+              <ion-label position="floating">Password</ion-label>
+              <ion-input
+                [type]="type() ? 'text' : 'password'" placeholder="Enter your password"
+                minlength="6"
+                maxlength="12"
+                required
+                formControlName="password"
+              ></ion-input>
+              <ion-icon slot="end" [name]="type() ? 'eye' : 'eye-off'" (click)="type.set(!type())"></ion-icon>
+            </ion-item>
+            @if (!loginFormGroup.get('password')?.valid && loginFormGroup.get('password')?.touched) {
+              @if (loginFormGroup.get('password')?.hasError('required')) {
+                <ion-text color="danger" class="ion-margin-start">
+                  Password is required
+                </ion-text>
+              }
+              @if (loginFormGroup.get('password')?.hasError('minlength')) {
+                <ion-text color="danger" class="ion-margin-start">
+                  Password must be at least 6 characters long
+                </ion-text>
+              }
+              @if (loginFormGroup.get('password')?.hasError('maxlength')) {
+                <ion-text color="danger" class="ion-margin-start">
+                  Password must be at most 12 characters long
+                </ion-text>
+              }
+            }
+          </div>
+        </form>
+        <ion-item lines="none" class="ion-padding-top">
+          <ion-text color="danger" slot="start">
+            Forgot Password?
+          </ion-text>
+
+          <ion-text color="danger" slot="end" routerLink="/sign-up">
+            Don't have an account?
+          </ion-text>
+        </ion-item>
+      </ion-item-group>
+    </ion-list>
+  </ion-row>
+</ion-footer>
