@@ -75,7 +75,7 @@ ui-design-using-ionic-and-angular/
 ├── 03-pet-finder-mobile-app/
 ├── 04-car-selling-mobile-app/
 ├── ...
-├── 23-ecommerce-organic-food-1-welcome-login-screen-mobile-app/
+├── 25-blood-donor-center-mobile-app/
 ├── screenshots/
 └── README.md
 ```
@@ -163,8 +163,10 @@ Find preview images for each UI example in the **screenshots/** directory.
 | **21. Ecommerce Welcome (Screen 7)** <br> <img src="screenshots/21-07.png" width="200"> | **21. Ecommerce Welcome (Screen 8)** <br> <img src="screenshots/21-08.png" width="200"> | **21. Ecommerce Welcome (Screen 9)** <br> <img src="screenshots/21-09.png" width="200"> |
 | **21. Ecommerce Welcome (Screen 10)** <br> <img src="screenshots/21-10.png" width="200"> | **21. Ecommerce Welcome (Screen 11)** <br> <img src="screenshots/21-11.png" width="200"> | **22. Events Home Page** <br> <img src="screenshots/22-01.png" width="200"> |
 | **23. Organic Food Home (Screen 1)** <br> <img src="screenshots/23-01.png" width="200"> | **23. Organic Food Home (GIF)** <br> <img src="screenshots/23-02.gif" width="200"> | **23. Organic Food Home (Screen 3)** <br> <img src="screenshots/23-03.png" width="200"> |
-| **23. Organic Food Home (Screen 4)** <br> <img src="screenshots/23-04.png" width="200"> | **23. Organic Food Home (Screen 5)** <br> <img src="screenshots/23-05.png" width="200"> | **24. Ecommerce Login/OTP (Screen 1)** <br> <img src="screenshots/25-01.png" width="200"> |
-| **24. Ecommerce Login/OTP (Screen 2)** <br> <img src="screenshots/25-02.png" width="200"> | **24. Ecommerce Login/OTP (Screen 3)** <br> <img src="screenshots/25-03.png" width="200"> | **24. Ecommerce Login/OTP (Screen 4)** <br> <img src="screenshots/25-04.png" width="200"> |
+| **23. Organic Food Home (Screen 4)** <br> <img src="screenshots/23-04.png" width="200"> | **23. Organic Food Home (Screen 5)** <br> <img src="screenshots/23-05.png" width="200"> | **24. Ecommerce Login/OTP (Screen 1)** <br> <img src="screenshots/24-01.png" width="200"> |
+| **24. Ecommerce Login/OTP (Screen 2)** <br> <img src="screenshots/24-02.png" width="200"> | **24. Ecommerce Login/OTP (Screen 3)** <br> <img src="screenshots/24-03.png" width="200"> | **24. Ecommerce Login/OTP (Screen 4)** <br> <img src="screenshots/24-04.png" width="200"> |
+| **25. Blood Donor Home (Screen 1)** <br> <img src="screenshots/25-01.png" width="200"> | **25. Blood Donor Home (Screen 2)** <br> <img src="screenshots/25-02.png" width="200"> | **25. Blood Donor Home (Screen 3)** <br> <img src="screenshots/25-03.png" width="200"> |
+| **25. Blood Donor Home (Screen 4)** <br> <img src="screenshots/25-04.png" width="200"> | **25. Blood Donor Home (Screen 5)** <br> <img src="screenshots/25-05.png" width="200"> |Coming Soon 👌|
 
 [⬆ back to top](#ui-design-using-ionic-and-angular)
 
@@ -190,3 +192,23 @@ Accelerate your mobile app development with ready-made Ionic + Angular UI templa
 > Let me know if you want to include example screenshots, badges, or further customization!
 
 [⬆ back to top](#ui-design-using-ionic-and-angular)
+
+## 🧑‍💻 Author
+
+**Ouakala Abdelaaziz**  
+Founder — Programming Mastery Academy Pvt. Ltd.  
+📺 [YouTube: Apps Presentation](https://www.youtube.com/@LegendDZ)  
+📺 [YouTube: Main Channel](https://www.youtube.com/@ProgrammingMasteryAcademy) 
+🌐 [Website: O.Abdelaaziz](https://ouakala-abdelaaziz.epizy.com/)
+🌐 [Linkedin: O.Abdelaaziz](https://dz.linkedin.com/in/abdelaaziz-ouakala)
+---
+
+## 🪪 License
+
+This project is licensed under the **MIT License**.  
+You are free to use, modify, and distribute it for learning and educational purposes.
+
+---
+
+⭐ **If this project helped you, consider giving it a star!**
+

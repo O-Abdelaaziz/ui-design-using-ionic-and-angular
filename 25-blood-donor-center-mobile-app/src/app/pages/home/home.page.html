@@ -1,0 +1,163 @@
+<ion-header class="ion-no-border" [translucent]="true">
+  <ion-toolbar color="primary">
+    <ion-buttons slot="start">
+      <ion-menu-button menu="main-menu"></ion-menu-button>
+    </ion-buttons>
+    <ion-title class="ion-text-center ion-text-uppercase">
+      Blood Donor Center
+    </ion-title>
+    <ion-buttons slot="end">
+      <ion-button fill="clear">
+        <ion-icon slot="icon-only" name="person-circle"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+
+  <app-shrink-header [scrollArea]="myContent" [headerHeight]="170">
+    <ion-grid [style.padding-bottom.px]="120 - newHeaderHeight">
+    </ion-grid>
+
+    <ion-list class="popover" lines="none" [style.margin-top.px]="-120 - newHeaderHeight/2">
+      <ion-row>
+        <ion-col size="6">
+          <ion-item>
+            <ion-icon slot="start" name="heart-half"></ion-icon>
+            <ion-label class="ion-text-wrap">
+              <h1>
+                <ion-text>269</ion-text>
+                <ion-text class="ion-margin-start" color="primary">-18%</ion-text>
+              </h1>
+              <p>Donors</p>
+            </ion-label>
+          </ion-item>
+        </ion-col>
+
+        <ion-col size="6">
+          <ion-item>
+            <ion-icon slot="start" name="fitness"></ion-icon>
+            <ion-label class="ion-text-wrap ion-text-right">
+              <h1>
+                <ion-text class="ion-margin-start" color="primary">+52%</ion-text>
+                <ion-text>269</ion-text>
+              </h1>
+              <p>Requests</p>
+            </ion-label>
+          </ion-item>
+        </ion-col>
+        <ion-col size="12">
+          <canvas #lineChart></canvas>
+        </ion-col>
+      </ion-row>
+    </ion-list>
+  </app-shrink-header>
+
+  <div class="segment-container ion-padding">
+    <ion-segment mode="ios" (ionChange)="onSegmentChange($event)" [value]="segmentValue()">
+      <ion-segment-button value="1">
+        <ion-label>Blood Donors</ion-label>
+      </ion-segment-button>
+      <ion-segment-button value="2">
+        <ion-label>Blood Requests</ion-label>
+      </ion-segment-button>
+    </ion-segment>
+  </div>
+</ion-header>
+
+<ion-content [scrollEvents]="true"
+             (ionScroll)="onScroll($event)"
+             [fullscreen]="true"
+             class="ion-padding"
+             #myContent>
+  <ion-fab slot="fixed" vertical="bottom" horizontal="end">
+    <ion-fab-button size="small" color="primary">
+      <ion-icon name="add"></ion-icon>
+    </ion-fab-button>
+  </ion-fab>
+
+  <ion-list lines="none" class="ion-margin-top">
+    <ion-item color="light">
+      <ion-label class="heading">Plasma {{ segmentValue() == '1' ? 'Donors' : 'Requests' }} near you!</ion-label>
+      <ion-button slot="end" fill="clear" size="small">
+        <ion-icon slot="icon-only" name="options"></ion-icon>
+      </ion-button>
+    </ion-item>
+
+    <ion-item-group>
+      @if (segmentValue() === '1') {
+        <!--Donors List-->
+        @for (donor of donors(); track donor.id) {
+          <ion-item class="donor-item" lines="full" (click)="options(donor)">
+            <ion-avatar slot="start" class="donor-avatar">
+              <img [src]="donor.photo" [alt]="donor.name">
+              <div class="blood-badge" [ngStyle]="{'background-color': getBloodGroupColor(donor.blood_group)}">
+                {{ donor.blood_group }}
+              </div>
+            </ion-avatar>
+            <ion-label class="ion-text-wrap">
+              <h2>{{ donor.name }} <span class="age">{{ donor.age }}y</span></h2>
+              <p class="location">
+                <ion-icon name="location"></ion-icon>
+                {{ donor.address }}
+                <span class="distance">{{ donor.distance }} km</span>
+              </p>
+              @if (donor.last_donation) {
+                <p class="last-donation">
+                  <ion-icon name="time"></ion-icon>
+                  Last donation: {{ donor.last_donation }}
+                </p>
+              }
+            </ion-label>
+            <ion-button fill="clear" slot="end">
+              <ion-icon name="call"></ion-icon>
+            </ion-button>
+          </ion-item>
+        }
+      } @else {
+        <!-- Requests List -->
+        @for (request of requests(); track $index) {
+          <ion-item class="request-item">
+            <ion-thumbnail slot="start">
+              @if (segmentValue() == '2') {
+                <div class="ion-text-center request-badge">
+                  <ion-text color="white">{{ request.urgency }}</ion-text>
+                </div>
+              }
+              <p class="ion-text-center request-group">
+                <ion-text color="white"> {{ request?.blood_group }}</ion-text>
+              </p>
+            </ion-thumbnail>
+            <ion-label>
+              <ion-note color="dark">
+                <strong>{{ request?.name }}</strong>
+              </ion-note>
+              <p>{{ request?.address }}</p>
+              <p>
+                <ion-text color="dark">{{ request?.age }}</ion-text>
+                <ion-text color="dark">
+                  <span>&#9679;</span>
+                  {{ request?.gender }}
+                </ion-text>
+                <ion-text color="dark">
+                  <span>&#9679;</span>
+                  {{ request?.distance === 1 ? request.distance + 'km' : 'kms' }}
+                </ion-text>
+              </p>
+              <p>
+                <ion-text color="dark">{{ request?.phone }}</ion-text>
+              </p>
+              <!--              <ion-button fill="clear" slot="end">-->
+              <!--                <ion-icon name="call"></ion-icon>-->
+              <!--              </ion-button>-->
+            </ion-label>
+            <ion-fab vertical="middle" horizontal="end">
+              <ion-fab-button size="small" color="white">
+                <img [src]="request?.social_photo" alt="social_photo">
+              </ion-fab-button>
+            </ion-fab>
+          </ion-item>
+        }
+      }
+    </ion-item-group>
+  </ion-list>
+</ion-content>
+
