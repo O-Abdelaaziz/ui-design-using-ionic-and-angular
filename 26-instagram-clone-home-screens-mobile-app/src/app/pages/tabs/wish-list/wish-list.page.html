@@ -1,0 +1,92 @@
+<ion-header class="ion-no-border">
+  <ion-toolbar color="light" mode="md">
+    <ion-title class="ion-text-center ion-margin-top">
+      Activity
+    </ion-title>
+    <ion-grid>
+      <ion-row>
+        <ion-col size="12">
+          <swiper-container [slidesPerView]="3.2" [loop]="true">
+            @for (slide of slides; track $index) {
+              <swiper-slide (click)="onSlideClick(slide.label)">
+                <ion-button expand="block" mode="md" [color]="activeTab() === slide.label ? 'dark' : 'light'"
+                            shape="round" size="small">
+                  <ion-text [color]="activeTab() === slide.label ? 'light' : 'dark'">{{ slide.name }}</ion-text>
+                </ion-button>
+                @if (slide.notifications) {
+                  <ion-fab vertical="top" horizontal="center">
+                    <ion-fab-button color="danger">
+                      {{ slide.notifications }}
+                    </ion-fab-button>
+                  </ion-fab>
+                }
+              </swiper-slide>
+            }
+          </swiper-container>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  @if (activeTab() == 'all') {
+    <ion-list lines="none">
+      <ion-list-header>
+        <ion-label>
+          <strong> New (+50)</strong>
+        </ion-label>
+      </ion-list-header>
+      @for (activity of activities; track $index) {
+        <ion-item>
+          <ion-thumbnail slot="start" class="photo">
+            <img [src]="activity?.user_profile" alt="activity?.username"/>
+          </ion-thumbnail>
+
+           <ion-label>
+            {{ activity?.username }}
+            <p class="ion-text-wrap">
+              @if (activity.activity == 'follow') {
+                <ion-text color="medium">
+                  started following you.
+                </ion-text>
+              }
+
+              @if (activity?.activity == 'comment') {
+                <ion-text color="medium">
+                  <span>Commented:</span> {{ activity?.comments }}
+                </ion-text>
+              }
+
+              <ion-text class="time">{{ activity?.time }}</ion-text>
+            </p>
+
+            @if (activity?.activity == 'comment') {
+              <ion-row>
+                <ion-icon
+                  [class.like]="activity?.like"
+                  (click)="likeComment(activity)"
+                  [color]="activity?.like ? 'primary' : 'medium'"
+                  [name]="activity?.like ? 'heart' : 'heart-outline'">
+                </ion-icon>
+                <ion-icon color="medium" class="ion-margin-start" name="chatbubble-ellipses-outline"></ion-icon>
+              </ion-row>
+            }
+
+          </ion-label>
+
+          @if (activity.activity== 'follow') {
+            <ion-button  mode="ios" slot="end" color="primary">Follow back</ion-button>
+          }
+
+          @if (activity.activity== 'comment') {
+            <ion-thumbnail slot="end" class="post">
+              <img [src]="activity?.post" [alt]="activity?.username"/>
+            </ion-thumbnail>
+          }
+        </ion-item>
+      }
+    </ion-list>
+  }
+
+</ion-content>

@@ -1,0 +1,65 @@
+import { Component, OnInit } from '@angular/core';
+
+// ... existing imports
+
+export class ProfilePage implements OnInit {
+  // Define mood types with proper typing
+  moods: {id: number, text: string}[] = [
+    {id: 1, text: 'Monday mood'},
+    {id: 2, text: 'Tuesday thoughts'},
+    {id: 3, text: 'Wednesday wisdom'},
+    {id: 4, text: 'Thursday vibes'},
+    {id: 5, text: 'Friday feeling'},
+    {id: 6, text: 'Weekend mood'},
+    {id: 7, text: 'Sunday reflections'},
+    {id: 8, text: 'Share a note'},
+    {id: 9, text: 'Whats new?'},
+    {id: 10, text: 'Whats on your playlist?'},
+  ];
+
+  currentMood: {id: number, text: string} | null = null;
+  private daysOfWeek = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
+
+  constructor() {}
+
+  ngOnInit() {
+    this.setDailyMood();
+  }
+
+  private setDailyMood() {
+    const today = new Date().getDay(); // 0 (Sunday) to 6 (Saturday)
+    const dailyMood = this.moods[today % this.moods.length];
+    this.currentMood = {
+      id: dailyMood.id,
+      text: dailyMood.text.replace(/^\w+/, this.daysOfWeek[today])
+    };
+  }
+
+  public getRandomMood(): {id: number, text: string} {
+    const randomIndex = Math.floor(Math.random() * this.moods.length);
+    return {
+      ...this.moods[randomIndex],
+      text: this.moods[randomIndex].text.replace(/^\w+/, 'Random')
+    };
+  }
+}
+
+
+<ion-content>
+  <div *ngIf="currentMood">
+    <h2>Today's Mood: {{ currentMood.text }}</h2>
+    <ion-button (click)="currentMood = getRandomMood()">Get Random Mood</ion-button>
+  </div>
+</ion-content>
+-------------------------------------------------------------------
+Reel page under for loop
+<!--         <ion-card>-->
+<!--           <ion-card-header>-->
+<!--             <ion-card-title>{{ feed.username }}</ion-card-title>-->
+<!--             <ion-card-subtitle>{{ feed.location }}</ion-card-subtitle>-->
+<!--           </ion-card-header>-->
+<!--           <ion-card-content>-->
+<!--             <ion-img [src]="feed.src"></ion-img>-->
+<!--             <p>{{ feed.description }}</p>-->
+<!--           </ion-card-content>-->
+<!--         </ion-card>-->

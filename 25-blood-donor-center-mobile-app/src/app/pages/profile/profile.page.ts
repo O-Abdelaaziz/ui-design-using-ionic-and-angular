@@ -20,7 +20,7 @@ import {trophyOutline, waterOutline} from "ionicons/icons";
   templateUrl: './profile.page.html',
   styleUrls: ['./profile.page.scss'],
   standalone: true,
-  imports: [IonContent, IonHeader, IonTitle, IonToolbar, CommonModule, FormsModule, IonButtons, IonMenuButton, IonBackButton, IonButton, IonGrid, IonAvatar, IonRow, IonCol, IonItem, IonIcon, IonLabel, IonList, IonText]
+  imports: [IonContent, IonToolbar, CommonModule, FormsModule, IonButtons, IonMenuButton, IonBackButton, IonButton, IonGrid, IonAvatar, IonRow, IonCol, IonItem, IonIcon, IonLabel, IonList, IonText]
 })
 export class ProfilePage implements OnInit {
 

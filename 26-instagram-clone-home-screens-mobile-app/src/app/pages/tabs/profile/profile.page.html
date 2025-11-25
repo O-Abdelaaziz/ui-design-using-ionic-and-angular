@@ -1,0 +1,233 @@
+<ion-header class="ion-no-border">
+  <ion-toolbar>
+    <ion-title color="dark">
+      <div class="user-info">
+        <span class="username">ouakala_abdelaaziz</span>
+        <ion-icon name="chevron-down-outline"></ion-icon>
+      </div>
+    </ion-title>
+
+    <ion-buttons slot="end">
+      <ion-button fill="clear" mode="md" color="dark">
+        <ion-icon slot="icon-only" name="add-circle-outline"></ion-icon>
+      </ion-button>
+      <ion-button fill="clear" mode="md" color="dark" (click)="onOptionsClick()">
+        <ion-icon slot="icon-only" name="menu-outline"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-grid>
+    <ion-row>
+      <ion-col size="12" offset="4">
+        <ion-label>
+          Ouakala abdelaaziz
+        </ion-label>
+      </ion-col>
+      <ion-col size="3" class="thumbnail" style="margin-top: -30px;">
+        <div class="random-mood">
+          <p>{{ currentMood?.text }}</p>
+        </div>
+        <ion-fab vertical="bottom" horizontal="right">
+          <ion-fab-button>
+            <ion-icon name="add"></ion-icon>
+          </ion-fab-button>
+        </ion-fab>
+        <ion-thumbnail>
+          <img src="/assets/images/avatar.jpg" alt="avatar">
+        </ion-thumbnail>
+      </ion-col>
+      <ion-col size="3" class="ion-text-center">
+        <ion-label>
+          <strong>123</strong>
+          <p>
+            <ion-text>posts</ion-text>
+          </p>
+        </ion-label>
+      </ion-col>
+      <ion-col size="3" class="ion-text-center">
+        <ion-label>
+          <strong>99</strong>
+          <p>
+            <ion-text>followers</ion-text>
+          </p>
+        </ion-label>
+      </ion-col>
+      <ion-col size="3" class="ion-text-center">
+        <ion-label>
+          <strong>85</strong>
+          <p>
+            <ion-text>following</ion-text>
+          </p>
+        </ion-label>
+      </ion-col>
+    </ion-row>
+
+    <ion-row>
+      <ion-col>
+        <ion-label>
+          <!--<span class="name">Ouakala abdelaaziz</span>-->
+          <ion-text color="medium" class="info">
+            Full Stack Developer
+          </ion-text>
+          <ion-row>
+            <ion-text color="medium" class="ion-text-justify description">
+              I'm a Full Stack Developer with 5 years of experience in web development. I have a strong background in
+              both
+              frontend and backend development, and I'm always looking for new challenges to take on.
+              you can reach me at <a href="https://www.instagram.com/ouakala_abdelaaziz/"
+                                     target="_blank">&#64;ouakala_abdelaaziz</a>
+            </ion-text>
+          </ion-row>
+        </ion-label>
+      </ion-col>
+    </ion-row>
+
+    <ion-row>
+      <ion-col size="4">
+        <ion-button size="small" expand="block" fill="outline" mode="ios">
+          <ion-text color="dark">Edit profile</ion-text>
+        </ion-button>
+      </ion-col>
+
+      <ion-col size="4">
+        <ion-button size="small" expand="block" fill="outline" mode="ios">
+          <ion-text color="dark">Statistics</ion-text>
+        </ion-button>
+      </ion-col>
+
+      <ion-col size="4">
+        <ion-button size="small" expand="block" fill="outline" mode="ios">
+          <ion-text color="dark">Contact</ion-text>
+        </ion-button>
+      </ion-col>
+    </ion-row>
+
+    <ion-row>
+      <ion-col>
+        <swiper-container [slidesPerView]="6.5" [loop]="true">
+          @for (story of stories; track $index) {
+            <swiper-slide>
+              <ion-thumbnail>
+                @if ($index == 0) {
+                  <ion-icon name="add" color="dark"></ion-icon>
+                }
+
+                @if ($index > 0) {
+                  <img src="{{ story.image }}" alt="story">
+                }
+              </ion-thumbnail>
+              <p>
+                <ion-text color="dark">{{ story.name }}</ion-text>
+              </p>
+            </swiper-slide>
+          }
+        </swiper-container>
+      </ion-col>
+    </ion-row>
+
+    <ion-row class="images">
+      <ion-col size="12">
+        <ion-segment mode="md" color="dark" (ionChange)="onSegmentChanged($event)" [value]="segmentValue()">
+          <!--          <ion-segment-button value="posts">-->
+          <!--            <ion-label>Posts</ion-label>-->
+          <!--          </ion-segment-button>-->
+          <!--          <ion-segment-button value="reels">-->
+          <!--            <ion-label>Reels</ion-label>-->
+          <!--          </ion-segment-button>-->
+          <!--          <ion-segment-button value="saved">-->
+          <!--            <ion-label>Saved</ion-label>-->
+          <!--          </ion-segment-button>-->
+
+          @for (segmentItem of segmentItems; track $index) {
+            <ion-segment-button [value]="segmentItem.value">
+              <ion-icon
+                [name]="segmentValue() == segmentItem.value ? segmentItem.icon : segmentItem.outlineIcon"></ion-icon>
+              <ion-label>{{ segmentItem.label }}</ion-label>
+            </ion-segment-button>
+          }
+        </ion-segment>
+      </ion-col>
+    </ion-row>
+
+    <!--    <ion-row class="images" >-->
+    <!--      <ion-col size="12">-->
+    <!--        <ion-grid>-->
+    <!--          <ion-row>-->
+    <!--            @for (image of images; track $index) {-->
+    <!--              <ion-col size="3">-->
+    <!--                <ion-thumbnail>-->
+    <!--                  <img src="{{ image }}" alt="image">-->
+    <!--                </ion-thumbnail>-->
+    <!--              </ion-col>-->
+    <!--            }-->
+    <!--          </ion-row>-->
+    <!--        </ion-grid>-->
+    <!--      </ion-col>-->
+    <!--    </ion-row>-->
+
+    <!--    <ion-row>-->
+    <!--      <ion-col size="12" [ngSwitch]="segmentValue()">-->
+    <!--        <ion-list lines="none" *ngSwitchCase="'grid'" class="photo-grid">-->
+    <!--          @for (image of images; track i; let i = $index) {-->
+    <!--            @if (i % 3 == 0) {-->
+    <!--              <ion-grid class="ion-no-padding">-->
+    <!--                @if (i % 9 == 0) {-->
+    <!--                  <ion-row>-->
+    <!--                    <ion-col size="8">-->
+    <!--                      <ion-thumbnail>-->
+    <!--                        <div class="image-container" [style.background-image]="'url('+image.url+')'"></div>-->
+    <!--                      </ion-thumbnail>-->
+    <!--                    </ion-col>-->
+    <!--                    <ion-col size="4">-->
+    <!--                      <ion-thumbnail>-->
+    <!--                        <div *ngIf="images[i+1]" class="image-container"-->
+    <!--                             [style.background-image]="'url('+images[i+1].url+')'"></div>-->
+    <!--                        <div *ngIf="images[i+2]" class="image-container"-->
+    <!--                             [style.background-image]="'url('+images[i+2].url+')'"></div>-->
+    <!--                      </ion-thumbnail>-->
+    <!--                    </ion-col>-->
+    <!--                  </ion-row>-->
+    <!--                }-->
+    <!--              </ion-grid>-->
+
+    <!--            }-->
+    <!--          }-->
+    <!--        </ion-list>-->
+    <!--      </ion-col>-->
+    <!--    </ion-row>-->
+
+<!--    <div [ngSwitch]="segmentValue()">-->
+<!--      <ion-list lines="none" *ngSwitchCase="'grid'" class="photo-grid">-->
+<!--        <div class="grid-container">-->
+<!--          @for (item of images; track item.id; let i = $index) {-->
+<!--            <div class="grid-item"-->
+<!--                 [class.wide]="i % 8 === 0"-->
+<!--                 [class.tall]="i % 8 === 0"-->
+<!--                 [style.grid-row]="i % 8 === 0 ? 'span 2' : ''"-->
+<!--                 [style.grid-column]="i % 8 === 0 ? 'span 2' : ''">-->
+<!--              <div class="image-container"-->
+<!--                   [style.background-image]="'url(' + item.url + ')'">-->
+<!--              </div>-->
+<!--            </div>-->
+<!--          }-->
+<!--        </div>-->
+<!--      </ion-list>-->
+<!--    </div>-->
+
+
+    <div [ngSwitch]="segmentValue()">
+      <ion-list lines="none" *ngSwitchCase="'grid'" class="photo-grid">
+        <div class="grid-container">
+          @for (item of images; track item.id) {
+            <div class="grid-item">
+              <div class="image-container" [style.background-image]="'url(' + item.url + ')'"></div>
+            </div>
+          }
+        </div>
+      </ion-list>
+    </div>
+  </ion-grid>
+</ion-content>

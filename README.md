@@ -75,7 +75,7 @@ ui-design-using-ionic-and-angular/
 ├── 03-pet-finder-mobile-app/
 ├── 04-car-selling-mobile-app/
 ├── ...
-├── 25-blood-donor-center-mobile-app/
+├── 26-instagram-clone-home-screens-mobile-app/
 ├── screenshots/
 └── README.md
 ```
@@ -166,8 +166,9 @@ Find preview images for each UI example in the **screenshots/** directory.
 | **23. Organic Food Home (Screen 4)** <br> <img src="screenshots/23-04.png" width="200"> | **23. Organic Food Home (Screen 5)** <br> <img src="screenshots/23-05.png" width="200"> | **24. Ecommerce Login/OTP (Screen 1)** <br> <img src="screenshots/24-01.png" width="200"> |
 | **24. Ecommerce Login/OTP (Screen 2)** <br> <img src="screenshots/24-02.png" width="200"> | **24. Ecommerce Login/OTP (Screen 3)** <br> <img src="screenshots/24-03.png" width="200"> | **24. Ecommerce Login/OTP (Screen 4)** <br> <img src="screenshots/24-04.png" width="200"> |
 | **25. Blood Donor Home (Screen 1)** <br> <img src="screenshots/25-01.png" width="200"> | **25. Blood Donor Home (Screen 2)** <br> <img src="screenshots/25-02.png" width="200"> | **25. Blood Donor Home (Screen 3)** <br> <img src="screenshots/25-03.png" width="200"> |
-| **25. Blood Donor Home (Screen 4)** <br> <img src="screenshots/25-04.png" width="200"> | **25. Blood Donor Home (Screen 5)** <br> <img src="screenshots/25-05.png" width="200"> |Coming Soon 👌|
-
+| **25. Blood Donor Home (Screen 4)** <br> <img src="screenshots/25-04.png" width="200"> | **25. Blood Donor Home (Screen 5)** <br> <img src="screenshots/25-05.png" width="200"> | **26. Instagram Clone Home (Screen 1)** <br> <img src="screenshots/26-01.png" width="200"> |
+| **26. Instagram Clone Home (Screen 2)** <br> <img src="screenshots/26-02.png" width="200"> | **26. Instagram Clone Home (Screen 3)** <br> <img src="screenshots/26-03.png" width="200"> | **26. Instagram Clone Home (Screen 4 Custom tabs-01)** <br> <img src="screenshots/26-04.png" width="200"> |
+| **26. Instagram Clone Home (Screen 5 Custom tabs-02)** <br> <img src="screenshots/26-05.png" width="200"> | **26. Instagram Clone Home (Screen 6 Custom tabs-03)** <br> <img src="screenshots/26-06.png" width="200"> | Coming Soon 👌|
 [⬆ back to top](#ui-design-using-ionic-and-angular)
 
 ---
@@ -196,11 +197,16 @@ Accelerate your mobile app development with ready-made Ionic + Angular UI templa
 ## 🧑‍💻 Author
 
 **Ouakala Abdelaaziz**  
-Founder — Programming Mastery Academy Pvt. Ltd.  
-📺 [YouTube: Apps Presentation](https://www.youtube.com/@LegendDZ)  
-📺 [YouTube: Main Channel](https://www.youtube.com/@ProgrammingMasteryAcademy) 
+Founder — Programming Mastery Academy Pvt. Ltd. 
+
+📺 [YouTube: Apps Presentation](https://www.youtube.com/@LegendDZ)
+
+📺 [YouTube: Main Channel](https://www.youtube.com/@ProgrammingMasteryAcademy)
+
 🌐 [Website: O.Abdelaaziz](https://ouakala-abdelaaziz.epizy.com/)
+
 🌐 [Linkedin: O.Abdelaaziz](https://dz.linkedin.com/in/abdelaaziz-ouakala)
+
 ---
 
 ## 🪪 License

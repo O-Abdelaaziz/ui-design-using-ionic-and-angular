@@ -1,0 +1,113 @@
+<ion-tabs #tabs (ionTabsWillChange)="setActiveTab($event)">
+  <!--  <ion-fab vertical="bottom" horizontal="center">-->
+  <!--    <ion-fab-button>-->
+  <!--      <ion-icon name="add"></ion-icon>-->
+  <!--    </ion-fab-button>-->
+  <!--  </ion-fab>-->
+
+  @if(activeTab() && !isHide()){
+    <ion-fab
+      [class]="activeTab() == 'wishlist' ? 'right-align animated' : (activeTab() == 'search' ? 'left-align animated' : 'animated')"
+      vertical="bottom"
+      [horizontal]="activeTab() == 'home' ? 'start': (activeTab() == 'profile' ? 'end' : 'center')">
+      <ion-fab-button>
+        <ion-icon [name]="getActiveTabIcon()"></ion-icon>
+      </ion-fab-button>
+    </ion-fab>
+  }
+
+  <ion-tab-bar slot="bottom">
+    <!-- 1.Using for loop to create tabs-->
+    <!--        @for (tab of tabsList; track $index) {-->
+    <!--          <ion-tab-button [tab]="tab.id">-->
+    <!--            <ion-icon [name]="activeTab() === tab.id ? tab.icon : tab.outlineIcon"></ion-icon>-->
+    <!--            <ion-label>{{ tab.label + $index }}</ion-label>-->
+    <!--          </ion-tab-button>-->
+    <!--          @if($index >=1 && $index < 2){-->
+    <!--            <svg height="50" viewBox="0 0 100 50" width="100" xmlns="http://www.w3.org/2000/svg">-->
+    <!--              <path d="M100 0v50H0V0c.543 27.153 22.72 49 50 49S99.457 27.153 99.99 0h.01z"-->
+    <!--                    fill="red" fill-rule="evenodd">-->
+    <!--              </path>-->
+    <!--            </svg>-->
+    <!--          }-->
+    <!--        }-->
+
+    <!-- 2.Using hard code to create tabs -->
+    <!--    <ion-tab-button tab="home">-->
+    <!--      <ion-icon [name]="activeTab() === 'home' ? 'home' : 'home-outline'"></ion-icon>-->
+    <!--      <ion-label>Home</ion-label>-->
+    <!--    </ion-tab-button>-->
+    <!--    <ion-tab-button tab="search" class="search">-->
+    <!--      <ion-icon [name]="activeTab()=== 'search' ? 'search' : 'search-outline'"></ion-icon>-->
+    <!--      <ion-label>Search</ion-label>-->
+    <!--    </ion-tab-button>-->
+    <!--    &lt;!&ndash;    <ion-tab-button tab="reels">&ndash;&gt;-->
+    <!--    &lt;!&ndash;      <ion-icon [name]="activeTab() === 'reels' ? 'reels' : 'reels-outline'"></ion-icon>&ndash;&gt;-->
+    <!--    &lt;!&ndash;      <ion-label>Reels</ion-label>&ndash;&gt;-->
+    <!--    &lt;!&ndash;    </ion-tab-button>&ndash;&gt;-->
+
+    <!--    &lt;!&ndash; Gradient rounded button &ndash;&gt;-->
+    <!--&lt;!&ndash;    <svg height="50" viewBox="0 0 100 50" width="100" xmlns="http://www.w3.org/2000/svg">&ndash;&gt;-->
+    <!--&lt;!&ndash;      <path d="M100 0v50H0V0c.543 27.153 22.72 49 50 49S99.457 27.153 99.99 0h.01z"&ndash;&gt;-->
+    <!--&lt;!&ndash;            fill="red" fill-rule="evenodd">&ndash;&gt;-->
+    <!--&lt;!&ndash;      </path>&ndash;&gt;-->
+    <!--&lt;!&ndash;    </svg>&ndash;&gt;-->
+    <!--    <ion-tab-button  ></ion-tab-button>-->
+
+    <!--    <ion-tab-button tab="wishlist" class="wishlist">-->
+    <!--      <ion-icon [name]="activeTab() === 'wishlist' ? 'heart' : 'heart-outline'"></ion-icon>-->
+    <!--      <ion-badge color="danger">2</ion-badge>-->
+    <!--      <ion-label>Wish List</ion-label>-->
+    <!--    </ion-tab-button>-->
+    <!--    <ion-tab-button tab="profile">-->
+    <!--      <ion-icon [name]="activeTab() === 'profile' ? 'person' : 'person-outline'"></ion-icon>-->
+    <!--      <ion-label>Profile</ion-label>-->
+    <!--    </ion-tab-button>-->
+
+
+    <!-- 3.Using hard code to create tabs with floating icons -->
+    <ion-tab-button tab="home">
+      @if (activeTab() !== 'home') {
+        <ion-icon name="home-outline"></ion-icon>
+      }
+      @if (activeTab() === 'home') {
+        <ion-label>Home</ion-label>
+      }
+
+    </ion-tab-button>
+    <ion-tab-button tab="search" class="search">
+      @if (activeTab() !== 'search') {
+        <ion-icon name="search-outline"></ion-icon>
+      }
+      @if (activeTab() === 'search') {
+        <ion-label>Search</ion-label>
+      }
+    </ion-tab-button>
+    <ion-tab-button tab="reels">
+      @if (activeTab() !== 'reels') {
+        <ion-icon name="reels-outline"></ion-icon>
+      }
+      @if (activeTab() === 'reels') {
+        <ion-label>Reels</ion-label>
+      }
+    </ion-tab-button>
+    <ion-tab-button tab="wishlist" class="wishlist">
+      @if (activeTab() !== 'wishlist') {
+        <ion-icon name="heart-outline"></ion-icon>
+        <ion-badge color="danger">2</ion-badge>
+      }
+      @if (activeTab() === 'wishlist') {
+        <ion-label>Wish List</ion-label>
+      }
+    </ion-tab-button>
+    <ion-tab-button tab="profile">
+      @if (activeTab() !== 'profile') {
+        <ion-icon name="person-outline"></ion-icon>
+
+      }
+      @if (activeTab() === 'profile') {
+        <ion-label>Profile</ion-label>
+      }
+    </ion-tab-button>
+  </ion-tab-bar>
+</ion-tabs>

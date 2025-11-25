@@ -1,0 +1,7 @@
+{
+  "name": "26-instagram-clone-home-screens-mobile-app",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular-standalone"
+}

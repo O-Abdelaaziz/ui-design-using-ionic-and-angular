@@ -1,0 +1,101 @@
+<ion-header [translucent]="true" class="ion-no-border">
+  <ion-toolbar>
+    <ion-title>
+      Reels
+    </ion-title>
+    <ion-buttons slot="end">
+      <ion-button fill="clear" mode="md" color="dark">
+        <ion-icon slot="icon-only" name="add-circle-outline"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+<ion-content [fullscreen]="true" [scrollEvents]="true"  >
+  <ion-grid class="ion-no-padding">
+    <ion-row>
+      @for (feed of feeds; track $index) {
+        <ion-col size="12">
+          <ion-item lines="full">
+            <ion-avatar slot="start">
+              <ion-img [src]="feed.logo"></ion-img>
+            </ion-avatar>
+            <ion-label>
+              <strong>{{ feed.username }}</strong>
+              <p>{{ feed.location }}</p>
+            </ion-label>
+            <ion-button fill="clear" mode="md" color="dark">
+              <ion-icon slot="icon-only" name="ellipsis-horizontal"></ion-icon>
+            </ion-button>
+          </ion-item>
+          <!-- Image -->
+          @if (feed.image) {
+            <div class="post-image" [style.background-image]="'url('+feed.src+')'"></div>
+          }
+
+          <!-- video -->
+          @if (!feed.image) {
+            <iframe
+              #video
+              class="post-video"
+              width="100%"
+              height="200"
+              [src]="getVideoUrl(feed.src)"
+              title="YouTube video player" frameborder="0"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+              referrerpolicy="strict-origin-when-cross-origin"
+              allowfullscreen>
+            </iframe>
+          }
+
+          <ion-item lines="none">
+            <ion-button slot="start" fill="clear" mode="md" color="dark" class="btn-like">
+              <ion-icon slot="icon-only" name="heart-outline"></ion-icon>
+            </ion-button>
+            <ion-button slot="start" fill="clear" mode="md" color="dark" class="btn-like">
+              <ion-icon slot="icon-only" name="chatbubble-ellipses-outline"></ion-icon>
+            </ion-button>
+            <ion-button slot="start" fill="clear" mode="md" color="dark" class="btn-like">
+              <ion-icon slot="icon-only" name="share-social-outline"></ion-icon>
+            </ion-button>
+            <ion-button slot="end" fill="clear" mode="md" color="dark" class="btn-like">
+              <ion-icon slot="icon-only" name="bookmark-outline"></ion-icon>
+            </ion-button>
+          </ion-item>
+
+          <ion-item lines="none" class="details">
+            <ion-label>
+              @if (feed.likes > 0) {
+                <strong>{{ feed.likes }} Likes</strong>
+              }
+              @if (feed.description && feed.description.length > 0) {
+                <p>
+                  <ion-text color="dark">
+                    <strong>
+                      {{ feed.username }}
+                      <span [class]="feed.wrap ? 'ion-text-wrap' : 'ion-text-nowrap'">{{ feed.description }}</span>
+                    </strong>
+                  </ion-text>
+                </p>
+              }
+              @if (feed.description && feed.description.length > 0) {
+                <ion-note (click)="toggleWrap(feed)">{{ feed.wrap ? 'less' : 'more' }}</ion-note>
+              }
+            </ion-label>
+            <!--            @if(feed.comments>0){-->
+            <!--              <ion-label>-->
+            <!--                <strong>{{ feed.comments }}</strong>-->
+            <!--                <p>comments</p>-->
+            <!--              </ion-label>-->
+            <!--            }-->
+            <!--            @if(feed.shares>0){-->
+            <!--              <ion-label>-->
+            <!--                <strong>{{ feed.shares }}</strong>-->
+            <!--                <p>shares</p>-->
+            <!--              </ion-label>-->
+            <!--            }-->
+          </ion-item>
+        </ion-col>
+      }
+    </ion-row>
+  </ion-grid>
+</ion-content>
