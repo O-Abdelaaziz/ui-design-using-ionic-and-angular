@@ -75,7 +75,7 @@ ui-design-using-ionic-and-angular/
 ├── 03-pet-finder-mobile-app/
 ├── 04-car-selling-mobile-app/
 ├── ...
-├── 26-instagram-clone-home-screens-mobile-app/
+├── 27-travel-tour-home-screen-mobile-app/
 ├── screenshots/
 └── README.md
 ```
@@ -168,7 +168,11 @@ Find preview images for each UI example in the **screenshots/** directory.
 | **25. Blood Donor Home (Screen 1)** <br> <img src="screenshots/25-01.png" width="200"> | **25. Blood Donor Home (Screen 2)** <br> <img src="screenshots/25-02.png" width="200"> | **25. Blood Donor Home (Screen 3)** <br> <img src="screenshots/25-03.png" width="200"> |
 | **25. Blood Donor Home (Screen 4)** <br> <img src="screenshots/25-04.png" width="200"> | **25. Blood Donor Home (Screen 5)** <br> <img src="screenshots/25-05.png" width="200"> | **26. Instagram Clone Home (Screen 1)** <br> <img src="screenshots/26-01.png" width="200"> |
 | **26. Instagram Clone Home (Screen 2)** <br> <img src="screenshots/26-02.png" width="200"> | **26. Instagram Clone Home (Screen 3)** <br> <img src="screenshots/26-03.png" width="200"> | **26. Instagram Clone Home (Screen 4 Custom tabs-01)** <br> <img src="screenshots/26-04.png" width="200"> |
-| **26. Instagram Clone Home (Screen 5 Custom tabs-02)** <br> <img src="screenshots/26-05.png" width="200"> | **26. Instagram Clone Home (Screen 6 Custom tabs-03)** <br> <img src="screenshots/26-06.png" width="200"> | Coming Soon 👌|
+| **26. Instagram Clone Home (Screen 5 Custom tabs-02)** <br> <img src="screenshots/26-05.png" width="200"> | **26. Instagram Clone Home (Screen 6 Custom tabs-03)** <br> <img src="screenshots/26-06.png" width="200"> | **27. Travel Tour Home (Screen 1)** <br> <img src="screenshots/27-01.png" width="200"> |
+| **27. Travel Tour Home (GIF)** <br> <img src="screenshots/27-01.gif" width="200"> | **27. Travel Tour Home (Screen 2)** <br> <img src="screenshots/27-02.png" width="200"> | **27. Travel Tour Home (Screen 3)** <br> <img src="screenshots/27-03.png" width="200"> |
+| **27. Travel Tour Home (Screen 4)** <br> <img src="screenshots/27-04.png" width="200"> | **27. Travel Tour Home (Screen 5)** <br> <img src="screenshots/27-05.png" width="200"> | **27. Travel Tour Home (Screen 6)** <br> <img src="screenshots/27-06.png" width="200"> |
+| Coming Soon 👌 | Coming Soon 👌 | Coming Soon 👌 |
+
 [⬆ back to top](#ui-design-using-ionic-and-angular)
 
 ---

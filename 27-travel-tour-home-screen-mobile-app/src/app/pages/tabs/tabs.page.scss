@@ -1,0 +1,64 @@
+//ion-tabs {
+//  ion-tab-bar {
+//    width: 95%;
+//    border-radius: 10px;
+//    margin: auto auto 15px;
+//
+//    ion-tab-button {
+//      color: var(--ion-color-white);
+//
+//      ion-icon {
+//        font-size: 1.5rem;
+//      }
+//    }
+//
+//    ion-tab-button[aria-selected=true] {
+//      ion-icon {
+//        border: 1px solid rgba(255, 95, 31, 0.2);
+//        border-radius: 50px;
+//        padding: 7px;
+//        background: linear-gradient(to right, var(--ion-color-primary), var(--ion-color-secondary));
+//        color: var(--ion-color-white);
+//      }
+//    }
+//  }
+//}
+
+
+ion-tabs {
+  ion-tab-bar {
+    --background: var(--ion-color-primary);
+    --border: none;
+    --color: var(--ion-color-white);
+
+    width: 95%;
+    border-radius: 10px;
+    margin: auto auto 15px;
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
+
+    ion-tab-button {
+      --color: var(--ion-color-medium);
+      --color-selected: var(--ion-color-white);
+
+      ion-icon {
+        font-size: 1.5rem;
+        margin-bottom: 4px;
+      }
+
+      ion-label {
+        font-size: 0.7rem;
+        font-weight: 500;
+      }
+    }
+
+    ion-tab-button.tab-selected {
+      ion-icon {
+        border: 1px solid rgba(255, 255, 255, 0.2);
+        border-radius: 50px;
+        padding: 7px;
+        background: linear-gradient(135deg, var(--ion-color-primary), var(--ion-color-secondary));
+        color: var(--ion-color-white);
+      }
+    }
+  }
+}

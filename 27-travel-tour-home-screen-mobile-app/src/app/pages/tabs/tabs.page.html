@@ -1,0 +1,21 @@
+<ion-tabs #tabs (ionTabsWillChange)="onTabChange($event)">
+  <ion-tab-bar slot="bottom" color="primary">
+    <ion-tab-button tab="home">
+      <ion-icon [name]="selectedTab() === 'home' ? 'home' : 'home-outline'"></ion-icon>
+<!--      <ion-label>Home</ion-label>-->
+    </ion-tab-button>
+    <ion-tab-button tab="wishlist">
+      <ion-icon [name]="selectedTab() === 'wishlist' ? 'heart': 'heart-outline'"></ion-icon>
+<!--      <ion-label>Wishlist</ion-label>-->
+      <ion-badge color="danger">47</ion-badge>
+    </ion-tab-button>
+    <ion-tab-button tab="location">
+      <ion-icon [name]="selectedTab() === 'location' ? 'location': 'location-outline'"></ion-icon>
+<!--      <ion-label>Location</ion-label>-->
+    </ion-tab-button>
+    <ion-tab-button tab="profile">
+      <ion-icon [name]="selectedTab() === 'profile' ? 'person': 'person-outline'"></ion-icon>
+<!--      <ion-label>Profile</ion-label>-->
+    </ion-tab-button>
+  </ion-tab-bar>
+</ion-tabs>

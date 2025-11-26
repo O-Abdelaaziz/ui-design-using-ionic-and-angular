@@ -1,0 +1,39 @@
+<ion-content [fullscreen]="true">
+  <swiper-container #swiper effect="fade">
+    @for (slide of slides; track $index) {
+      <swiper-slide [style.backgroundImage]="'url('+slide.image+')'">
+        <ion-grid>
+          <ion-row class="logo">
+            <ion-col>
+              <ion-img src="/assets/images/travel.png"></ion-img>
+              <ion-label>
+                <h1>{{ slide.title }}</h1>
+                <p>{{ slide.description }}</p>
+                <ion-button fill="outline" color="white">
+                  <ion-text color="white">Explore</ion-text>
+                </ion-button>
+              </ion-label>
+            </ion-col>
+          </ion-row>
+        </ion-grid>
+      </swiper-slide>
+    }
+  </swiper-container>
+</ion-content>
+
+<ion-footer class="ion-no-border">
+  <ion-toolbar>
+    <ion-grid>
+      <ion-row>
+        <ion-col>
+          <ion-button color="primary" expand="block" shape="round" class="primary-btn" routerLink="/sign-up">
+            <ion-text color="white">Sign up</ion-text>
+          </ion-button>
+          <ion-button color="white" expand="block" shape="round" class="secondary-btn" routerLink="/sign-in">
+            <ion-text color="primary">Sign in</ion-text>
+          </ion-button>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+  </ion-toolbar>
+</ion-footer>

@@ -1,0 +1,111 @@
+<ion-header class="home-header">
+  <ion-toolbar mode="md" class="ion-padding-start ion-padding-end">
+    <ion-buttons slot="start">
+      <ion-avatar class="profile-avatar">
+        <ion-img src="/assets/images/avatar.jpg"></ion-img>
+      </ion-avatar>
+    </ion-buttons>
+
+    <ion-title class="ion-text-center">
+      <h1 class="welcome-text">Hi, Abdelaaziz!</h1>
+    </ion-title>
+
+    <ion-buttons slot="end">
+      <ion-button fill="clear" class="notification-btn">
+        <ion-icon slot="icon-only" name="notifications"></ion-icon>
+        <ion-badge color="danger" class="notification-badge">3</ion-badge>
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true" class="home-content">
+  <div class="hero-section">
+    <div class="welcome-message">
+      <h2 class="hero-title">Where do you want to go?</h2>
+      <p class="hero-subtitle">Discover amazing places around the world</p>
+    </div>
+
+    <div class="search-container">
+      <ion-searchbar
+        class="custom-searchbar"
+        placeholder="Search destination, hotels, places..."
+        animated
+        mode="ios"
+        showCancelButton="focus"
+        cancelButtonText="Cancel"
+        debounce="500">
+<!--        <ion-icon name="search-outline" slot="start"></ion-icon>-->
+      </ion-searchbar>
+    </div>
+  </div>
+
+  <ion-grid class="categories-grid">
+    <ion-row>
+      <ion-col size="12">
+        <h2 class="section-title">Categories</h2>
+      </ion-col>
+    </ion-row>
+    <ion-row class="categories-row">
+      @for (category of categories; track $index) {
+        <ion-col size="6" size-md="3" class="category-col">
+          <div class="category-card" [style.backgroundImage]="'url(' + category.image + ')'">
+            <div class="category-overlay"></div>
+            <div class="category-content">
+              <ion-icon name="location" class="category-icon"></ion-icon>
+              <h3 class="category-name">{{ category.name }}</h3>
+            </div>
+          </div>
+        </ion-col>
+      }
+    </ion-row>
+
+    <!-- Add this inside your ion-content, after the categories grid -->
+    <div class="top-trips-section">
+      <div class="section-header">
+        <h2 class="section-title">
+          Top trips
+          <ion-icon name="chevron-down-outline"></ion-icon>
+        </h2>
+        <ion-button fill="clear" class="explore-btn" color="medium" size="small">
+          EXPLORE
+          <ion-icon name="chevron-forward-outline" slot="end"></ion-icon>
+        </ion-button>
+      </div>
+
+      <div class="trip-slider">
+        <swiper-container [slidesPerView]="1.2" [loop]="true" [spaceBetween]="16">
+          @for(trip of trips; track trip.id) {
+            <swiper-slide>
+              <div class="trip-card" [routerLink]="['/','trip', trip.id]">
+                <div class="trip-image">
+                  <img [src]="trip.image" [alt]="trip.name" />
+                  <ion-chip class="price-chip">
+                    <ion-label>₹{{ trip.price }}</ion-label>
+                  </ion-chip>
+                </div>
+                <div class="trip-details">
+                  <ion-item lines="none">
+                    <ion-label>
+                      <h3 class="trip-name" [routerLink]="['/','trip', trip.id]">{{ trip.name }}</h3>
+                      <p class="trip-category">
+                        <ion-icon name="location-outline"></ion-icon>
+                        {{ trip.category }}
+                      </p>
+                    </ion-label>
+                    <ion-fab-button slot="end" class="favorite-btn">
+                      <ion-icon
+                        [name]="trip.isFavorite ? 'heart' : 'heart-outline'"
+                        [color]="trip.isFavorite ? 'danger' : 'medium'">
+                      </ion-icon>
+                    </ion-fab-button>
+                  </ion-item>
+                </div>
+              </div>
+            </swiper-slide>
+          }
+        </swiper-container>
+      </div>
+    </div>
+  </ion-grid>
+</ion-content>

@@ -1,0 +1,127 @@
+ion-content {
+  --padding-start: 10px;
+  --padding-end: 10px;
+  --padding-top: 10px;
+
+  ion-header {
+    width: 100%;
+    height: 50vh;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-color: transparent;
+    border-radius: 10px;
+
+    ion-toolbar {
+      padding-top: 10px;
+      --background: transparent;
+
+      ion-fab-button {
+        border: 3px solid rgba(255, 255, 255, 0.5);
+        border-radius: 50px;
+        width: 5vh;
+        height: 5vh;
+
+        ion-icon {
+          font-size: 1rem;
+        }
+      }
+    }
+
+    ion-label {
+      position: absolute;
+      left: 0;
+      bottom: 0;
+      padding: 15px;
+      font-size: 1.5rem;
+      font-weight: bold;
+      color: white;
+      letter-spacing: 1px;
+
+      p {
+        margin-top: 0.5vh;
+        color: rgba(255, 255, 255, 0.8);
+        span {
+          font-size: 1rem;
+          font-weight: 500;
+        }
+      }
+    }
+
+    .images {
+      position: absolute;
+      bottom: 0;
+      right: 0;
+      padding: 15px;
+
+      ion-thumbnail {
+        margin-bottom: 8px;
+        border: 2px solid rgba(255, 255, 255, 0.5);
+        border-radius: 5px;
+        width: 5vh;
+        height: 5vh;
+        background: linear-gradient(315deg, rgba(255, 255, 255, 0.2) 0%, rgba(60, 60, 60, 0.2) 74%);
+
+        &.selected {
+          border-color: rgba(255, 255, 255, 0.8);
+          background: linear-gradient(315deg, rgba(255, 255, 255, 0.2) 0%, rgba(255, 255, 255, 0.8) 74%);
+          box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+          z-index: 2;
+        }
+
+        img {
+          height: 100%;
+          width: 100%;
+          border-radius: 5px;
+        }
+      }
+    }
+  }
+
+  ion-segment {
+    margin-top: 5px;
+
+    ion-segment-button {
+      --padding-top: 10px
+    }
+  }
+
+  ion-grid {
+    ion-row {
+      ion-col {
+        ion-item {
+          --background: rgba(255, 255, 255, 0.2);
+          border-radius: 10px;
+
+          ion-icon {
+            width: 3vh;
+            height: 3vh;
+            padding: 5px;
+            font-size: 1.5rem;
+            margin-right: 15px;
+            border: 1px solid rgba(248, 156, 150, 0.2);
+            border-radius: 50px;
+            background: rgba(248, 156, 150, 0.2);
+          }
+
+          ion-label {
+            font-size: 1rem;
+            font-weight: 500;
+
+            ion-text {
+              //font-size: 1rem;
+            }
+
+            p {
+              ion-text {
+                font-size: 0.8rem !important;
+                font-weight: bold;
+                text-shadow: 0 0 2px grey;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
