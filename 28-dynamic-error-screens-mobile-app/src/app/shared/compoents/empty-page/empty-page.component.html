@@ -1,0 +1,50 @@
+<div class="image-container" [style.background-image]="'url('+ model()?.background +')'">
+  <ion-grid [class]="model()?.centerAlign ? 'ion-text-center' : 'ion-align-items-center'">
+    <ion-row>
+      <ion-col [offset]="!model()?.centerAlign ? '1' : '0'">
+        @if (model()?.iconName) {
+          <p>
+            <ion-icon
+              class="icon"
+              name="{{ model()?.iconName }}"
+              [color]="model()?.titleColor ? model()?.titleColor:'light'">
+            </ion-icon>
+          </p>
+        }
+
+        @if (model()?.title) {
+          <ion-label class="main-title" [color]="model()?.titleColor ? model()?.titleColor:'light'">{{ model()?.title }}
+          </ion-label>
+        }
+
+        @if (model()?.subtitle) {
+          <p class="sub-title">
+            <ion-text [color]="model()?.titleColor ? model()?.titleColor:'light'">
+              {{ model()?.subtitle }}
+            </ion-text>
+          </p>
+        }
+
+        @if (model()?.description) {
+          <p class="description">
+            <ion-text [color]="model()?.color ? model()?.color:'light'">
+              {{ model()?.description }}
+            </ion-text>
+          </p>
+        }
+      </ion-col>
+    </ion-row>
+
+    @if (model()?.button) {
+      <ion-row class="ion-margin-top">
+        <ion-col [offset]="!model()?.centerAlign ? '1' : '0'">
+          <ion-button shape="round" [color]="model()?.buttonColor ? model()?.buttonColor:'light'">
+            <ion-text [class]="model()?.centerAlign ? 'ion-margin-horizontal ion-padding-horizontal' : ''">
+              {{ model()?.button }}
+            </ion-text>
+          </ion-button>
+        </ion-col>
+      </ion-row>
+    }
+  </ion-grid>
+</div>

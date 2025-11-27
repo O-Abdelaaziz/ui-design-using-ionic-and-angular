@@ -5,10 +5,24 @@ import {
   IonAvatar,
   IonBackButton,
   IonButton,
-  IonButtons, IonCol,
-  IonContent, IonFab, IonFabButton, IonFooter, IonGrid,
-  IonHeader, IonIcon, IonImg, IonInput, IonItem, IonItemGroup, IonLabel, IonList, IonListHeader, IonRow, IonText,
-  IonTitle,
+  IonButtons,
+  IonCol,
+  IonContent,
+  IonFab,
+  IonFabButton,
+  IonFooter,
+  IonGrid,
+  IonHeader,
+  IonIcon,
+  IonImg,
+  IonInput,
+  IonItem,
+  IonItemGroup,
+  IonLabel,
+  IonList,
+  IonListHeader,
+  IonRow,
+  IonText,
   IonToolbar
 } from '@ionic/angular/standalone';
 import {RouterLink} from "@angular/router";
@@ -21,7 +35,7 @@ import {Capacitor} from "@capacitor/core";
   templateUrl: './sign-up.page.html',
   styleUrls: ['./sign-up.page.scss'],
   standalone: true,
-  imports: [IonContent, IonHeader, IonTitle, IonToolbar, CommonModule, FormsModule, IonBackButton, IonButton, IonButtons, IonCol, IonFooter, IonGrid, IonIcon, IonImg, IonInput, IonItem, IonItemGroup, IonLabel, IonList, IonListHeader, IonRow, IonText, ReactiveFormsModule, RouterLink, IonAvatar, IonFab, IonFabButton]
+  imports: [IonContent, IonHeader, IonToolbar, CommonModule, FormsModule, IonBackButton, IonButton, IonButtons, IonCol, IonFooter, IonGrid, IonIcon, IonImg, IonInput, IonItem, IonItemGroup, IonLabel, IonList, IonListHeader, IonRow, IonText, ReactiveFormsModule, RouterLink, IonAvatar, IonFab, IonFabButton]
 })
 export class SignUpPage implements OnInit {
 

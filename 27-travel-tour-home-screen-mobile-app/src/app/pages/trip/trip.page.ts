@@ -3,11 +3,21 @@ import {CommonModule} from '@angular/common';
 import {FormsModule} from '@angular/forms';
 import {
   IonButton,
-  IonButtons, IonCol,
+  IonButtons,
+  IonCol,
   IonContent,
-  IonFabButton, IonFooter, IonGrid,
-  IonHeader, IonIcon, IonItem, IonLabel, IonRow, IonSegment, IonSegmentButton, IonText, IonThumbnail,
-  IonTitle,
+  IonFabButton,
+  IonFooter,
+  IonGrid,
+  IonHeader,
+  IonIcon,
+  IonItem,
+  IonLabel,
+  IonRow,
+  IonSegment,
+  IonSegmentButton,
+  IonText,
+  IonThumbnail,
   IonToolbar,
   NavController
 } from '@ionic/angular/standalone';
@@ -29,7 +39,7 @@ import {
   templateUrl: './trip.page.html',
   styleUrls: ['./trip.page.scss'],
   standalone: true,
-  imports: [IonContent, IonHeader, IonTitle, IonToolbar, CommonModule, FormsModule, IonButtons, IonFabButton, IonIcon, IonLabel, IonText, IonThumbnail, RouterLink, IonSegment, IonSegmentButton, IonGrid, IonCol, IonRow, IonItem, IonFooter, IonButton]
+  imports: [IonContent, IonHeader, IonToolbar, CommonModule, FormsModule, IonButtons, IonFabButton, IonIcon, IonLabel, IonText, IonThumbnail, RouterLink, IonSegment, IonSegmentButton, IonGrid, IonCol, IonRow, IonItem, IonFooter, IonButton]
 })
 export class TripPage implements OnInit {
   public _navController = inject(NavController);

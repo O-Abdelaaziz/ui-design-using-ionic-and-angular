@@ -1,14 +1,16 @@
-import {Component, CUSTOM_ELEMENTS_SCHEMA, ElementRef, OnInit, ViewChild, viewChild} from '@angular/core';
+import {Component, CUSTOM_ELEMENTS_SCHEMA, ElementRef, OnInit, ViewChild} from '@angular/core';
 import {CommonModule} from '@angular/common';
 import {FormsModule} from '@angular/forms';
 import {
-  IonButton, IonCol,
-  IonContent, IonFooter, IonGrid,
-  IonHeader,
+  IonButton,
+  IonCol,
+  IonContent,
+  IonFooter,
+  IonGrid,
   IonImg,
   IonLabel,
-  IonRow, IonText,
-  IonTitle,
+  IonRow,
+  IonText,
   IonToolbar
 } from '@ionic/angular/standalone';
 import {register} from 'swiper/element/bundle';
@@ -21,7 +23,7 @@ register();
   templateUrl: './welcome.page.html',
   styleUrls: ['./welcome.page.scss'],
   standalone: true,
-  imports: [IonContent, IonHeader, IonTitle, IonToolbar, CommonModule, FormsModule, IonImg, IonRow, IonLabel, IonButton, IonFooter, IonCol, IonGrid, IonText, RouterLink],
+  imports: [IonContent, IonToolbar, CommonModule, FormsModule, IonImg, IonRow, IonLabel, IonButton, IonFooter, IonCol, IonGrid, IonText, RouterLink],
   schemas: [CUSTOM_ELEMENTS_SCHEMA]
 })
 export class WelcomePage implements OnInit {

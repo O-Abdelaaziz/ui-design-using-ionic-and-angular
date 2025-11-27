@@ -1,13 +1,25 @@
 import {Component, inject, OnInit} from '@angular/core';
 import {CommonModule} from '@angular/common';
-import {FormControl, FormGroup, FormsModule, ReactiveFormsModule, Validators} from '@angular/forms';
+import {FormControl, FormGroup, ReactiveFormsModule, Validators} from '@angular/forms';
 import {
   IonBackButton,
   IonButton,
-  IonButtons, IonCol,
-  IonContent, IonFooter, IonGrid,
-  IonHeader, IonIcon, IonImg, IonInput, IonItem, IonItemGroup, IonLabel, IonList, IonListHeader, IonRow, IonText,
-  IonTitle,
+  IonButtons,
+  IonCol,
+  IonContent,
+  IonFooter,
+  IonGrid,
+  IonHeader,
+  IonIcon,
+  IonImg,
+  IonInput,
+  IonItem,
+  IonItemGroup,
+  IonLabel,
+  IonList,
+  IonListHeader,
+  IonRow,
+  IonText,
   IonToolbar
 } from '@ionic/angular/standalone';
 import {Router, RouterLink} from "@angular/router";
@@ -19,7 +31,7 @@ import {key, logoFacebook, logoGoogle, logoLinkedin, logoTwitter, mail} from "io
   templateUrl: './sign-in.page.html',
   styleUrls: ['./sign-in.page.scss'],
   standalone: true,
-  imports: [CommonModule, ReactiveFormsModule, IonContent, IonHeader, IonTitle, IonToolbar, IonButtons, IonBackButton, IonButton, IonCol, IonGrid, IonImg, IonLabel, IonRow, IonText, IonFooter, IonList, IonListHeader, IonItemGroup, IonItem, IonInput, RouterLink, IonIcon]
+  imports: [CommonModule, ReactiveFormsModule, IonContent, IonHeader, IonToolbar, IonButtons, IonBackButton, IonButton, IonCol, IonGrid, IonImg, IonLabel, IonRow, IonText, IonFooter, IonList, IonListHeader, IonItemGroup, IonItem, IonInput, RouterLink, IonIcon]
 })
 export class SignInPage implements OnInit {
 

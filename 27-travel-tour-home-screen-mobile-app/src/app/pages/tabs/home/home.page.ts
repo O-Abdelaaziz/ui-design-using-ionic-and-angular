@@ -2,22 +2,33 @@ import {Component, CUSTOM_ELEMENTS_SCHEMA, OnInit} from '@angular/core';
 import {CommonModule} from '@angular/common';
 import {FormsModule} from '@angular/forms';
 import {
-  IonAvatar, IonBadge,
+  IonAvatar,
+  IonBadge,
   IonButton,
-  IonButtons, IonCard, IonCardContent, IonCardHeader, IonCardSubtitle, IonCardTitle, IonChip, IonCol,
-  IonContent, IonFabButton, IonGrid,
+  IonButtons,
+  IonChip,
+  IonCol,
+  IonContent,
+  IonFabButton,
+  IonGrid,
   IonHeader,
-  IonIcon, IonImg, IonItem, IonLabel, IonRow, IonSearchbar, IonText, IonThumbnail,
+  IonIcon,
+  IonImg,
+  IonItem,
+  IonLabel,
+  IonRow,
+  IonSearchbar,
   IonTitle,
   IonToolbar
 } from '@ionic/angular/standalone';
 import {addIcons} from "ionicons";
 import {
   chevronDownOutline,
-  chevronForwardOutline, heart,
+  chevronForwardOutline,
+  heart,
   heartOutline,
-  notifications,
-  notificationsOutline, searchOutline
+  notificationsOutline,
+  searchOutline
 } from "ionicons/icons";
 import {register} from "swiper/element/bundle";
 import {RouterLink} from "@angular/router";
@@ -29,7 +40,7 @@ register()
   templateUrl: './home.page.html',
   styleUrls: ['./home.page.scss'],
   standalone: true,
-  imports: [IonContent, IonHeader, IonTitle, IonToolbar, CommonModule, FormsModule, IonButtons, IonButton, IonIcon, IonAvatar, IonImg, IonGrid, IonCol, IonRow, IonLabel, IonSearchbar, IonCard, IonCardHeader, IonCardTitle, IonCardContent, IonCardSubtitle, IonItem, IonThumbnail, IonBadge, IonChip, IonText, IonFabButton, RouterLink],
+  imports: [IonContent, IonHeader, IonTitle, IonToolbar, CommonModule, FormsModule, IonButtons, IonButton, IonIcon, IonAvatar, IonImg, IonGrid, IonCol, IonRow, IonLabel, IonSearchbar, IonItem, IonBadge, IonChip, IonFabButton, RouterLink],
   schemas: [CUSTOM_ELEMENTS_SCHEMA],
 })
 export class HomePage implements OnInit {
@@ -66,12 +77,14 @@ export class HomePage implements OnInit {
       price: '5K',
       isFavorite: false
     },
-    {id: 4,
+    {
+      id: 4,
       name: 'Tarsar Lake',
       category: 'Lake',
       image: 'assets/images/trip-03.jpg',
       price: '15K',
-      isFavorite: false},
+      isFavorite: false
+    },
   ];
 
   constructor() {

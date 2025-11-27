@@ -1,0 +1,7 @@
+{
+  "name": "28-dynamic-error-screens-mobile-app",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular-standalone"
+}
