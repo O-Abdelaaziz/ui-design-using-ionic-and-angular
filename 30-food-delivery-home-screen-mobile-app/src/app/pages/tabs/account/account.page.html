@@ -1,0 +1,32 @@
+<ion-header>
+  <ion-toolbar color="white">
+    <ion-item lines="none">
+      <ion-label color="primary">
+        Ouakala Abdelaaziz
+        <p>
+          <ion-text color="dark">
+            a.ouakala | +213100000000
+          </ion-text>
+        </p>
+      </ion-label>
+    </ion-item>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+
+  <ion-list lines="none">
+    <ion-item class="ion-margin-bottom" [detail]="true" *ngFor="let item of options">
+      <ion-avatar slot="start" class="ion-text-center">
+        @if (item?.img) {
+          <img [src]="'assets/images/' + item?.img" [alt]="item?.name">
+        }
+        @if (item?.icon) {
+          <ion-icon [name]="item?.icon" [color]="item?.color || 'dark'"></ion-icon>
+        }
+      </ion-avatar>
+      <ion-label>{{ item?.name }}</ion-label>
+    </ion-item>
+  </ion-list>
+
+</ion-content>

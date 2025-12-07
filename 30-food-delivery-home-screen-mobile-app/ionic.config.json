@@ -1,0 +1,7 @@
+{
+  "name": "30-food-delivery-home-screen-mobile-app",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular-standalone"
+}

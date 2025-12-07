@@ -1,0 +1,137 @@
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-buttons slot="start">
+      <ion-avatar>
+        <img src="assets/images/avatar.jpg" alt="avatar"/>
+      </ion-avatar>
+    </ion-buttons>
+    <ion-title class="ion-no-padding">
+      <ion-label>
+        <ion-text color="white">You are here</ion-text>
+        <p>
+          O.Abdelaaziz
+          <ion-icon color="white" name="chevron-down-outline"></ion-icon>
+        </p>
+      </ion-label>
+    </ion-title>
+    <ion-buttons slot="end">
+      <ion-button>
+        <ion-badge color="danger">&#9679;</ion-badge>
+        <ion-icon name="cart" color="white"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+
+<!--  <ion-grid>-->
+<!--    <ion-row class="ion-no-padding">-->
+<!--      <ion-col size="12" size-md="6" size-lg="4">-->
+<!--        <swiper-container class="banners">-->
+<!--          @for (banner of banners; track $index) {-->
+<!--            <swiper-slide>-->
+<!--              <img [src]="banner.banner" alt="banner"/>-->
+<!--            </swiper-slide>-->
+<!--          }-->
+<!--        </swiper-container>-->
+<!--      </ion-col>-->
+<!--    </ion-row>-->
+<!--  </ion-grid>-->
+
+  <ion-grid>
+    <ion-row class="ion-justify-content-center">
+      <ion-col size="12" size-md="8" size-lg="6">
+        <swiper-container
+          class="banner-carousel"
+          [pagination]="true"
+          [autoplay]="{ delay: 3000 }"
+          [loop]="true"
+          [spaceBetween]="16">
+          @for (banner of banners; track $index) {
+            <swiper-slide>
+              <div class="banner-slide">
+                <img
+                  [src]="banner.banner"
+                  [alt]="'Banner ' + ($index + 1)"
+                  loading="lazy" />
+              </div>
+            </swiper-slide>
+          }
+        </swiper-container>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+
+  <div class="topic">
+    What would you like to do today?
+  </div>
+
+<!--  <ion-grid>-->
+<!--    <ion-row>-->
+<!--      <ion-col size="3">-->
+<!--        <ion-card>-->
+<!--          <ion-thumbnail>-->
+<!--            <img [src]="'assets/images/package.png'" alt="package"/>-->
+<!--          </ion-thumbnail>-->
+<!--          <ion-label class="ion-text-wrap ion-text-center">Send Packages</ion-label>-->
+<!--        </ion-card>-->
+<!--      </ion-col>-->
+
+<!--      @for (store of storeTypes; track $index) {-->
+<!--        <ion-col size="3">-->
+<!--          <ion-card>-->
+<!--            <ion-thumbnail>-->
+<!--              <img [src]="'assets/images/' + store?.icon"/>-->
+<!--            </ion-thumbnail>-->
+<!--            <ion-label class="ion-text-wrap ion-text-center">{{ store?.name }}</ion-label>-->
+<!--          </ion-card>-->
+<!--        </ion-col>-->
+<!--      }-->
+<!--      <ion-col size="3">-->
+<!--        <ion-card>-->
+<!--          <ion-thumbnail>-->
+<!--            <img [src]="'assets/images/shop.png'" alt="shop"/>-->
+<!--          </ion-thumbnail>-->
+<!--          <ion-label class="ion-text-wrap ion-text-center">Any Store in City</ion-label>-->
+<!--        </ion-card>-->
+<!--      </ion-col>-->
+<!--    </ion-row>-->
+<!--  </ion-grid>-->
+
+  <ion-grid class="store-types-grid">
+    <ion-row class="ion-justify-content-center">
+      <!-- Send Packages Card -->
+      <ion-col size="6" size-md="3" size-lg="2">
+        <div class="store-type-card">
+          <div class="icon-container">
+            <img src="assets/images/package.png" alt="Send Packages" loading="lazy" />
+          </div>
+          <ion-text class="store-type-label">Send Packages</ion-text>
+        </div>
+      </ion-col>
+
+      <!-- Dynamic Store Types -->
+      @for (store of storeTypes; track $index) {
+        <ion-col size="6" size-md="3" size-lg="2">
+          <div class="store-type-card" [class.active]="selectedStoreType === store.id" (click)="selectStoreType(store.id)">
+            <div class="icon-container">
+              <img [src]="'assets/images/' + store?.icon" [alt]="store?.name + ' icon'" loading="lazy" />
+            </div>
+            <ion-text class="store-type-label">{{ store?.name }}</ion-text>
+          </div>
+        </ion-col>
+      }
+
+      <!-- Any Store in City Card -->
+      <ion-col size="6" size-md="3" size-lg="2">
+        <div class="store-type-card">
+          <div class="icon-container">
+            <img src="assets/images/shop.png" alt="Any Store in City" loading="lazy" />
+          </div>
+          <ion-text class="store-type-label">Any Store in City</ion-text>
+        </div>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-content>

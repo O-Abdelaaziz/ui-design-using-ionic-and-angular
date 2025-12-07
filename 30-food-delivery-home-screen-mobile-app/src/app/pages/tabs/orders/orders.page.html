@@ -1,0 +1,127 @@
+<ion-header>
+  <ion-toolbar color="primary" mode="md">
+    <ion-title>Orders</ion-title>
+    <ion-buttons slot="end">
+      <ion-button color="white">
+        <ion-icon name="search" slot="icon-only"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content color="primary">
+
+  <ion-list>
+    <ion-list-header mode="md" color="light" class="ion-margin-vertical">
+      PAST ORDERS
+    </ion-list-header>
+
+    <div>
+      <ion-item lines="none" [detail]="true" class="type">
+        <ion-thumbnail slot="start">
+          <img src="assets/images/package.png" alt="package"/>
+        </ion-thumbnail>
+        <ion-label>
+          Send Packages
+          <p>
+            <ion-text>
+              Jan 7, 2025
+            </ion-text>
+          </p>
+        </ion-label>
+      </ion-item>
+
+      <ion-row class="pickdrop">
+        <ion-col size="6" class="pick">
+          <ion-item lines="none">
+            <ion-thumbnail slot="start">
+              <img src="assets/images/marker_pick.png" alt="marker_pick"/>
+            </ion-thumbnail>
+            <ion-label>12/24, Us Los Angeles, CA</ion-label>
+          </ion-item>
+        </ion-col>
+        <ion-col size="6">
+          <ion-item lines="none">
+            <ion-thumbnail slot="start">
+              <img src="assets/images/marker.png" alt="marker"/>
+            </ion-thumbnail>
+            <ion-label>13/12, Algeria Algeria, Algeria</ion-label>
+          </ion-item>
+        </ion-col>
+      </ion-row>
+
+      <ion-row class="ion-padding amount">
+        <ion-text color="dark">Paid$
+          <ion-text color="primary">250.00</ion-text>
+        </ion-text>
+      </ion-row>
+
+      <ion-row class="reorder">
+        <ion-col size="6">
+          <ion-button fill="clear">
+            <ion-icon color="primary" name="checkmark-circle" slot="start"></ion-icon>
+            <ion-text color="dark">Completed</ion-text>
+          </ion-button>
+        </ion-col>
+        <ion-col size="6">
+          <ion-button shape="round" expand="block">
+            <ion-text>Reorder</ion-text>
+          </ion-button>
+        </ion-col>
+      </ion-row>
+    </div>
+
+    <!--  items order  -->
+    <div>
+      <ion-item lines="none" [detail]="true" class="type">
+        <ion-thumbnail slot="start">
+          <img src="assets/images/shop2.jpg" alt="shop2"/>
+        </ion-thumbnail>
+        <ion-label>
+          Restaurant
+          <p>
+            <ion-text>
+              Vasantkunj, Delhi
+            </ion-text>
+          </p>
+          <p>
+            <ion-text>
+              Jan 8, 2022
+            </ion-text>
+          </p>
+        </ion-label>
+      </ion-item>
+
+      <div class="items">
+        <ion-row *ngFor="let item of [1,2]">
+          <ion-text color="dark">
+            <img src="assets/images/location.png"/>
+            <ion-text>Rasgulla x 2</ion-text>
+          </ion-text>
+        </ion-row>
+      </div>
+
+      <ion-row class="ion-padding amount">
+        <ion-text color="dark">Paid $
+          <ion-text color="primary">250.00</ion-text>
+        </ion-text>
+      </ion-row>
+
+      <ion-row class="reorder">
+        <ion-col size="6">
+          <ion-button fill="clear">
+            <ion-icon color="primary" name="checkmark-circle" slot="start"></ion-icon>
+            <ion-text color="dark">Completed</ion-text>
+          </ion-button>
+        </ion-col>
+        <ion-col size="6">
+          <ion-button shape="round" expand="block">
+            <ion-text>Reorder</ion-text>
+          </ion-button>
+        </ion-col>
+      </ion-row>
+
+    </div>
+  </ion-list>
+
+</ion-content>

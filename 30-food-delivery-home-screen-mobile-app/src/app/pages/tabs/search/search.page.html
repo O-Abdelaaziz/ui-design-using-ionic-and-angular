@@ -1,0 +1,47 @@
+<ion-header class="ion-padding-top">
+  <ion-toolbar color="white" mode="ios">
+    <ion-searchbar
+      [animated]="true"
+      debounce="800"
+      #searchInput
+      placeholder="Search for items, stores..."
+      (ionChange)="onSearchChange($event)"></ion-searchbar>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  @if (shops.length > 0) {
+    <ng-container>
+      <ion-list lines="none">
+        @for (store of shops; track $index) {
+          <ion-item class="ion-margin-top">
+            <ion-thumbnail slot="start">
+              <img [src]="'assets/images/' + store?.img" [alt]="store?.name"/>
+            </ion-thumbnail>
+            <ion-label>
+              <ion-text>{{ store?.name }}</ion-text>
+              @if (store?.categories) {
+                <p>
+                  <ion-text>
+                    {{ getCategories(store?.categories) }}
+                  </ion-text>
+                </p>
+              }
+              <p>
+                <ion-text>
+                  {{ store?.location }}
+                </ion-text>
+              </p>
+              <p>
+                <ion-text>
+                  <ion-icon name="time"></ion-icon>
+                  {{ store?.delivery_time }} MINS
+                </ion-text>
+              </p>
+            </ion-label>
+          </ion-item>
+        }
+      </ion-list>
+    </ng-container>
+  }
+</ion-content>
