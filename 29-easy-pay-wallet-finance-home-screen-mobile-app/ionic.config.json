@@ -1,0 +1,7 @@
+{
+  "name": "29-easy-pay-wallet-finance-home-screen-mobile-app",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular-standalone"
+}

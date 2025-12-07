@@ -75,7 +75,7 @@ ui-design-using-ionic-and-angular/
 ├── 03-pet-finder-mobile-app/
 ├── 04-car-selling-mobile-app/
 ├── ...
-├── 28-dynamic-error-screens-mobile-app/
+├── 29-easy-pay-wallet-finance-home-screen-mobile-app/
 ├── screenshots/
 └── README.md
 ```
@@ -171,7 +171,9 @@ Find preview images for each UI example in the **screenshots/** directory.
 | **26. Instagram Clone Home (Screen 5 Custom tabs-02)** <br> <img src="screenshots/26-05.png" width="200"> | **26. Instagram Clone Home (Screen 6 Custom tabs-03)** <br> <img src="screenshots/26-06.png" width="200"> | **27. Travel Tour Home (Screen 1)** <br> <img src="screenshots/27-01.png" width="200"> |
 | **27. Travel Tour Home (GIF)** <br> <img src="screenshots/27-01.gif" width="200"> | **27. Travel Tour Home (Screen 2)** <br> <img src="screenshots/27-02.png" width="200"> | **27. Travel Tour Home (Screen 3)** <br> <img src="screenshots/27-03.png" width="200"> |
 | **27. Travel Tour Home (Screen 4)** <br> <img src="screenshots/27-04.png" width="200"> | **27. Travel Tour Home (Screen 5)** <br> <img src="screenshots/27-05.png" width="200"> | **27. Travel Tour Home (Screen 6)** <br> <img src="screenshots/27-06.png" width="200"> |
-| **28. Dynamic Error Screens (Screen 1)** <br> <img src="screenshots/28-01.png" width="200"> | **28. Dynamic Error Screens (GIF)** <br> <img src="screenshots/28-02.gif" width="200"> | Coming Soon 👌 |
+| **28. Dynamic Error Screens (Screen 1)** <br> <img src="screenshots/28-01.png" width="200"> | **28. Dynamic Error Screens (GIF)** <br> <img src="screenshots/28-02.gif" width="200"> | **29. Wallet Finance Screens (Screen 1)** <br> <img src="screenshots/29-01.png" width="200"> |
+| **29. Wallet Finance Screens (Screen 2)** <br> <img src="screenshots/29-02.png" width="200"> | **29. Wallet Finance Screens (Screen 3)** <br> <img src="screenshots/29-03.png" width="200"> | **29. Wallet Finance Screens (Screen 4)** <br> <img src="screenshots/29-04.png" width="200"> |
+| Coming Soon 👌 | Coming Soon 👌 | Coming Soon 👌 |
 
 [⬆ back to top](#ui-design-using-ionic-and-angular)
 

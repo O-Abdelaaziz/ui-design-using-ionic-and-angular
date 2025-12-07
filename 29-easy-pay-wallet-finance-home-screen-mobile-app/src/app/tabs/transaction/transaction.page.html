@@ -1,0 +1,46 @@
+<ion-header [translucent]="true">
+  <ion-toolbar color="primary" class="ion-text-center ion-text-capitalize">
+    <ion-title>transaction</ion-title>
+  </ion-toolbar>
+  <ion-toolbar color="primary" class="ion-padding">
+    <ion-segment mode="ios" [value]="segmentValue" (ionChange)="segmentChanged($event)">
+      <ion-segment-button value="all">
+        <ion-label>All</ion-label>
+      </ion-segment-button>
+      <ion-segment-button value="income">
+        <ion-label>Income</ion-label>
+      </ion-segment-button>
+      <ion-segment-button value="expense">
+        <ion-label>Expense</ion-label>
+      </ion-segment-button>
+    </ion-segment>
+  </ion-toolbar>
+
+</ion-header>
+
+<ion-content [fullscreen]="true" class="ion-padding" color="secondary">
+  @if(transactions.length > 0){
+    <ion-list class="transactions">
+      <ion-item-group>
+        @for(transaction of transactions; track $index){
+        <ion-item lines="full">
+          <ion-thumbnail slot="start" class="ion-text-center">
+            <img [src]="'assets/images/' + (transaction?.amount >= 0 ? 'up-right.png' : 'down-left-arrow.png')" />
+          </ion-thumbnail>
+          <ion-label>
+            <ion-text color="primary">{{transaction?.to}}</ion-text>
+            <p>
+              <ion-text>
+                {{transaction?.date | date: 'MMM d, y'}}
+              </ion-text>
+            </p>
+          </ion-label>
+          <ion-text slot="end" color="primary">
+            {{transaction?.amount >= 0 ? '$' + transaction?.amount : '-$' + (transaction?.amount * (-1))}}
+          </ion-text>
+        </ion-item>
+        }
+      </ion-item-group>
+    </ion-list>
+  }
+</ion-content>

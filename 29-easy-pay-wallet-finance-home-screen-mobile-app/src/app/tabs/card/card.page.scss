@@ -1,0 +1,96 @@
+ion-content {
+  .bg_circle {
+    position: absolute;
+    width: 33vh;
+    height: 33vh;
+    left: -8rem;
+    top: 7vh;
+    border-radius: 50%;
+    background: rgba(117, 254, 172, 0.72);
+  }
+
+  ion-row {
+    margin: 5vh 1rem 6vh 1rem;
+    swiper-container {
+      height: 37vh;
+      div.card_details {
+        text-align: center;
+        height: 32vh;
+        border-radius: 2.5rem;
+        padding: 0 1.5rem;
+        background: rgba(255, 255, 255, 0.05);
+        backdrop-filter: blur(30px);
+        border: 2px solid rgba(127, 212, 168, 0.2);
+        img {
+          align-self: start;
+          width: 2.5rem;
+          margin: 2rem 0 2rem 0;
+        }
+        ion-label {
+          div.acc-amt {
+            margin: 0.2rem 0;
+            font-size: 1.5rem;
+            font-weight: 700;
+          }
+          span {
+            font-size: 1.1rem;
+            font-weight: 500;
+          }
+        }
+        p.exp {
+          font-size: 1rem;
+          font-weight: 500;
+          align-self: start;
+          margin: 2rem 0;
+        }
+      }
+    }
+  }
+
+  ion-list.transactions {
+    border-radius: 8vh 8vh 0 0;
+    background: var(--ion-color-secondary);
+    padding-bottom: 15.69vh;
+    ion-list-header {
+      padding-inline-start: 3.5vh;
+    }
+    ion-list-header, ion-item {
+      ion-label {
+        font-size: 1.1rem;
+      }
+    }
+
+    ion-item-group {
+      padding: 0 3.5vh;
+      ion-item {
+        font-weight: bold;
+        --background: transparent;
+        --border-style: dashed;
+        --border-color: var(--ion-color-tertiary);
+        --padding-bottom: 1rem;
+        --padding-top: 1rem;
+        --padding-start: 0;
+        ion-text[slot="end"] {
+          font-size: 1rem;
+        }
+        p {
+          font-size: 0.9rem;
+          font-weight: normal;
+          margin-top: 3px;
+        }
+        ion-thumbnail {
+          height: 6vh;
+          width: 6vh;
+          border-radius: 10px;
+          background: var(--ion-color-white);
+          box-shadow: 0 3px 6px rgb(3 181 170 / 4%);
+          img {
+            height: 4vh;
+            width: 4vh;
+            transform: translateY(25%);
+          }
+        }
+      }
+    }
+  }
+}
