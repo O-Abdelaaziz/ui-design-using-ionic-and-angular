@@ -1,0 +1,223 @@
+ion-content {
+  ion-item.cart-items {
+    align-items: center;
+
+    ion-label {
+      margin: 0;
+      font-size: 0.89rem;
+      font-weight: 600;
+    }
+
+    ion-button {
+      ion-icon {
+        font-size: 1rem;
+      }
+    }
+  }
+
+  ion-card.cart-item {
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+
+    ion-item {
+      //--padding-start: 0;
+      //--padding-end: 0;
+      //--padding-top: 0;
+      //--padding-bottom: 0;
+      //--background: var(--ion-color-light);
+      //--padding-start: 0.5rem;
+      //--inner-padding-end: 0.5rem;
+      --padding-start: 0;
+      --inner-padding-end: 0;
+
+      ion-thumbnail {
+        width: 5rem;
+        height: 5rem;
+        margin: 0 16px 0 0;
+
+        img {
+          width: 100%;
+          height: 100%;
+          object-fit: cover;
+          border-radius: 0.5rem;
+          box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+      }
+
+      ion-label {
+        margin: 0;
+        font-size: 0.89rem;
+        font-weight: 600;
+
+        p.price {
+          margin-top: 10px;
+          font-size: 0.89rem;
+          font-weight: 600;
+
+          ion-text {
+            font-size: 0.89rem;
+            font-weight: 600;
+
+            span {
+              font-size: 0.75rem;
+              font-weight: 600;
+            }
+          }
+        }
+      }
+
+      ion-col {
+        padding: 0;
+        margin: 0;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+
+        ion-row {
+          ion-button {
+            margin: 0;
+            background-color: var(--ion-color-light);
+            border-radius: 5px;
+          }
+        }
+      }
+    }
+  }
+
+  //ion-list.billing {
+  //  margin-top: 2rem;
+  //  background: transparent;
+  //
+  //  ion-list-header {
+  //    --background: transparent;
+  //    --padding-start: 0;
+  //    --padding-end: 0;
+  //    --padding-top: 0;
+  //    --padding-bottom: 0;
+  //    margin-bottom: 1rem;
+  //
+  //    ion-label {
+  //      font-size: 1rem;
+  //      font-weight: 600;
+  //    }
+  //  }
+  //
+  //  ion-item {
+  //    --background: transparent;
+  //    //--padding-start: 0;
+  //    //--padding-end: 0;
+  //    //--inner-padding-end: 0;
+  //    --min-height: 2.5rem;
+  //
+  //    ion-label, ion-text {
+  //      font-size: 0.9rem;
+  //    }
+  //  }
+  //
+  //  .dashed-border-top{
+  //    border-top: 1px dashed var(--ion-color-medium);
+  //    margin-top: 0.5rem;
+  //    padding-top: 0.5rem;
+  //  }
+  //}
+
+
+  ion-list.billing {
+    background: transparent;
+
+    ion-list-header {
+      font-size: 1rem;
+      margin-bottom: 0.5rem;
+    }
+
+    ion-item-group {
+      margin-left: 1rem;
+      margin-right: 1rem;
+      border: 1px solid var(--ion-color-medium);
+      border-radius: 8px;
+
+      ion-item {
+        --background: transparent;
+
+        ion-label,
+        ion-text {
+          font-size: 0.9rem;
+        }
+      }
+    }
+
+    .dashed-border-top {
+      border-top: 1px dashed var(--ion-color-medium);
+    }
+  }
+
+  .coupon-item {
+
+    --min-height: 60px;
+    --border-radius: 8px;
+    //margin: 8px 0;
+    border: 1px dashed var(--ion-color-success);
+    --background: rgba(var(--ion-color-success-rgb), 0.05);
+
+    ion-icon {
+      font-size: 1.5rem;
+    }
+
+    ion-text {
+      font-weight: 600;
+    }
+  }
+
+  // Add these styles to cart.page.scss
+  .address-details {
+    --padding-start: 0;
+    --inner-padding-end: 0;
+    --background: var(--ion-color-light);
+    border-radius: 8px;
+    margin: 8px 0;
+    padding: 12px;
+
+    ion-icon {
+      margin-right: 12px;
+      font-size: 24px;
+    }
+
+    h3 {
+      font-weight: 600;
+      margin-bottom: 4px;
+      color: var(--ion-color-dark);
+    }
+
+    p {
+      margin: 4px 0;
+      color: var(--ion-color-medium);
+      font-size: 0.9rem;
+      line-height: 1.4;
+    }
+
+    ion-badge {
+      margin-top: 8px;
+    }
+  }
+
+  //// Style the add address button
+  //ion-item[button] {
+  //  --background: var(--ion-color-light);
+  //  --border-radius: 8px;
+  //  --padding-start: 16px;
+  //  --padding-end: 16px;
+  //  margin: 8px 0;
+  //
+  //  ion-icon {
+  //    margin-right: 12px;
+  //    font-size: 24px;
+  //  }
+  //}
+}
+
+ion-footer {
+  ion-toolbar {
+    --background: transparent;
+  }
+}

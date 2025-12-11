@@ -1,0 +1,126 @@
+<!--<ion-content [fullscreen]="true">-->
+<!--  <ion-card>-->
+<!--    <div class="logo ion-text-center">-->
+<!--      <ion-icon name="gift"></ion-icon>-->
+<!--      <h1>Gift <span>Store</span></h1>-->
+<!--    </div>-->
+<!--    <form [formGroup]="loginForm" class="ion-margin-horizontal">-->
+<!--      <ion-input-->
+<!--        formControlName="email"-->
+<!--        type="email"-->
+<!--        placeholder="Email"-->
+<!--        color="primary"-->
+<!--        errorText="Please enter a valid email"-->
+<!--        class="ion-margin-bottom"-->
+<!--      >-->
+<!--        <ion-icon slot="start" name="mail"></ion-icon>-->
+<!--      </ion-input>-->
+
+<!--      <ion-input-->
+<!--        formControlName="password"-->
+<!--        type="password"-->
+<!--        placeholder="Password"-->
+<!--        color="primary"-->
+<!--        errorText="Please enter a valid password"-->
+<!--        class="ion-margin-bottom"-->
+<!--      >-->
+<!--        <ion-icon slot="start" name="lock"></ion-icon>-->
+<!--        <ion-input-password-toggle slot="end" formControlName="password"></ion-input-password-toggle>-->
+<!--      </ion-input>-->
+
+<!--      <div align="right" class="ion-margin-bottom forgot-password">-->
+<!--        <ion-button fill="clear" color="primary" size="small" routerLink="/home/forgot-password">-->
+<!--          Forgot Password?-->
+<!--        </ion-button>-->
+<!--      </div>-->
+
+<!--      <ion-button expand="block" fill="solid" color="primary" (click)="onLogin()">-->
+<!--        Login-->
+<!--      </ion-button>-->
+
+<!--      <div class="ion-text-center ion-margin-top sign-up">-->
+<!--        <ion-text>-->
+<!--          Don't have an account?-->
+<!--          <ion-button fill="clear" color="primary" routerLink="/home/register">-->
+<!--            Register-->
+<!--          </ion-button>-->
+<!--        </ion-text>-->
+<!--      </div>-->
+<!--    </form>-->
+<!--  </ion-card>-->
+<!--</ion-content>-->
+<!-- login.page.html -->
+<ion-content [fullscreen]="true" class="login-content">
+  <div class="login-container">
+    <div class="logo-container">
+      <div class="logo-circle">
+        <ion-icon name="gift" class="logo-icon"></ion-icon>
+      </div>
+      <h1>Welcome Back</h1>
+      <p>Sign in to continue</p>
+    </div>
+
+    <form [formGroup]="loginForm" class="login-form">
+      <ion-item lines="none" class="form-input">
+        <ion-icon name="mail-outline" slot="start" class="input-icon"></ion-icon>
+        <ion-input
+          formControlName="email"
+          type="email"
+          placeholder="Email"
+          class="custom-input"
+          mode="md"
+        ></ion-input>
+      </ion-item>
+
+      <ion-item lines="none" class="form-input">
+        <ion-icon name="lock-closed-outline" slot="start" class="input-icon"></ion-icon>
+        <ion-input
+          formControlName="password"
+          type="password"
+          placeholder="Password"
+          class="custom-input"
+          mode="md"
+        ></ion-input>
+        <ion-button fill="clear" slot="end" class="password-toggle">
+          <ion-icon name="eye-outline"></ion-icon>
+        </ion-button>
+      </ion-item>
+
+      <div class="forgot-password">
+        <ion-button fill="clear" color="medium" size="small" routerLink="/forgot-password">
+          Forgot Password?
+        </ion-button>
+      </div>
+
+      <ion-button
+        expand="block"
+        shape="round"
+        class="login-button"
+        (click)="onLogin()"
+        [disabled]="!loginForm.valid">
+        Sign In
+      </ion-button>
+
+      <div class="divider">
+        <span>or continue with</span>
+      </div>
+
+      <div class="social-login">
+        <ion-button fill="outline" shape="round" class="social-button">
+          <ion-icon name="google" slot="start"></ion-icon>
+          Google
+        </ion-button>
+        <ion-button fill="outline" shape="round" class="social-button">
+          <ion-icon name="facebook" slot="start"></ion-icon>
+          Facebook
+        </ion-button>
+      </div>
+
+      <div class="signup-link">
+        <p>Don't have an account?
+          <a (click)="navigateToRegister()">Sign Up</a>
+        </p>
+      </div>
+    </form>
+  </div>
+</ion-content>

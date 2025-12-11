@@ -1,0 +1,62 @@
+<ion-content [fullscreen]="true">
+  <ion-header slot="fixed" class="ion-no-border">
+    <ion-toolbar>
+      <ion-buttons slot="start">
+        <ion-back-button mode="md" defaultHref="/home" color="dark"></ion-back-button>
+      </ion-buttons>
+    </ion-toolbar>
+  </ion-header>
+
+  <div [style.background-image]="'url(' + gift()?.cover + ')'" class="cover">
+    <div>
+      <ion-card>
+        <ion-card-header>
+          <ion-card-title>{{ gift()?.name }}</ion-card-title>
+        </ion-card-header>
+        <ion-card-content>
+          <p>{{ gift()?.description }}</p>
+          <p>{{ gift()?.price | currency }}</p>
+          <p>{{ gift()?.rating | number:'1.1-1' }} <ion-icon name="star"></ion-icon></p>
+        </ion-card-content>
+      </ion-card>
+    </div>
+  </div>
+</ion-content>
+
+
+ //ion-toolbar {
+    //  --background: transparent;
+    //  --ion-color-base: transparent !important;
+    //
+    //  ion-buttons {
+    //    background: rgba(255, 255, 255, 0.15);
+    //    border-radius: 50%;
+    //  }
+    //
+    //  ion-button {
+    //    position: relative;
+    //    margin: 8px 8px;
+    //    width: 2rem;
+    //    height: 2rem;
+    //    border-radius: 50%;
+    //
+    //    ion-badge {
+    //      position: absolute;
+    //      top: 0;
+    //      right: 0;
+    //      border-radius: 50%;
+    //      width: 1rem;
+    //      height: 1rem;
+    //      margin: -0.3rem -0.6rem 0 0;
+    //      font-size: 0.7rem;
+    //      display: flex;
+    //      align-items: center;
+    //      justify-content: center;
+    //      color: var(--ion-color-light);
+    //
+    //      ion-text {
+    //        font-size: 0.6rem;
+    //      }
+    //    }
+    //  }
+    //}

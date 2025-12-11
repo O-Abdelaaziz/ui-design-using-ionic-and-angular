@@ -3,23 +3,23 @@ import {CommonModule} from '@angular/common';
 import {FormsModule} from '@angular/forms';
 import {
   IonContent,
-  IonHeader, IonIcon,
+  IonHeader,
+  IonIcon,
   IonItem,
   IonLabel,
-  IonList, IonListHeader,
-  IonText,
-  IonTitle,
-  IonToolbar
+  IonList,
+  IonListHeader,
+  IonText
 } from '@ionic/angular/standalone';
 import {addIcons} from "ionicons";
-import {addCircle, addCircleOutline} from "ionicons/icons";
+import {addCircle} from "ionicons/icons";
 
 @Component({
   selector: 'app-wallet',
   templateUrl: './wallet.page.html',
   styleUrls: ['./wallet.page.scss'],
   standalone: true,
-  imports: [IonContent, IonHeader, IonTitle, IonToolbar, CommonModule, FormsModule, IonItem, IonList, IonLabel, IonText, IonIcon, IonListHeader]
+  imports: [IonContent, IonHeader, CommonModule, FormsModule, IonItem, IonList, IonLabel, IonText, IonIcon, IonListHeader]
 })
 export class WalletPage implements OnInit {
   transactions: any[] = [];

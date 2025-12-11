@@ -1,0 +1,159 @@
+<div class="ion-page">
+  <ion-header>
+    <ion-toolbar color="primary">
+      <ion-buttons slot="start">
+        <ion-button (click)="onCancel()">
+          <ion-icon slot="icon-only" name="close"></ion-icon>
+        </ion-button>
+      </ion-buttons>
+      <ion-title>{{ isEditMode ? 'Edit' : 'Add New' }} Address</ion-title>
+    </ion-toolbar>
+  </ion-header>
+
+  <ion-content class="ion-padding">
+    <form [formGroup]="addressForm" (ngSubmit)="onSubmit()" class="address-form">
+      <!-- Full Name -->
+      <ion-item lines="full" [class.ion-invalid]="fullName?.invalid && (fullName?.dirty || fullName?.touched)">
+        <ion-label position="floating">Full Name
+          <ion-text color="danger">*</ion-text>
+        </ion-label>
+        <ion-input formControlName="fullName" type="text" required></ion-input>
+        @if (fullName?.errors?.['required'] && (fullName?.dirty || fullName?.touched)) {
+          <ion-note slot="end">
+            Full name is required
+          </ion-note>
+        }
+      </ion-item>
+
+      <!-- Phone Number -->
+      <ion-item lines="full" [class.ion-invalid]="phone?.invalid && (phone?.dirty || phone?.touched)">
+        <ion-label position="floating">Phone Number
+          <ion-text color="danger">*</ion-text>
+        </ion-label>
+        <ion-input formControlName="phone" type="tel" required></ion-input>
+        @if (phone?.errors?.['required'] && (phone?.dirty || phone?.touched)) {
+          <ion-note slot="end">
+            Phone number is required
+          </ion-note>
+        }
+        @if (phone?.errors?.['pattern'] && (phone?.dirty || phone?.touched)) {
+          <ion-note slot="end">
+            Please enter a valid phone number
+          </ion-note>
+        }
+      </ion-item>
+
+      <!-- Address Line 1 -->
+      <ion-item lines="full"
+                [class.ion-invalid]="addressLine1?.invalid && (addressLine1?.dirty || addressLine1?.touched)">
+        <ion-label position="floating">Address Line 1
+          <ion-text color="danger">*</ion-text>
+        </ion-label>
+        <ion-input formControlName="addressLine1" type="text" required></ion-input>
+
+        @if (addressLine1?.errors?.['required'] && (addressLine1?.dirty || addressLine1?.touched)) {
+          <ion-note slot="end">
+            Address is required
+          </ion-note>
+        }
+      </ion-item>
+
+      <!-- Address Line 2 -->
+      <ion-item lines="full">
+        <ion-label position="floating">Address Line 2 (Optional)</ion-label>
+        <ion-input formControlName="addressLine2" type="text"></ion-input>
+      </ion-item>
+
+      <!-- City -->
+      <ion-item lines="full" [class.ion-invalid]="city?.invalid && (city?.dirty || city?.touched)">
+        <ion-label position="floating">City
+          <ion-text color="danger">*</ion-text>
+        </ion-label>
+        <ion-input formControlName="city" type="text" required></ion-input>
+        @if (city?.errors?.['required'] && (city?.dirty || city?.touched)) {
+          <ion-note slot="end">
+            City is required
+          </ion-note>
+        }
+      </ion-item>
+
+      <!-- Country -->
+      <ion-item lines="full" [class.ion-invalid]="country?.invalid && (country?.dirty || country?.touched)">
+        <ion-label>Country
+          <ion-text color="danger">*</ion-text>
+        </ion-label>
+        <ion-select formControlName="country" placeholder="Select country" interface="action-sheet" required>
+          @for (country of countries; track $index) {
+            <ion-select-option [value]="country">{{ country }}</ion-select-option>
+          }
+        </ion-select>
+        @if (country?.errors?.['required'] && (country?.dirty || country?.touched)) {
+          <ion-note slot="end">
+            Country is required
+          </ion-note>
+        }
+      </ion-item>
+
+      <!-- State/Province -->
+      <ion-item lines="full" [class.ion-invalid]="state?.invalid && (state?.dirty || state?.touched)">
+        <ion-label>State/Province
+          <ion-text color="danger">*</ion-text>
+        </ion-label>
+        <ion-select formControlName="state" placeholder="Select state" [disabled]="!addressForm.get('country')?.value"
+                    interface="action-sheet" required>
+          @for (state of states; track $index) {
+            <ion-select-option [value]="state">{{ state }}</ion-select-option>
+          }
+        </ion-select>
+        @if (state?.errors?.['required'] && (state?.dirty || state?.touched)) {
+          <ion-note slot="end">
+            State/Province is required
+          </ion-note>
+        }
+      </ion-item>
+
+      <!-- Postal/Zip Code -->
+      <ion-item lines="full" [class.ion-invalid]="postalCode?.invalid && (postalCode?.dirty || postalCode?.touched)">
+        <ion-label position="floating">Postal/Zip Code
+          <ion-text color="danger">*</ion-text>
+        </ion-label>
+        <ion-input formControlName="postalCode" type="text" required></ion-input>
+
+        @if(postalCode?.errors?.['required'] && (postalCode?.dirty || postalCode?.touched)){
+          <ion-note slot="end">
+            Postal/Zip code is required
+          </ion-note>
+        }
+        @if(postalCode?.errors?.['pattern'] && (postalCode?.dirty || postalCode?.touched)){
+          <ion-note slot="end">
+            Please enter a valid postal/zip code
+          </ion-note>
+        }
+      </ion-item>
+
+      <!-- Set as default address -->
+      <ion-item lines="none" class="ion-margin-top">
+        <ion-label>Set as default address</ion-label>
+        <ion-toggle formControlName="isDefault" slot="end"></ion-toggle>
+      </ion-item>
+    </form>
+<!--    <pre>-->
+<!--      {{addressForm.value | json}}-->
+<!--    </pre>-->
+  </ion-content>
+
+  <ion-footer class="ion-no-border">
+    <ion-toolbar>
+      <ion-button
+        expand="block"
+        size="large"
+        class="ion-margin"
+        (click)="onSubmit()"
+        [disabled]="!addressForm.valid">
+        Save Address
+      </ion-button>
+    </ion-toolbar>
+  </ion-footer>
+
+</div>
+

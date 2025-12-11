@@ -75,7 +75,7 @@ ui-design-using-ionic-and-angular/
 ├── 03-pet-finder-mobile-app/
 ├── 04-car-selling-mobile-app/
 ├── ...
-├── 30-food-delivery-home-screen-mobile-app/
+├── 31-gift-store-home-screens-mobile-app/
 ├── screenshots/
 └── README.md
 ```
@@ -174,7 +174,12 @@ Find preview images for each UI example in the **screenshots/** directory.
 | **28. Dynamic Error Screens (Screen 1)** <br> <img src="screenshots/28-01.png" width="200"> | **28. Dynamic Error Screens (GIF)** <br> <img src="screenshots/28-02.gif" width="200"> | **29. Wallet Finance Screens (Screen 1)** <br> <img src="screenshots/29-01.png" width="200"> |
 | **29. Wallet Finance Screens (Screen 2)** <br> <img src="screenshots/29-02.png" width="200"> | **29. Wallet Finance Screens (Screen 3)** <br> <img src="screenshots/29-03.png" width="200"> | **29. Wallet Finance Screens (Screen 4)** <br> <img src="screenshots/29-04.png" width="200"> |
 | **30. Food Delivery Screens (Screen 1)** <br> <img src="screenshots/30-01.png" width="200"> | **30. Food Delivery Screens (Screen 2)** <br> <img src="screenshots/30-02.png" width="200"> | **30. Food Delivery Screens (Screen 3)** <br> <img src="screenshots/30-03.png" width="200"> |
-| **30. Food Delivery Screens (Screen 4)** <br> <img src="screenshots/30-04.png" width="200"> | **30. Food Delivery Screens (Screen 5)** <br> <img src="screenshots/30-05.png" width="200"> | Coming Soon 👌 |
+| **30. Food Delivery Screens (Screen 4)** <br> <img src="screenshots/30-04.png" width="200"> | **30. Food Delivery Screens (Screen 5)** <br> <img src="screenshots/30-05.png" width="200"> | **31. Gift Store Home Screens (Screen 1)** <br> <img src="screenshots/31-01.png" width="200"> |
+| **31. Gift Store Home Screens (Screen 2)** <br> <img src="screenshots/31-02.png" width="200"> | **31. Gift Store Home Screens (Screen 3)** <br> <img src="screenshots/31-03.png" width="200"> | **31. Gift Store Home Screens (Screen 4)** <br> <img src="screenshots/31-04.png" width="200"> |
+| **31. Gift Store Home Screens (Screen 5)** <br> <img src="screenshots/31-05.png" width="200"> | **31. Gift Store Home Screens (Screen 6)** <br> <img src="screenshots/31-06.png" width="200"> | **31. Gift Store Home Screens (Screen 7)** <br> <img src="screenshots/31-07.png" width="200"> |
+| **31. Gift Store Home Screens (Screen 8)** <br> <img src="screenshots/31-08.png" width="200"> | **31. Gift Store Home Screens (Screen 9)** <br> <img src="screenshots/31-09.png" width="200"> | **31. Gift Store Home Screens (Screen 10)** <br> <img src="screenshots/31-10.png" width="200"> |
+| **31. Gift Store Home Screens (Screen 11)** <br> <img src="screenshots/31-11.png" width="200"> | **31. Gift Store Home Screens (Screen 12)** <br> <img src="screenshots/31-12.png" width="200"> | **31. Gift Store Home Screens (Screen 13)** <br> <img src="screenshots/31-13.png" width="200"> |
+| **31. Gift Store Home Screens (Screen 14)** <br> <img src="screenshots/31-14.png" width="200"> | Coming Soon 👌 |
 
 [⬆ back to top](#ui-design-using-ionic-and-angular)
 

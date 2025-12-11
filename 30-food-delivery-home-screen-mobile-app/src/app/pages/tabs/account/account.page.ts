@@ -4,12 +4,12 @@ import {FormsModule} from '@angular/forms';
 import {
   IonAvatar,
   IonContent,
-  IonHeader, IonIcon,
+  IonHeader,
+  IonIcon,
   IonItem,
   IonLabel,
   IonList,
   IonText,
-  IonTitle,
   IonToolbar
 } from '@ionic/angular/standalone';
 import {information, power, shareSocial} from "ionicons/icons";
@@ -20,7 +20,7 @@ import {addIcons} from "ionicons";
   templateUrl: './account.page.html',
   styleUrls: ['./account.page.scss'],
   standalone: true,
-  imports: [IonContent, IonHeader, IonTitle, IonToolbar, CommonModule, FormsModule, IonItem, IonLabel, IonText, IonList, IonAvatar, IonIcon]
+  imports: [IonContent, IonHeader, IonToolbar, CommonModule, FormsModule, IonItem, IonLabel, IonText, IonList, IonAvatar, IonIcon]
 })
 export class AccountPage implements OnInit {
 

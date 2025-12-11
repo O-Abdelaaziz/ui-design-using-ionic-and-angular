@@ -1,0 +1,123 @@
+<!--<ion-app>-->
+<!--  <ion-menu contentId="main-content" menuId="main-menu">-->
+<!--   <ion-header class="ion-no-padding">-->
+<!--     <div class="header-top-bg"></div>-->
+
+<!--     <ion-item lines="none">-->
+<!--       <ion-avatar slot="start">-->
+<!--         <img src="assets/images/avatar.jpg" alt="avatar">-->
+<!--       </ion-avatar>-->
+
+<!--       <ion-label color="light">-->
+<!--         {{ profile.name }}-->
+
+<!--         <p>-->
+<!--           <ion-text color="light">-->
+<!--             {{ profile.email }}-->
+<!--           </ion-text>-->
+<!--         </p>-->
+<!--       </ion-label>-->
+<!--     </ion-item>-->
+<!--   </ion-header>-->
+
+<!--    <ion-content>-->
+
+<!--      @for(page of pages; track $index) {-->
+<!--        <ion-menu-toggle class="menu-items" [autoHide]="false">-->
+<!--          <ion-item-->
+<!--            lines="none"-->
+<!--            class="ion-padding-start ion-margin-top"-->
+<!--            [ngClass]="{ 'selected': page?.active }"-->
+<!--            (click)="onItemTap(page)"-->
+<!--          >-->
+<!--            <ion-icon-->
+<!--              slot="start"-->
+<!--              [ios]="page.icon + '-outline'"-->
+<!--              [md]="page.icon + '-sharp'">-->
+<!--            </ion-icon>-->
+
+<!--            <ion-label>{{ page.title }}</ion-label>-->
+<!--          </ion-item>-->
+<!--        </ion-menu-toggle>-->
+<!--      }-->
+
+<!--    </ion-content>-->
+<!--  </ion-menu>-->
+<!--  <ion-router-outlet id="main-content"></ion-router-outlet>-->
+<!--</ion-app>-->
+
+<!-- app.component.html -->
+<ion-app>
+  <ion-menu contentId="main-content" menuId="main-menu" class="modern-menu">
+    <ion-header class="ion-no-border">
+      <div class="menu-header">
+        <div class="profile-section">
+          <ion-avatar class="profile-avatar">
+            <img src="assets/images/avatar.jpg" alt="profile" />
+            <div class="status-indicator"></div>
+          </ion-avatar>
+          <div class="profile-info">
+            <h3>{{ profile.name }}</h3>
+            <p>{{ profile.email }}</p>
+          </div>
+        </div>
+      </div>
+    </ion-header>
+
+    <ion-content class="ion-padding">
+      <div class="menu-section">
+        <h6 class="section-title">MAIN</h6>
+        @for(page of mainPages; track $index) {
+          <ion-menu-toggle [autoHide]="false">
+            <ion-item
+              button
+              lines="none"
+              class="menu-item"
+              [ngClass]="{'active': page.active}"
+              (click)="onItemTap(page)">
+              <ion-icon
+                slot="start"
+                [name]="page.icon"
+                [ngClass]="{'active-icon': page.active}">
+              </ion-icon>
+              <ion-label class="menu-label">{{ page.title }}</ion-label>
+              @if (page?.badge) {
+                <ion-badge slot="end" color="primary">{{ page?.badge }}</ion-badge>
+              }
+            </ion-item>
+          </ion-menu-toggle>
+        }
+      </div>
+
+      <div class="menu-section">
+        <h6 class="section-title">ACCOUNT</h6>
+        @for(page of accountPages; track $index) {
+          <ion-menu-toggle [autoHide]="false">
+            <ion-item
+              button
+              lines="none"
+              class="menu-item"
+              [ngClass]="{'active': page.active}"
+              (click)="onItemTap(page)">
+              <ion-icon
+                slot="start"
+                [name]="page.icon"
+                [ngClass]="{'active-icon': page.active}">
+              </ion-icon>
+              <ion-label class="menu-label">{{ page.title }}</ion-label>
+            </ion-item>
+          </ion-menu-toggle>
+        }
+      </div>
+
+      <div class="menu-section">
+        <ion-button expand="block" fill="clear" class="logout-btn" (click)="logout()">
+          <ion-icon slot="start" name="log-out-outline"></ion-icon>
+          Sign Out
+        </ion-button>
+      </div>
+    </ion-content>
+  </ion-menu>
+
+  <ion-router-outlet id="main-content"></ion-router-outlet>
+</ion-app>

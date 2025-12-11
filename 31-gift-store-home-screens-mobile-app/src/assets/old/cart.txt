@@ -1,0 +1,25 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>cart</ion-title>
+    <ion-buttons slot="start">
+      <ion-back-button mode="md" [defaultHref]="previousUrl()" color="dark"></ion-back-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+   @if(cartItems()){
+     <ion-item lines="none" class="cart-items">
+       <ion-label>
+         <h2>{{ cartItem().gift?.name }}</h2>
+         <p>{{ cartItem().gift?.description }}</p>
+         <p>
+           <ion-text color="medium">MRP</ion-text>
+           <ion-text color="dark" class="price">
+             <span>{{ cartItem().gift?.price | currency }}</span>
+           </ion-text>
+         </p>
+       </ion-label>
+     </ion-item>
+   }
+</ion-content>

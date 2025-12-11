@@ -2,17 +2,22 @@ import {Component, CUSTOM_ELEMENTS_SCHEMA, OnInit} from '@angular/core';
 import {CommonModule} from '@angular/common';
 import {FormsModule} from '@angular/forms';
 import {
-  IonAvatar, IonBadge, IonButton,
-  IonButtons, IonCard, IonCol,
-  IonContent, IonGrid,
-  IonHeader, IonIcon,
-  IonLabel, IonRow,
-  IonText, IonThumbnail,
-  IonTitle,
+  IonAvatar,
+  IonBadge,
+  IonButton,
+  IonButtons,
+  IonCol,
+  IonContent,
+  IonGrid,
+  IonHeader,
+  IonIcon,
+  IonLabel,
+  IonRow,
+  IonText,
   IonToolbar
 } from '@ionic/angular/standalone';
 import {addIcons} from "ionicons";
-import {cart, cartOutline, chevronDownOutline} from "ionicons/icons";
+import {cart, chevronDownOutline} from "ionicons/icons";
 
 import {register} from 'swiper/element/bundle';
 
@@ -23,7 +28,7 @@ register();
   templateUrl: './home.page.html',
   styleUrls: ['./home.page.scss'],
   standalone: true,
-  imports: [IonContent, IonHeader, IonTitle, IonToolbar, CommonModule, FormsModule, IonButtons, IonAvatar, IonLabel, IonText, IonIcon, IonButton, IonBadge, IonGrid, IonRow, IonCol, IonCard, IonThumbnail],
+  imports: [IonContent, IonHeader, IonToolbar, CommonModule, FormsModule, IonButtons, IonAvatar, IonLabel, IonText, IonIcon, IonButton, IonBadge, IonGrid, IonRow, IonCol],
   schemas: [CUSTOM_ELEMENTS_SCHEMA]
 })
 export class HomePage implements OnInit {

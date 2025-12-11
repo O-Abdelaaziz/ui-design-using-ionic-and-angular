@@ -1,0 +1,97 @@
+<ion-header [translucent]="true" class="ion-text-center ion-text-uppercase">
+  <ion-toolbar>
+    <ion-title>
+      Gift Store
+    </ion-title>
+    <ion-buttons slot="start">
+      <ion-menu-button>
+
+      </ion-menu-button>
+    </ion-buttons>
+    <ion-buttons slot="end">
+      <ion-button fill="clear" [routerLink]="['/home', 'cart']" size="large" color="primary">
+        <ion-icon name="bag-handle"></ion-icon>
+        @if(totalGifts()>0){
+          <ion-badge>{{totalGifts()}}</ion-badge>
+        }
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <!-- View Toggle Buttons -->
+  <div class="view-options">
+    <ion-segment color="primary" [(ngModel)]="viewMode" (ionChange)="onViewModeChange()">
+      <ion-segment-button value="grid">
+        <ion-icon name="grid"></ion-icon>
+      </ion-segment-button>
+      <ion-segment-button value="list">
+        <ion-icon name="list"></ion-icon>
+      </ion-segment-button>
+    </ion-segment>
+
+    <ion-searchbar
+      [(ngModel)]="searchQuery"
+      (ionInput)="onSearchChange($event)"
+      placeholder="Search gifts..."
+      [debounce]="300"
+      class="custom-searchbar"
+      animated
+      clear-icon="close-circle"
+      showCancelButton="focus"
+      (ionCancel)="onSearchCancel()">
+    </ion-searchbar>
+  </div>
+
+  <!-- Grid View -->
+  @if (viewMode() === 'grid') {
+    <ion-grid>
+      <ion-row>
+        @for (gift of gifts(); track $index) {
+          <ion-col sizeXs="6" sizeSm="6" sizeMd="4" sizeLg="3" sizeXl="3">
+            <ion-card [routerLink]="['/home', 'gifts', gift.id]">
+              <ion-thumbnail>
+                <img [src]="gift.cover" [alt]="gift.name" loading="lazy"/>
+              </ion-thumbnail>
+              <ion-label>
+                <h3>{{ gift.name }}</h3>
+                <p class="price-rating">
+                  <ion-text color="primary">{{ gift.price | currency }}</ion-text>
+                  <ion-text class="rating">
+                    {{ gift.rating | number:'1.1-1' }}
+                    <ion-icon name="star" color="warning"></ion-icon>
+                  </ion-text>
+                </p>
+              </ion-label>
+            </ion-card>
+          </ion-col>
+        }
+      </ion-row>
+    </ion-grid>
+  }
+
+  <!-- List View -->
+  @if (viewMode() === 'list') {
+    <ion-list lines="full" class="gift-list">
+      @for (gift of gifts(); track $index) {
+        <ion-item button [detail]="false" [routerLink]="['/home', 'gifts', gift.id]" class="gift-item">
+          <ion-avatar slot="start" class="gift-avatar">
+            <img [src]="gift.cover" [alt]="gift.name" loading="lazy"/>
+          </ion-avatar>
+          <ion-label class="ion-text-wrap">
+            <h2>{{ gift.name }}</h2>
+            <p class="description">{{ gift.description }}</p>
+            <div class="meta">
+              <ion-text color="primary" class="price">{{ gift.price | currency }}</ion-text>
+              <ion-badge color="warning" class="rating">
+                {{ gift.rating | number:'1.1-1' }}
+                <ion-icon name="star" color="light"></ion-icon>
+              </ion-badge>
+            </div>
+          </ion-label>
+        </ion-item>
+      }
+    </ion-list>
+  }
+</ion-content>

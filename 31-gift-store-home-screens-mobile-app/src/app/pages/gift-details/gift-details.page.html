@@ -1,0 +1,60 @@
+<ion-content [fullscreen]="true">
+  <ion-header slot="fixed" class="ion-no-border">
+    <ion-toolbar>
+      <ion-buttons slot="start">
+        <ion-back-button mode="md" defaultHref="/home" color="light"></ion-back-button>
+      </ion-buttons>
+
+      <ion-buttons slot="end">
+        <ion-button fill="clear" color="primary" size="large">
+          <ion-icon name="bookmark" slot="icon-only"></ion-icon>
+        </ion-button>
+        <ion-button fill="clear" color="primary" size="large" [routerLink]="['/home','gifts',gift()?.id, 'cart']">
+          <ion-icon name="bag-handle" slot="icon-only"></ion-icon>
+          @if (totalGifts() > 0) {
+            <ion-badge color="primary">{{ totalGifts() }}</ion-badge>
+          }
+        </ion-button>
+      </ion-buttons>
+    </ion-toolbar>
+  </ion-header>
+
+  <div [style.background-image]="'url(' + gift()?.cover + ')'" class="cover">
+    <div class="rating">
+      <ion-icon name="star" color="warning"></ion-icon>
+      <span>{{ gift()?.rating | number:'1.1-1' }}</span>
+    </div>
+  </div>
+
+  <ion-item lines="none">
+    <ion-label>
+      {{ gift()?.name | uppercase }}
+      <p class="description"> {{ gift()?.description }}</p>
+      <p>
+        <ion-text color="medium">MRP</ion-text>
+        <ion-text color="dark" class="price">
+          <span>{{ gift()?.price | currency }}</span>
+        </ion-text>
+      </p>
+    </ion-label>
+  </ion-item>
+</ion-content>
+
+<ion-footer class="ion-no-border">
+  <ion-toolbar>
+    <ion-button
+      class="ion-padding-start ion-padding-end ion-padding-bottom"
+      mode="ios"
+      [strong]="true"
+      expand="block"
+      [color]="addToCart() ? 'success' : 'primary'"
+      (click)="addedGiftToCart()">
+      <ion-icon
+        slot="start"
+        [name]="addToCart() ? 'bag-handle' : 'bag-handle-outline'"
+        [color]="addToCart() ? 'light' : ''"
+      ></ion-icon>
+      <ion-text [color]="addToCart() ? 'light' : ''">{{ addToCart() || 'ADD TO CART' }}</ion-text>
+    </ion-button>
+  </ion-toolbar>
+</ion-footer>

@@ -1,0 +1,7 @@
+{
+  "name": "31-gift-store-home-screens-mobile-app",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular-standalone"
+}

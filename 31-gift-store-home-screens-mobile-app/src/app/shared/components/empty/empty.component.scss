@@ -1,0 +1,50 @@
+// empty.component.scss
+.empty-state {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  height: 60vh;
+  padding: 0 2rem;
+
+  .icon-container {
+    background: rgba(var(--ion-color-primary-rgb), 0.1);
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 1.5rem;
+
+    .empty-icon {
+      font-size: 4rem;
+      color: var(--ion-color-primary);
+    }
+  }
+
+  .empty-title {
+    display: block;
+    font-size: 1.5rem;
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+    color: var(--ion-color-dark);
+  }
+
+  .empty-message {
+    display: block;
+    font-size: 1rem;
+    color: var(--ion-color-medium);
+    margin-bottom: 2rem;
+    line-height: 1.5;
+  }
+
+  .action-button {
+    max-width: 250px;
+    --border-radius: 8px;
+    --padding-top: 1.2rem;
+    --padding-bottom: 1.2rem;
+    font-weight: 600;
+  }
+}

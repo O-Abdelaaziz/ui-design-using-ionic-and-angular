@@ -1,0 +1,285 @@
+
+<!--<ion-content [fullscreen]="true" class="ion-padding-horizontal">-->
+<!--  <div class="content-container">-->
+<!--    <ion-list lines="none" class="ion-margin-bottom">-->
+<!--      <ion-radio-group [(ngModel)]="selectedCoupon" (ionChange)="selectCoupon($event.detail.value)">-->
+<!--     @for (coupon of coupons; track coupon.code) {-->
+<!--          <ion-item class="coupon-item">-->
+<!--            <ion-radio slot="start" [value]="coupon" color="primary"></ion-radio>-->
+<!--            <ion-label class="ion-text-wrap">-->
+<!--              <h3>{{ coupon.code }}</h3>-->
+<!--              <p>{{ coupon.description }}</p>-->
+<!--              <p class="valid-until">-->
+<!--                <ion-icon name="time-outline"></ion-icon>-->
+<!--                Valid until: {{ coupon.validUntil | date:'mediumDate' }}-->
+<!--              </p>-->
+<!--            </ion-label>-->
+<!--            <ion-text slot="end" color="success" class="discount">-->
+<!--              {{ coupon.discount * 100 }}% OFF-->
+<!--            </ion-text>-->
+<!--          </ion-item>-->
+<!--        }-->
+<!--      </ion-radio-group>-->
+<!--    </ion-list>-->
+
+<!--    <div class="button-container">-->
+<!--      <ion-button-->
+<!--        expand="block"-->
+<!--        color="primary"-->
+<!--        (click)="applyCoupon()"-->
+<!--        [disabled]="!selectedCoupon">-->
+<!--        Apply Coupon-->
+<!--      </ion-button>-->
+
+<!--      @if (appliedCoupon) {-->
+<!--        <ion-button-->
+<!--          expand="block"-->
+<!--          fill="outline"-->
+<!--          color="danger"-->
+<!--          class="ion-margin-top"-->
+<!--          (click)="removeCoupon()">-->
+<!--          Remove Coupon-->
+<!--        </ion-button>-->
+<!--      }-->
+<!--    </div>-->
+<!--  </div>-->
+<!--</ion-content>-->
+
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-button (click)="closeModal()">
+        <ion-icon slot="icon-only" name="close"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+    <ion-title>Apply Coupon</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true" class="ion-padding-horizontal">
+  <div class="content-container">
+    <ion-radio-group [(ngModel)]="selectedCoupon" (ionChange)="selectCoupon($event.detail.value)">
+      @for (coupon of coupons; track coupon.code) {
+        <ion-item class="coupon-item">
+          <ion-radio slot="start" [value]="coupon" color="primary"></ion-radio>
+          <ion-label class="ion-text-wrap">
+            <h3>{{ coupon.code }}</h3>
+            <p>{{ coupon.description }}</p>
+            <p class="valid-until">
+              <ion-icon name="time-outline"></ion-icon>
+              Valid until: {{ coupon.validUntil | date:'mediumDate' }}
+            </p>
+          </ion-label>
+          <ion-text slot="end" color="success" class="discount">
+            {{ coupon.discount * 100 }}% OFF
+          </ion-text>
+        </ion-item>
+      }
+    </ion-radio-group>
+  </div>
+
+  <div class="button-container">
+    <ion-button
+      expand="block"
+      color="primary"
+      (click)="applyCoupon()"
+      [disabled]="!selectedCoupon">
+      Apply Coupon
+    </ion-button>
+
+    @if (appliedCoupon) {
+      <ion-button
+        expand="block"
+        fill="outline"
+        color="danger"
+        class="ion-margin-top"
+        (click)="removeCoupon()">
+        Remove Coupon
+      </ion-button>
+    }
+  </div>
+</ion-content>
+
+
+//ion-content {
+//  --background: var(--ion-color-light);
+//
+//  .content-container {
+//    display: flex;
+//    flex-direction: column;
+//    min-height: 100%;
+//  }
+//
+//  ion-list {
+//    margin-top: 20px;
+//    background: transparent;
+//    flex: 1;
+//  }
+//
+//  .button-container {
+//    padding: 16px;
+//    background: var(--ion-color-light);
+//    position: sticky;
+//    bottom: 0;
+//  }
+//}
+//
+//.coupon-item {
+//  --padding-start: 16px;
+//  --inner-padding-end: 16px;
+//  --min-height: 90px;
+//  margin: 0 16px 12px;
+//  border-radius: 12px;
+//  border: 1px solid var(--ion-color-medium);
+//  --background: var(--ion-color-white);
+//  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+//
+//  ion-radio {
+//    margin: 0 16px 0 0;
+//    --color: var(--ion-color-medium);
+//    --color-checked: var(--ion-color-primary);
+//  }
+//
+//  ion-label {
+//    margin: 12px 0;
+//
+//    h3 {
+//      font-weight: 600;
+//      margin-bottom: 6px;
+//      color: var(--ion-color-dark);
+//    }
+//
+//    p {
+//      margin: 6px 0;
+//      font-size: 0.9rem;
+//      color: var(--ion-color-medium);
+//      line-height: 1.4;
+//    }
+//
+//    .valid-until {
+//      font-size: 0.8rem;
+//      color: var(--ion-color-medium);
+//      display: flex;
+//      align-items: center;
+//      margin-top: 4px;
+//
+//      ion-icon {
+//        margin-right: 4px;
+//      }
+//    }
+//  }
+//
+//  .discount {
+//    font-weight: 700;
+//    font-size: 1.1rem;
+//    margin-left: 8px;
+//  }
+//}
+//
+//ion-button[expand="block"] {
+//  margin: 0;
+//  --border-radius: 8px;
+//  height: 48px;
+//  font-weight: 600;
+//  text-transform: none;
+//  letter-spacing: 0.5px;
+//}
+//
+//ion-radio-group {
+//  padding-bottom: 20px;
+//}
+//
+///* For better visual feedback */
+//ion-item.radio-checked {
+//  --background: rgba(var(--ion-color-primary-rgb), 0.05);
+//  border-color: var(--ion-color-primary);
+//}
+
+
+ion-content {
+  --padding-bottom: 100px; // Make space for the fixed buttons
+  --background: var(--ion-color-light);
+  display: flex;
+  flex-direction: column;
+
+  .content-container {
+    flex: 1;
+    padding-bottom: 16px; // Add some space at the bottom
+  }
+
+  .button-container {
+    background: var(--ion-color-light);
+    padding: 16px;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: 10;
+    box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.1);
+  }
+}
+
+.coupon-item {
+  --border-radius: 12px;
+  --padding-start: 16px;
+  --inner-padding-end: 16px;
+  --min-height: 100px;
+  margin-bottom: 12px;
+  --background: var(--ion-color-white);
+  border: 1px solid var(--ion-color-light-shade);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+
+  ion-radio {
+    margin: 0 16px 0 0;
+    --color: var(--ion-color-medium);
+    --color-checked: var(--ion-color-primary);
+  }
+
+  ion-label {
+    h3 {
+      font-weight: 600;
+      color: var(--ion-color-dark);
+      margin-bottom: 6px;
+    }
+
+    p {
+      color: var(--ion-color-medium);
+      margin: 4px 0;
+      font-size: 0.9rem;
+      line-height: 1.4;
+    }
+
+    .valid-until {
+      display: flex;
+      align-items: center;
+      font-size: 0.8rem;
+      color: var(--ion-color-medium);
+      margin-top: 4px;
+
+      ion-icon {
+        margin-right: 4px;
+      }
+    }
+  }
+
+  .discount {
+    font-weight: 700;
+    font-size: 1.1rem;
+    color: var(--ion-color-success);
+  }
+}
+
+ion-button[expand="block"] {
+  --border-radius: 8px;
+  height: 48px;
+  font-weight: 600;
+  margin: 0;
+  --box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* For better visual feedback */
+ion-item.radio-checked {
+  --background: rgba(var(--ion-color-primary-rgb), 0.05);
+  border-color: var(--ion-color-primary);
+}
+

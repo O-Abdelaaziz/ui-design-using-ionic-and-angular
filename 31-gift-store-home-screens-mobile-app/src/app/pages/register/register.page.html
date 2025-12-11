@@ -1,0 +1,119 @@
+<!-- register.page.html -->
+<ion-content [fullscreen]="true" class="register-content">
+  <div class="register-container">
+    <div class="logo-container">
+      <div class="logo-circle">
+        <ion-icon name="gift" class="logo-icon"></ion-icon>
+      </div>
+      <h1>Create Account</h1>
+      <p>Fill in your details to get started</p>
+    </div>
+
+    <form [formGroup]="registerForm" class="register-form">
+      <ion-item lines="none" class="form-input">
+        <ion-icon name="person-outline" slot="start" class="input-icon"></ion-icon>
+        <ion-input
+          formControlName="fullName"
+          placeholder="Full Name"
+          class="custom-input"
+          mode="md"
+        ></ion-input>
+      </ion-item>
+
+      <ion-item lines="none" class="form-input">
+        <ion-icon name="mail" slot="start" class="input-icon"></ion-icon>
+        <ion-input
+          formControlName="email"
+          type="email"
+          placeholder="Email"
+          class="custom-input"
+          mode="md"
+        ></ion-input>
+      </ion-item>
+
+      <ion-item lines="none" class="form-input">
+        <ion-icon name="phone-portrait-outline" slot="start" class="input-icon"></ion-icon>
+        <ion-input
+          formControlName="phone"
+          type="tel"
+          placeholder="Phone Number"
+          class="custom-input"
+          mode="md"
+        ></ion-input>
+      </ion-item>
+
+      <ion-item lines="none" class="form-input">
+        <ion-icon name="lock-closed-outline" slot="start" class="input-icon"></ion-icon>
+        <ion-input
+          formControlName="password"
+          [type]="showPassword ? 'text' : 'password'"
+          placeholder="Password"
+          class="custom-input"
+          mode="md"
+        ></ion-input>
+        <ion-button
+          fill="clear"
+          slot="end"
+          class="password-toggle"
+          (click)="togglePassword()">
+          <ion-icon [name]="showPassword ? 'eye-off' : 'eye'"></ion-icon>
+        </ion-button>
+      </ion-item>
+
+      <ion-item lines="none" class="form-input">
+        <ion-icon name="lock-closed-outline" slot="start" class="input-icon"></ion-icon>
+        <ion-input
+          formControlName="confirmPassword"
+          [type]="showConfirmPassword ? 'text' : 'password'"
+          placeholder="Confirm Password"
+          class="custom-input"
+          mode="md"
+        ></ion-input>
+        <ion-button
+          fill="clear"
+          slot="end"
+          class="password-toggle"
+          (click)="toggleConfirmPassword()">
+          <ion-icon [name]="showConfirmPassword ? 'eye-off' : 'eye'"></ion-icon>
+        </ion-button>
+      </ion-item>
+
+      <ion-item lines="none" class="terms-item">
+        <ion-checkbox slot="start" formControlName="terms"></ion-checkbox>
+        <ion-label class="terms-text">
+          I agree to the <a (click)="openTerms()">Terms & Conditions</a> and <a (click)="openPrivacy()">Privacy Policy</a>
+        </ion-label>
+      </ion-item>
+
+      <ion-button
+        expand="block"
+        shape="round"
+        class="register-button"
+        (click)="onRegister()"
+        [disabled]="!registerForm.valid">
+        Create Account
+      </ion-button>
+
+      <div class="divider">
+        <span>or sign up with</span>
+      </div>
+
+      <div class="social-login">
+        <ion-button fill="outline" shape="round" class="social-button">
+          <ion-icon name="google" slot="start"></ion-icon>
+          Google
+        </ion-button>
+        <ion-button fill="outline" shape="round" class="social-button">
+          <ion-icon name="facebook" slot="start"></ion-icon>
+          Facebook
+        </ion-button>
+      </div>
+
+      <div class="login-link">
+        <p>Already have an account?
+          <a (click)="navigateToLogin()">Sign In</a>
+        </p>
+      </div>
+    </form>
+  </div>
+</ion-content>

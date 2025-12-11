@@ -3,12 +3,14 @@ import {CommonModule} from '@angular/common';
 import {FormsModule} from '@angular/forms';
 import {
   IonContent,
-  IonHeader, IonIcon,
-  IonItem, IonLabel,
+  IonHeader,
+  IonIcon,
+  IonItem,
+  IonLabel,
   IonList,
-  IonSearchbar, IonText,
+  IonSearchbar,
+  IonText,
   IonThumbnail,
-  IonTitle,
   IonToolbar
 } from '@ionic/angular/standalone';
 import {addIcons} from "ionicons";
@@ -19,7 +21,7 @@ import {time} from "ionicons/icons";
   templateUrl: './search.page.html',
   styleUrls: ['./search.page.scss'],
   standalone: true,
-  imports: [IonContent, IonHeader, IonTitle, IonToolbar, CommonModule, FormsModule, IonSearchbar, IonList, IonItem, IonThumbnail, IonLabel, IonText, IonIcon]
+  imports: [IonContent, IonHeader, IonToolbar, CommonModule, FormsModule, IonSearchbar, IonList, IonItem, IonThumbnail, IonLabel, IonText, IonIcon]
 })
 export class SearchPage implements OnInit {
 
