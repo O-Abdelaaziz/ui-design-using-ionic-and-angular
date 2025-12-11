@@ -1,0 +1,7 @@
+{
+  "name": "32-events-hub-home-screens-mobile-app",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular-standalone"
+}

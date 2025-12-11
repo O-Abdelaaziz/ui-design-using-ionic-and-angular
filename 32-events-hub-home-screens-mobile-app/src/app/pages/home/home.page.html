@@ -1,0 +1,248 @@
+<!--<ion-header class="ion-no-border">-->
+<!--  <ion-toolbar class="wrapper">-->
+<!--    <ion-item lines="none">-->
+<!--      <ion-label color="light">-->
+<!--        <div class="icon-text">-->
+<!--          <ion-icon name="locate-outline"></ion-icon>-->
+<!--          <ion-text> Events near me!</ion-text>-->
+<!--        </div>-->
+<!--        <p>Find events in your area</p>-->
+<!--      </ion-label>-->
+
+<!--      <ion-fab-button size="small">-->
+<!--        <ion-icon name="notifications-outline" color="medium"></ion-icon>-->
+<!--        <ion-badge>&#9679;</ion-badge>-->
+<!--      </ion-fab-button>-->
+<!--    </ion-item>-->
+
+<!--    <ion-grid class="search-bar">-->
+<!--      <ion-row>-->
+<!--        <ion-col size="10">-->
+<!--          <ion-searchbar placeholder="Search events"></ion-searchbar>-->
+<!--        </ion-col>-->
+<!--        <ion-col size="2">-->
+<!--          <ion-fab-button size="small" color="light">-->
+<!--            <ion-icon name="options-outline" color="medium"></ion-icon>-->
+<!--          </ion-fab-button>-->
+<!--        </ion-col>-->
+<!--      </ion-row>-->
+<!--    </ion-grid>-->
+<!--  </ion-toolbar>-->
+<!--</ion-header>-->
+
+<!--<ion-content [fullscreen]="true" color="light">-->
+<!--  <ion-list lines="none">-->
+<!--    <ion-list-header>-->
+<!--      <ion-label>Upcoming Events</ion-label>-->
+<!--    </ion-list-header>-->
+
+<!--    <swiper-container-->
+<!--      [modules]="swiperModules"-->
+<!--      [keyboard]="true"-->
+<!--      [slidesPerView]="1.35"-->
+<!--      [spaceBetween]="10"-->
+<!--      [centeredSlides]="true"-->
+<!--      [loop]="true"-->
+<!--      [autoplay]="{delay: 2500, disableOnInteraction: false}">-->
+<!--      @for (event of upcomingEvents; track $index) {-->
+<!--        <swiper-slide>-->
+<!--          <ion-card class="upcoming-events" [routerLink]="['/','events', event.id]">-->
+<!--            <ion-item lines="none">-->
+<!--              <ion-thumbnail slot="start">-->
+<!--                <ion-img [src]="event.image"></ion-img>-->
+<!--              </ion-thumbnail>-->
+
+<!--              <ion-label>-->
+<!--                <ion-text class="date">-->
+<!--                  {{ event?.date | date: 'MMM d, y' }}-->
+<!--                </ion-text>-->
+<!--                <p class="title">-->
+<!--                  <ion-text color="dark"> {{ event?.name }}</ion-text>-->
+<!--                </p>-->
+<!--                <p class="location">-->
+<!--                  <ion-icon name="location-outline"></ion-icon>-->
+<!--                  {{ event?.location }}-->
+<!--                </p>-->
+<!--              </ion-label>-->
+<!--            </ion-item>-->
+<!--          </ion-card>-->
+<!--        </swiper-slide>-->
+<!--      }-->
+<!--    </swiper-container>-->
+<!--  </ion-list>-->
+
+<!--  <ion-list lines="none" class="ion-margin-top">-->
+<!--    <ion-item-divider mode="ios" color="light">-->
+<!--      Top Picks-->
+<!--      <img src="assets/images/fire.png" alt="fire"/>-->
+<!--      <ion-button slot="end" fill="clear" color="medium"> View All</ion-button>-->
+<!--    </ion-item-divider>-->
+
+<!--    <swiper-container-->
+<!--      #category-->
+<!--      [modules]="swiperModules"-->
+<!--      [slidesPerView]="2.6"-->
+<!--      [keyboard]="true"-->
+<!--      [centerSlides]="true"-->
+<!--    >-->
+<!--      <swiper-slide>-->
+<!--        <ion-card class="category">-->
+<!--          <ion-item lines="none">-->
+<!--            <ion-avatar slot="start">-->
+<!--              <ion-img [src]="'assets/images/all.png'"></ion-img>-->
+<!--            </ion-avatar>-->
+
+<!--            <ion-label> All</ion-label>-->
+<!--          </ion-item>-->
+<!--        </ion-card>-->
+<!--      </swiper-slide>-->
+
+<!--      @for (category of categories; track $index) {-->
+<!--        <swiper-slide>-->
+<!--          <ion-card class="category">-->
+<!--            <ion-item lines="none">-->
+<!--              <ion-avatar slot="start">-->
+<!--                <ion-img [src]="category.image"></ion-img>-->
+<!--              </ion-avatar>-->
+<!--              <ion-label> {{ category.name }}</ion-label>-->
+<!--            </ion-item>-->
+<!--          </ion-card>-->
+<!--        </swiper-slide>-->
+<!--      }-->
+<!--    </swiper-container>-->
+<!--  </ion-list>-->
+
+<!--  @for (event of currentEvents; track $index) {-->
+<!--    <ion-card-->
+<!--      [routerLink]="['/', 'events', event?.id]"-->
+<!--      class="current-events"-->
+<!--      [style.backgroundImage]="'url('+ event.image +')'"-->
+<!--    >-->
+<!--      <ion-item lines="none">-->
+<!--        <ion-label>-->
+<!--          {{ event?.date | date: 'MMM d, y' }}-->
+<!--          <p>-->
+<!--            {{ event?.name }}-->
+<!--          </p>-->
+<!--        </ion-label>-->
+
+<!--        <ion-fab-button slot="end" size="small">-->
+<!--          <ion-icon name="arrow-forward-outline"></ion-icon>-->
+<!--        </ion-fab-button>-->
+<!--      </ion-item>-->
+<!--    </ion-card>-->
+<!--  }-->
+<!--</ion-content>-->
+
+<ion-header class="custom-header">
+  <ion-toolbar class="ion-padding-bottom">
+    <ion-buttons slot="start">
+      <ion-button>
+        <ion-icon slot="icon-only" name="location-outline"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+    <ion-title class="header-title">
+      <span class="subtitle">Discover Events in</span>
+      <h2>New York</h2>
+    </ion-title>
+    <ion-buttons slot="end">
+      <ion-button class="notification-btn">
+        <ion-icon name="notifications-outline"></ion-icon>
+        <ion-badge color="danger">3</ion-badge>
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+
+  <div class="search-container">
+    <ion-searchbar
+      placeholder="Search events, artists, venues..."
+      animated
+      class="custom-searchbar">
+    </ion-searchbar>
+    <ion-button fill="clear" class="filter-btn">
+      <ion-icon name="options-outline" slot="icon-only" color="medium"></ion-icon>
+    </ion-button>
+  </div>
+</ion-header>
+
+<ion-content class="ion-padding" [fullscreen]="true">
+  <!-- Categories Section -->
+  <section class="section">
+    <div class="section-header">
+      <h3>Categories</h3>
+      <ion-button fill="clear" size="small">See All</ion-button>
+    </div>
+
+    <swiper-container class="categories-swiper" [slidesPerView]="3.5" [spaceBetween]="12">
+      @for (category of categories; track $index) {
+        <swiper-slide>
+          <ion-card class="category-card" [ngStyle]="{'--category-bg': 'url(' + category.image + ')'}">
+            <div class="category-overlay"></div>
+            <ion-label>{{ category.name }}</ion-label>
+          </ion-card>
+        </swiper-slide>
+      }
+    </swiper-container>
+  </section>
+
+  <!-- Featured Events -->
+  <section class="section">
+    <div class="section-header">
+      <h3>Featured Events</h3>
+      <ion-button fill="clear" size="small" routerLink="/events">View All</ion-button>
+    </div>
+
+    <swiper-container class="featured-swiper" [slidesPerView]="1.2" [spaceBetween]="16">
+      @for (event of featuredEvents; track $index) {
+        <swiper-slide>
+          <ion-card class="event-card" [routerLink]="['/events', event.id]">
+            <div class="event-image" [ngStyle]="{'background-image': 'url(' + event.image + ')'}">
+              <ion-badge class="event-badge" color="light">{{ event.category_name }}</ion-badge>
+            </div>
+            <ion-card-header>
+              <ion-card-subtitle>{{ event.date | date: 'EEE, MMM d • h a' }}</ion-card-subtitle>
+              <ion-card-title>{{ event.name }}</ion-card-title>
+              <div class="event-location">
+                <ion-icon name="location-outline"></ion-icon>
+                <span>{{ event.location }}</span>
+              </div>
+            </ion-card-header>
+          </ion-card>
+        </swiper-slide>
+      }
+    </swiper-container>
+  </section>
+
+  <!-- Upcoming Events -->
+  <section class="section">
+    <div class="section-header">
+      <h3>Upcoming Events</h3>
+      <ion-segment value="today" class="date-segment">
+        <ion-segment-button value="today">Today</ion-segment-button>
+        <ion-segment-button value="tomorrow">Tomorrow</ion-segment-button>
+        <ion-segment-button value="week">This Week</ion-segment-button>
+      </ion-segment>
+    </div>
+
+    <div class="upcoming-events">
+      @for (event of upcomingEvents; track $index) {
+        <ion-card class="upcoming-event" [routerLink]="['/events', event.id]">
+          <div class="event-date">
+            <span class="day">{{ event.date | date: 'd' }}</span>
+            <span class="month">{{ event.date | date: 'MMM' }}</span>
+          </div>
+          <div class="event-details">
+            <h4>{{ event.name }}</h4>
+            <div class="event-meta">
+              <span class="location">
+                <ion-icon name="location-outline"></ion-icon>
+                {{ event.location }}
+              </span>
+              <ion-button size="small" fill="outline">Tickets</ion-button>
+            </div>
+          </div>
+        </ion-card>
+      }
+    </div>
+  </section>
+</ion-content>

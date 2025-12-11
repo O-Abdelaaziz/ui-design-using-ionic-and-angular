@@ -75,7 +75,7 @@ ui-design-using-ionic-and-angular/
 ├── 03-pet-finder-mobile-app/
 ├── 04-car-selling-mobile-app/
 ├── ...
-├── 31-gift-store-home-screens-mobile-app/
+├── 32-events-hub-home-screens-mobile-app/
 ├── screenshots/
 └── README.md
 ```
@@ -147,7 +147,10 @@ Find preview images for each UI example in the **screenshots/** directory.
 | UI Example 1 | UI Example 2 | UI Example 3 |
 | :---: | :---: | :---: |
 | **01. First App** <br> <img src="screenshots/01.png" width="200"> | **02. Gym Management UI (Screen 1)** <br> <img src="screenshots/02-1.png" width="200"> | **02. Gym Management UI (Screen 2)** <br> <img src="screenshots/02-2.png" width="200"> |
-| **03. Job Finder UI** <br> <img src="screenshots/03.png" width="200"> | **04. Car Selling UI** <br> <img src="screenshots/04.png" width="200"> | **06. Welcome/Login UI (Screen 1)** <br> <img src="screenshots/06-1.png" width="200"> |
+| **03. Job Finder UI** <br> <img src="screenshots/03.png" width="200"> | **04. Car Selling UI** <br> <img src="screenshots/04.png" width="200"> | **05. Swiggy UI Home Screens (Screen 1)** <br> <img src="screenshots/05-01.png" width="200"> |
+| **05. Swiggy UI Home Screens (Screen 2)** <br> <img src="screenshots/05-02.png" width="200"> | **05. Swiggy UI Home Screens (Screen 3)** <br> <img src="screenshots/05-03.png" width="200"> | **05. Swiggy UI Home Screens (Screen 4)** <br> <img src="screenshots/05-04.png" width="200"> |
+| **05. Swiggy UI Home Screens (Screen 5)** <br> <img src="screenshots/05-05.png" width="200"> | **05. Swiggy UI Home Screens (Screen 6)** <br> <img src="screenshots/05-06.png" width="200"> | **05. Swiggy UI Home Screens (Screen 7)** <br> <img src="screenshots/05-07.png" width="200"> |
+| **05. Swiggy UI Home Screens (Screen 8)** <br> <img src="screenshots/05-08.png" width="200"> | **05. Swiggy UI Home Screens (Screen 9)** <br> <img src="screenshots/05-09.png" width="200"> | **06. Welcome/Login UI (Screen 1)** <br> <img src="screenshots/06-1.png" width="200"> |
 | **06. Welcome/Login UI (Screen 2)** <br> <img src="screenshots/06-2.png" width="200"> | **07. Purple Welcome UI (Screen 1)** <br> <img src="screenshots/07-1.png" width="200"> | **07. Purple Welcome UI (Screen 2)** <br> <img src="screenshots/07-2.png" width="200"> |
 | **08. Business Welcome UI (Screen 1)** <br> <img src="screenshots/08-01.png" width="200"> | **08. Business Welcome UI (Screen 2)** <br> <img src="screenshots/08-02.png" width="200"> | **09. E-learning Welcome UI (Screen 1)** <br> <img src="screenshots/09-01.png" width="200"> |
 | **09. E-learning Welcome UI (Screen 2)** <br> <img src="screenshots/09-02.png" width="200"> | **10. Fashionista Welcome UI (Screen 1)** <br> <img src="screenshots/10-01.png" width="200"> | **10. Fashionista Welcome UI (Screen 2)** <br> <img src="screenshots/10-02.png" width="200"> |
@@ -179,7 +182,9 @@ Find preview images for each UI example in the **screenshots/** directory.
 | **31. Gift Store Home Screens (Screen 5)** <br> <img src="screenshots/31-05.png" width="200"> | **31. Gift Store Home Screens (Screen 6)** <br> <img src="screenshots/31-06.png" width="200"> | **31. Gift Store Home Screens (Screen 7)** <br> <img src="screenshots/31-07.png" width="200"> |
 | **31. Gift Store Home Screens (Screen 8)** <br> <img src="screenshots/31-08.png" width="200"> | **31. Gift Store Home Screens (Screen 9)** <br> <img src="screenshots/31-09.png" width="200"> | **31. Gift Store Home Screens (Screen 10)** <br> <img src="screenshots/31-10.png" width="200"> |
 | **31. Gift Store Home Screens (Screen 11)** <br> <img src="screenshots/31-11.png" width="200"> | **31. Gift Store Home Screens (Screen 12)** <br> <img src="screenshots/31-12.png" width="200"> | **31. Gift Store Home Screens (Screen 13)** <br> <img src="screenshots/31-13.png" width="200"> |
-| **31. Gift Store Home Screens (Screen 14)** <br> <img src="screenshots/31-14.png" width="200"> | Coming Soon 👌 |
+| **31. Gift Store Home Screens (Screen 14)** <br> <img src="screenshots/31-14.png" width="200"> | **32. Events Hub Home Screens (Screen 1)** <br> <img src="screenshots/32-01.png" width="200"> | **32. Events Hub Home Screens (Screen 2)** <br> <img src="screenshots/32-02.png" width="200"> |
+| **32. Events Hub Home Screens (Screen 3)** <br> <img src="screenshots/32-03.png" width="200"> | **32. Events Hub Home Screens (Screen 4)** <br> <img src="screenshots/32-04.png" width="200"> | **32. Events Hub Home Screens (Screen 5)** <br> <img src="screenshots/32-05.png" width="200"> |
+| Coming Soon 👌 | Coming Soon 👌 | Coming Soon 👌 |
 
 [⬆ back to top](#ui-design-using-ionic-and-angular)
 

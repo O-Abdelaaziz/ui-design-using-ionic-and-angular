@@ -1,0 +1,244 @@
+<!--<ion-content [fullscreen]="true" color="light">-->
+<!--  <ion-header class="ion-no-border" slot="fixed">-->
+<!--    <ion-toolbar mode="md">-->
+<!--      <ion-buttons slot="start" >-->
+<!--        <ion-back-button color="light" defaultHref="/home"></ion-back-button>-->
+<!--      </ion-buttons>-->
+<!--    </ion-toolbar>-->
+<!--  </ion-header>-->
+
+<!--  <div class="bg-container">-->
+<!--    <div [style.backgroundImage]="'url(' + event?.image + ')'" class="bg"></div>-->
+<!--  </div>-->
+
+<!--  <ion-item lines="none">-->
+<!--    <ion-label class="event-info">-->
+<!--      {{ event?.name }}-->
+<!--      <ion-row>-->
+<!--        <ion-col>-->
+<!--          <ion-icon name="calendar-outline"></ion-icon>-->
+<!--          {{ event?.date | date: 'MMM d, y' }}-->
+
+<!--          <ion-icon name="location-outline" class="loc"></ion-icon>-->
+<!--          {{ event?.location }}-->
+<!--        </ion-col>-->
+<!--      </ion-row>-->
+<!--    </ion-label>-->
+
+<!--    <div slot="end" class="ion-text-center">-->
+<!--      <ion-label color="primary"> $45</ion-label>-->
+<!--      <p>256 seats available</p>-->
+<!--    </div>-->
+<!--  </ion-item>-->
+
+<!--  <ion-card>-->
+<!--    <ion-list>-->
+<!--      <ion-list-header> About Event</ion-list-header>-->
+<!--      <p class="ion-margin-horizontal">{{ event?.description }}</p>-->
+<!--      <ion-row>-->
+<!--        <ion-col class="ion-align-items-center">-->
+<!--          <ion-avatar>-->
+<!--            <img src="assets/images/avatar1.png" alt="avatar"/>-->
+<!--          </ion-avatar>-->
+<!--          <ion-avatar class="participant">-->
+<!--            <img src="assets/images/avatar2.png" alt="avatar"/>-->
+<!--          </ion-avatar>-->
+<!--          <ion-avatar class="participant">-->
+<!--            <img src="assets/images/avatar3.jpg" alt="avatar"/>-->
+<!--          </ion-avatar>-->
+<!--          <ion-avatar class="ion-text-center participant bg-avatar">-->
+<!--            <ion-text color="dark">+2k</ion-text>-->
+<!--          </ion-avatar>-->
+<!--        </ion-col>-->
+
+<!--        <ion-col class="ion-align-items-center participant-text">-->
+<!--          <ion-label>-->
+<!--            <ion-text color="dark"><strong>Participant</strong></ion-text>-->
+<!--            <p>All over the world</p>-->
+<!--          </ion-label>-->
+<!--        </ion-col>-->
+<!--      </ion-row>-->
+
+<!--      <ion-list-header class="ion-align-items-center">-->
+<!--        Location-->
+<!--      </ion-list-header>-->
+
+<!--      <div class="map">-->
+<!--        <img src="assets/images/maps.png">-->
+<!--      </div>-->
+
+<!--    </ion-list>-->
+<!--  </ion-card>-->
+<!--</ion-content>-->
+
+<!--<ion-footer class="ion-no-border">-->
+<!--  <ion-row>-->
+<!--    <ion-col size="10">-->
+<!--      <ion-button-->
+<!--        expand="block"-->
+<!--        shape="round"-->
+<!--        color="primary"-->
+<!--        size="large"-->
+<!--        [strong]="true"-->
+<!--      >-->
+<!--        <ion-text>Buy Ticket</ion-text>-->
+<!--      </ion-button>-->
+<!--    </ion-col>-->
+<!--    <ion-col size="2">-->
+<!--      <ion-fab-button color="light">-->
+<!--        <ion-icon color="primary" name="heart-outline"></ion-icon>-->
+<!--      </ion-fab-button>-->
+<!--    </ion-col>-->
+<!--  </ion-row>-->
+<!--  &lt;!&ndash; <ion-toolbar>-->
+<!--  </ion-toolbar> &ndash;&gt;-->
+<!--</ion-footer>-->
+
+<ion-content [fullscreen]="true" class="event-detail-page">
+  <!-- Header with back button and image -->
+  <ion-header class="event-header">
+    <div class="header-bg" [style.backgroundImage]="'url(' + event?.image + ')'">
+      <ion-toolbar>
+        <ion-buttons slot="start">
+          <ion-back-button defaultHref="/home" class="back-button" icon="arrow-back" text=""></ion-back-button>
+        </ion-buttons>
+        <ion-buttons slot="end">
+          <ion-button class="share-button">
+            <ion-icon name="share-social" slot="icon-only"></ion-icon>
+          </ion-button>
+        </ion-buttons>
+      </ion-toolbar>
+      <div class="header-overlay"></div>
+    </div>
+  </ion-header>
+
+  <!-- Event Content -->
+  <div class="event-content">
+    <!-- Event Title and Date -->
+    <div class="event-meta">
+      <h1 class="event-title">{{ event?.name }}</h1>
+      <div class="event-date-location">
+        <ion-icon name="calendar-outline"></ion-icon>
+        <span>{{ event?.date | date: 'EEEE, MMMM d, y • h:mm a' }}</span>
+      </div>
+      <div class="event-date-location">
+        <ion-icon name="location-outline"></ion-icon>
+        <span>{{ event?.location }}</span>
+      </div>
+    </div>
+
+    <!-- Price and Action Buttons -->
+    <div class="price-section">
+      <div class="price-tag">
+        <span class="amount">$45</span>
+        <span class="label">Starting from</span>
+      </div>
+      <div class="action-buttons">
+        <ion-button fill="clear" class="favorite-button">
+          <ion-icon slot="icon-only" name="heart-outline"></ion-icon>
+        </ion-button>
+        <ion-button expand="block" shape="round" class="buy-button">
+          <ion-icon name="ticket-outline" slot="start"></ion-icon>
+          Buy Tickets
+        </ion-button>
+      </div>
+    </div>
+
+    <!-- About Event -->
+    <ion-card class="about-card">
+      <ion-card-header>
+        <ion-card-title>About the Event</ion-card-title>
+      </ion-card-header>
+      <ion-card-content>
+        <p class="event-description">{{ event?.description }}</p>
+
+        <div class="event-category">
+          <ion-chip>
+            <ion-icon name="pricetag-outline"></ion-icon>
+            <ion-label>{{ event?.category_name }}</ion-label>
+          </ion-chip>
+        </div>
+      </ion-card-content>
+    </ion-card>
+
+    <!-- Performers -->
+    <ion-card class="performers-card" *ngIf="event?.performers?.length">
+      <ion-card-header>
+        <ion-card-title>Performers</ion-card-title>
+      </ion-card-header>
+      <ion-card-content>
+        <div class="performers-list">
+          <div class="performer">
+            <ion-avatar>
+              <img [src]="'assets/images/avatar1.png'" alt="performer">
+            </ion-avatar>
+            <span class="performer-name">Jhon Doe</span>
+          </div>
+
+          <div class="performer">
+            <ion-avatar>
+              <img [src]="'assets/images/avatar2.png'" alt="performer">
+            </ion-avatar>
+            <span class="performer-name">Jhon Doe</span>
+          </div>
+
+          <div class="performer">
+            <ion-avatar>
+              <img [src]="'assets/images/avatar3.jpg'" alt="performer">
+            </ion-avatar>
+            <span class="performer-name">Jhon Doe</span>
+          </div>
+        </div>
+      </ion-card-content>
+    </ion-card>
+
+    <!-- Location Map -->
+    <ion-card class="location-card">
+      <ion-card-header>
+        <ion-card-title>Location</ion-card-title>
+      </ion-card-header>
+      <ion-card-content>
+        <div class="map-container">
+          <img src="assets/images/maps.png" alt="Event Location" class="map-image">
+          <ion-button expand="block" fill="clear" class="direction-button">
+            <ion-icon name="navigate" slot="start"></ion-icon>
+            Get Directions
+          </ion-button>
+        </div>
+      </ion-card-content>
+    </ion-card>
+
+    <!-- Participants -->
+    <ion-card class="participants-card">
+      <ion-card-header>
+        <ion-card-title>Participants</ion-card-title>
+      </ion-card-header>
+      <ion-card-content>
+        <div class="participants-list">
+          <div class="participant-avatars">
+            <ion-avatar *ngFor="let avatar of [1,2]">
+              <img [src]="'assets/images/avatar' + avatar + '.png'" [alt]="'Participant ' + avatar">
+            </ion-avatar>
+            <div class="more-participants">
+              +2K Going
+            </div>
+          </div>
+          <ion-button fill="clear" class="view-all">
+            View All
+            <ion-icon name="arrow-forward" slot="end"></ion-icon>
+          </ion-button>
+        </div>
+      </ion-card-content>
+    </ion-card>
+  </div>
+
+  <!-- Fixed Footer Button -->
+  <ion-footer class="ion-no-border">
+    <ion-toolbar>
+      <ion-button expand="block" size="large" shape="round" class="cta-button">
+        <ion-icon name="ticket-outline" slot="start"></ion-icon>
+        Buy Tickets - $45
+      </ion-button>
+    </ion-toolbar>
+  </ion-footer>
+</ion-content>
