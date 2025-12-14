@@ -75,7 +75,7 @@ ui-design-using-ionic-and-angular/
 ├── 03-pet-finder-mobile-app/
 ├── 04-car-selling-mobile-app/
 ├── ...
-├── 32-events-hub-home-screens-mobile-app/
+├── 33-bakery-dark-light-home-screens-mobile-app/
 ├── screenshots/
 └── README.md
 ```
@@ -184,6 +184,8 @@ Find preview images for each UI example in the **screenshots/** directory.
 | **31. Gift Store Home Screens (Screen 11)** <br> <img src="screenshots/31-11.png" width="200"> | **31. Gift Store Home Screens (Screen 12)** <br> <img src="screenshots/31-12.png" width="200"> | **31. Gift Store Home Screens (Screen 13)** <br> <img src="screenshots/31-13.png" width="200"> |
 | **31. Gift Store Home Screens (Screen 14)** <br> <img src="screenshots/31-14.png" width="200"> | **32. Events Hub Home Screens (Screen 1)** <br> <img src="screenshots/32-01.png" width="200"> | **32. Events Hub Home Screens (Screen 2)** <br> <img src="screenshots/32-02.png" width="200"> |
 | **32. Events Hub Home Screens (Screen 3)** <br> <img src="screenshots/32-03.png" width="200"> | **32. Events Hub Home Screens (Screen 4)** <br> <img src="screenshots/32-04.png" width="200"> | **32. Events Hub Home Screens (Screen 5)** <br> <img src="screenshots/32-05.png" width="200"> |
+| **33. Bakery Home Screens (Screen 1)** <br> <img src="screenshots/33-01.png" width="200"> | **33. Bakery Home Screens (Screen 2)** <br> <img src="screenshots/33-02.png" width="200"> | **33. Bakery Home Screens (Screen 3)** <br> <img src="screenshots/33-03.png" width="200"> |
+| **33. Bakery Home Screens (Screen 4)** <br> <img src="screenshots/33-04.png" width="200"> | **33. Bakery Home Screens (Screen 5)** <br> <img src="screenshots/33-05.png" width="200"> | **33. Bakery Home Screens (Screen 6)** <br> <img src="screenshots/33-06.png" width="200"> |
 | Coming Soon 👌 | Coming Soon 👌 | Coming Soon 👌 |
 
 [⬆ back to top](#ui-design-using-ionic-and-angular)

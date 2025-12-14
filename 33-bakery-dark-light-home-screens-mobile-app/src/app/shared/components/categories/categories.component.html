@@ -1,0 +1,86 @@
+<!--@defer (when categories().length > 0) {-->
+<!--  <ion-row>-->
+<!--    <div class="container">-->
+<!--      <swiper-container-->
+<!--        [modules]="swiperModules"-->
+<!--        [slidesPerView]="4"-->
+<!--        [breakpoints]="breakpoints"-->
+<!--        [lazy]="true"-->
+<!--        [preloadImages]="false"-->
+<!--        aria-label="Product categories"-->
+<!--      >-->
+<!--        @for (category of categories(); track category?.id || $index) {-->
+<!--          @if (category) {-->
+<!--            <swiper-slide>-->
+<!--              <ion-col>-->
+<!--                <app-image-circle-->
+<!--                  [image]="category.image"-->
+<!--                  [alt]="category.name + ' category'"-->
+<!--                ></app-image-circle>-->
+<!--                <p class="small text-weight-500" aria-hidden="true">-->
+<!--                  {{ category.name }}-->
+<!--                </p>-->
+<!--              </ion-col>-->
+<!--            </swiper-slide>-->
+<!--          }-->
+<!--        }-->
+<!--      </swiper-container>-->
+<!--    </div>-->
+<!--  </ion-row>-->
+<!--} @placeholder (minimum 500ms) {-->
+<!--  <ion-row>-->
+<!--    <ion-col>-->
+<!--      <ion-skeleton-text animated></ion-skeleton-text>-->
+<!--    </ion-col>-->
+<!--  </ion-row>-->
+<!--} @error {-->
+<!--  <ion-row>-->
+<!--    <ion-col>-->
+<!--      <ion-note color="danger">Failed to load categories</ion-note>-->
+<!--    </ion-col>-->
+<!--  </ion-row>-->
+<!--}-->
+
+@defer (when categories().length > 0) {
+  <div class="categories-container">
+    <swiper-container
+      [modules]="swiperModules"
+      [slidesPerView]="4"
+      [breakpoints]="breakpoints"
+      [lazy]="true"
+      [preloadImages]="false"
+      [spaceBetween]="16"
+      [centeredSlides]="false"
+      [grabCursor]="true"
+      aria-label="Product categories"
+    >
+      @for (category of categories(); track category?.id || $index) {
+        @if (category) {
+          <swiper-slide class="category-slide">
+            <div class="category-card">
+              <app-image-circle
+                [image]="category.image"
+                [alt]="category.name + ' category'"
+                class="category-image"
+              ></app-image-circle>
+              <p class="category-name">{{ category.name }}</p>
+            </div>
+          </swiper-slide>
+        }
+      }
+    </swiper-container>
+  </div>
+} @placeholder (minimum 500ms) {
+  <div class="skeleton-loader">
+    <ion-skeleton-text animated class="skeleton-item"></ion-skeleton-text>
+  </div>
+} @error {
+  <div class="error-state">
+    <ion-icon name="alert-circle" class="error-icon"></ion-icon>
+    <p>Unable to load categories</p>
+    <ion-button fill="clear" (click)="retryLoading()" class="retry-button">
+      <ion-icon slot="start" name="refresh"></ion-icon>
+      Try Again
+    </ion-button>
+  </div>
+}

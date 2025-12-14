@@ -1,0 +1,285 @@
+<!--<ion-header [translucent]="true">-->
+<!--  <ion-toolbar>-->
+<!--    <ion-buttons slot="start">-->
+<!--      <ion-back-button defaultHref="/tabs/home"></ion-back-button>-->
+<!--    </ion-buttons>-->
+<!--    <ion-buttons slot="end">-->
+<!--      <ion-button (click)="shareProduct()">-->
+<!--        <ion-icon slot="icon-only" name="share-social-outline"></ion-icon>-->
+<!--      </ion-button>-->
+<!--      <ion-button (click)="toggleWishlist()">-->
+<!--        <ion-icon-->
+<!--          slot="icon-only"-->
+<!--          [name]="isInWishlist() ? 'heart' : 'heart-outline'"-->
+<!--          [color]="isInWishlist() ? 'danger' : ''">-->
+<!--        </ion-icon>-->
+<!--      </ion-button>-->
+<!--    </ion-buttons>-->
+<!--  </ion-toolbar>-->
+<!--</ion-header>-->
+
+<!--<ion-content [fullscreen]="true">-->
+<!--  <div class="product-container">-->
+<!--    &lt;!&ndash; Product Images Slider &ndash;&gt;-->
+<!--    <div class="image-slider">-->
+<!--      <swiper-container [slidesPerView]="1" [pagination]="true">-->
+<!--        <swiper-slide>-->
+<!--          <div class="swiper-image" [style.backgroundImage]="'url(' + productDetails()?.image + ')'"></div>-->
+<!--        </swiper-slide>-->
+<!--      </swiper-container>-->
+<!--    </div>-->
+
+<!--    &lt;!&ndash; Product Info &ndash;&gt;-->
+<!--    <div class="product-info">-->
+<!--      <div class="header">-->
+<!--        <h1 class="product-name">{{ productDetails()?.name }}</h1>-->
+<!--        <div class="rating-container">-->
+<!--          <div class="stars">-->
+<!--            @for (star of [1, 2, 3, 4, 5]; track $index) {-->
+<!--              <ion-icon-->
+<!--                [name]="star <= (productDetails()?.rating || 0) ? 'star' : 'star-outline'"-->
+<!--                [color]="star <= (productDetails()?.rating || 0) ? 'warning' : 'medium'">-->
+<!--              </ion-icon>-->
+<!--            }-->
+<!--          </div>-->
+<!--          <span class="review-count">({{ productDetails()?.reviewCount || 0 }} reviews)</span>-->
+<!--        </div>-->
+<!--      </div>-->
+
+<!--      <div class="price-container">-->
+<!--        <span class="current-price">{{ productDetails()?.default_price | currency }}</span>-->
+<!--        @if (productDetails()?.cut_price) {-->
+<!--          <span class="original-price">{{ productDetails()?.cut_price | currency }}</span>-->
+<!--          <span class="discount-badge">-{{ calculateDiscount() }}% OFF</span>-->
+<!--        }-->
+<!--      </div>-->
+
+<!--      &lt;!&ndash; Description with Read More &ndash;&gt;-->
+<!--      <div class="description">-->
+<!--        <h3>Description</h3>-->
+<!--        <p [class.collapsed]="!readMore()" (click)="readMore.set(!readMore())">-->
+<!--          {{ productDetails()?.description }}-->
+<!--        </p>-->
+<!--        <button class="read-more" (click)="readMore.set(!readMore())">-->
+<!--          {{ readMore() ? 'Read Less' : 'Read More' }}-->
+<!--        </button>-->
+<!--      </div>-->
+
+<!--      &lt;!&ndash; Seller Info &ndash;&gt;-->
+<!--      <div class="seller-info" *ngIf="productDetails()?.seller_id">-->
+<!--        <h3>Sold by</h3>-->
+<!--        <div class="seller-details">-->
+<!--          <ion-avatar>-->
+<!--            <img src="assets/seller/avatar-1.jpg" alt="avatar-1">-->
+<!--          </ion-avatar>-->
+<!--          <div class="seller-text">-->
+<!--            <h4>Jhon Deo</h4>-->
+<!--            <p>4.5 ★ (220)</p>-->
+<!--          </div>-->
+<!--          <ion-button fill="clear" class="contact-btn">-->
+<!--            <ion-icon name="chatbox-ellipses-outline" slot="start"></ion-icon>-->
+<!--            Chat-->
+<!--          </ion-button>-->
+<!--        </div>-->
+<!--      </div>-->
+
+<!--      &lt;!&ndash; Quantity Selector &ndash;&gt;-->
+<!--      <div class="quantity-selector">-->
+<!--        <h3>Quantity</h3>-->
+<!--        <div class="quantity-controls">-->
+<!--          <ion-button fill="outline" (click)="decreaseQuantity()" [disabled]="quantity() <= 1">-->
+<!--            <ion-icon name="remove-outline"></ion-icon>-->
+<!--          </ion-button>-->
+<!--          <span class="quantity">{{ quantity() }}</span>-->
+<!--          <ion-button fill="outline" (click)="increaseQuantity()">-->
+<!--            <ion-icon name="add-outline"></ion-icon>-->
+<!--          </ion-button>-->
+<!--        </div>-->
+<!--      </div>-->
+
+<!--      &lt;!&ndash; Similar Products &ndash;&gt;-->
+<!--      @if (similarProducts().length > 0) {-->
+<!--        <div class="similar-products">-->
+<!--          <h3>You may also like</h3>-->
+<!--          <div class="products-grid">-->
+<!--            @for (product of similarProducts(); track product.id) {-->
+<!--              <app-product [item]="product" (click)="navigateToProduct(product.id)"></app-product>-->
+<!--            }-->
+<!--          </div>-->
+<!--        </div>-->
+<!--      }-->
+<!--    </div>-->
+<!--  </div>-->
+<!--</ion-content>-->
+
+<!--&lt;!&ndash; Fixed Add to Cart Button &ndash;&gt;-->
+<!--<ion-footer>-->
+<!--  <ion-toolbar>-->
+<!--    <ion-buttons>-->
+<!--      <ion-button class="cart-btn" expand="block" (click)="addToCart()">-->
+<!--        <ion-icon name="bag-handle-outline" slot="start"></ion-icon>-->
+<!--        Add to Cart - {{ (productDetails()?.default_price || 0) * quantity() | currency }}-->
+<!--      </ion-button>-->
+<!--    </ion-buttons>-->
+<!--  </ion-toolbar>-->
+<!--</ion-footer>-->
+
+
+<ion-content [fullscreen]="true">
+  <ion-header class="ion-no-border" slot="fixed">
+    <ion-toolbar>
+      <ion-buttons slot="start">
+        <ion-back-button
+          mode="md"
+          defaultHref="/tabs/home"
+          class="btnBg btnBgLight"
+        ></ion-back-button>
+      </ion-buttons>
+
+      <ion-buttons slot="end">
+        <ion-fab-button size="small" class="btnBg btnBgLight">
+          <ion-icon name="heart-outline" color="dark"></ion-icon>
+        </ion-fab-button>
+
+        <ion-fab-button size="small" class="btnBg btnBgLight">
+          <ion-icon name="share-social-outline" color="dark"></ion-icon>
+        </ion-fab-button>
+      </ion-buttons>
+    </ion-toolbar>
+  </ion-header>
+
+  @let pdt = productDetails() ;
+
+  <div [style.backgroundImage]="'url(' + pdt?.image + ')'" class="bg">
+    <ion-row class="bottom-center">
+      @for (image of [1, 2, 3, 4, 5]; track $index) {
+        <ion-col size="auto">
+          <app-image-rect-box
+            [image]="'assets/products/chocolate-cake.jpg'"
+          ></app-image-rect-box>
+        </ion-col>
+      }
+    </ion-row>
+  </div>
+
+  <ion-list lines="none" class="ion-margin">
+    <ion-item class="item">
+      <ion-label class="medium">
+        {{ pdt?.category?.name }}
+        <p class="x-large mt text-weight-500">
+          <ion-text color="dark"> {{ pdt?.name }}</ion-text>
+        </p>
+      </ion-label>
+
+      <ion-col slot="end" class="ion-text-end">
+        <ion-row class="rating medium">
+          <ion-icon name="star" color="warning"></ion-icon>
+          {{ pdt?.rating }}
+        </ion-row>
+        <ion-row class="mt">
+          <app-veg-nonveg-indicator
+            [type]="pdt?.type!"
+          ></app-veg-nonveg-indicator>
+        </ion-row>
+      </ion-col>
+    </ion-item>
+
+    <ion-list-header class="medium text-weight-500"> Seller</ion-list-header>
+
+    <ion-item class="seller">
+      <ion-avatar slot="start">
+        <img src="assets/seller/avatar-1.jpg" alt="seller"/>
+      </ion-avatar>
+
+      <ion-label>
+        <ion-text class="text-title text-weight-500" color="dark"
+        >{{ pdt?.seller?.name }}
+        </ion-text
+        >
+        <p class="small">{{ pdt?.seller?.role }}</p>
+      </ion-label>
+
+      <ion-fab-button slot="end" size="small" class="btnBg" color="light">
+        <ion-icon name="chatbox-ellipses" color="primary"></ion-icon>
+      </ion-fab-button>
+      <ion-fab-button slot="end" size="small" class="btnBg" color="light">
+        <ion-icon name="call" color="primary"></ion-icon>
+      </ion-fab-button>
+    </ion-item>
+
+    <ion-item class="description" lines="full">
+      <ion-label>
+        <ion-text class="large text-weight-500" color="dark"
+        >Description
+        </ion-text
+        >
+
+        <div class="text-container">
+          <p class="medium" [ngClass]="{'expanded': readMore()}">{{ pdt?.description }}</p>
+
+          @if (!readMore()) {
+            <ion-button
+              size="small"
+              fill="clear"
+              color="primary"
+              class="ion-no-margin"
+              (click)="readMore.set(true)"
+            >
+              Read more
+            </ion-button>
+          }
+        </div>
+      </ion-label>
+    </ion-item>
+
+    @if (pdt?.varieties?.length! > 0) {
+      <ion-list-header class="large text-weight-500">
+        Select Option
+      </ion-list-header>
+
+      <ion-row class="sizes">
+        @for (variety of pdt?.varieties; track $index) {
+          <ion-col>
+            <ion-button
+              size="small"
+              [ngClass]="{ 'selected': variety?.is_default}"
+            >
+              {{ variety?.quantity }} {{ variety?.unit }}
+            </ion-button>
+          </ion-col>
+        }
+      </ion-row>
+    }
+  </ion-list>
+</ion-content>
+
+<ion-footer>
+  <ion-toolbar>
+    <ion-row>
+      <ion-col size="4">
+        <ion-label class="medium">
+          Total Price
+          <p class="large text-weight-500">
+            <ion-text color="dark"
+            >{{ pdt?.default_price | currency }}
+            </ion-text
+            >
+          </p>
+        </ion-label>
+      </ion-col>
+
+      <ion-col size="8">
+        <ion-button
+          size="large"
+          expand="block"
+          shape="round"
+          [strong]="true"
+          mode="ios"
+        >
+          <ion-icon slot="start" name="bag-handle"></ion-icon>
+          <ion-text class="large">Add to Cart</ion-text>
+        </ion-button>
+      </ion-col>
+    </ion-row>
+  </ion-toolbar>
+</ion-footer>

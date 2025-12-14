@@ -1,0 +1,75 @@
+@defer (when bannerImages().length > 0) {
+  <ion-row>
+    <ion-col size="12" class="ion-padding">
+      <swiper-container
+        [slidesPerView]="1"
+        [spaceBetween]="20"
+        [centeredSlides]="true"
+        initial-slide="0"
+        centered-slides="true"
+        [pagination]="{clickable: true, dynamicBullets: true}"
+        [modules]="swiperModules">
+        @for (slide of bannerImages(); track $index) {
+          <swiper-slide>
+            <img [src]="slide.image" alt="slide.image">
+          </swiper-slide>
+        }
+      </swiper-container>
+    </ion-col>
+  </ion-row>
+} @placeholder {
+  <ion-row>
+    <ion-col>
+      <ion-skeleton-text animated></ion-skeleton-text>
+    </ion-col>
+  </ion-row>
+}
+<!--  <ion-row>-->
+<!--    <ion-col>-->
+<!--      <ion-card>-->
+<!--        <ion-card-header>-->
+<!--          <ion-card-title>Loading...</ion-card-title>-->
+<!--        </ion-card-header>-->
+<!--        <ion-card-content>-->
+<!--          <ion-skeleton-text animated></ion-skeleton-text>-->
+<!--        </ion-card-content>-->
+<!--      </ion-card>-->
+<!--    </ion-col>-->
+<!--  </ion-row>-->
+
+
+<!--@defer (when bannerImages?.length! > 0){-->
+<!--  <ion-row>-->
+<!--    <ion-col>-->
+<!--      <swiper [slidesPerView]="1" [spaceBetween]="0" [centeredSlides]="true" [loop]="true" [pagination]="{-->
+<!--      clickable: true-->
+<!--    }" [navigation]="true" [modules]="swiperModules">-->
+<!--        <swiper-slide *ngFor="let slide of slides">-->
+<!--          <ion-card>-->
+<!--            <ion-card-header>-->
+<!--              <ion-card-title>{{ slide.title }}</ion-card-title>-->
+<!--              <ion-card-subtitle>{{ slide.description }}</ion-card-subtitle>-->
+<!--            </ion-card-header>-->
+<!--            <ion-card-content>-->
+<!--              <img [src]="slide.image" alt="slide.image">-->
+<!--            </ion-card-content>-->
+<!--          </ion-card>-->
+<!--        </swiper-slide>-->
+<!--      </swiper>-->
+<!--    </ion-col>-->
+<!--  </ion-row>-->
+<!--}-->
+<!--@placeholder {-->
+<!--  <ion-row>-->
+<!--    <ion-col>-->
+<!--      <ion-card>-->
+<!--        <ion-card-header>-->
+<!--          <ion-card-title>Loading...</ion-card-title>-->
+<!--        </ion-card-header>-->
+<!--        <ion-card-content>-->
+<!--          <ion-skeleton-text animated></ion-skeleton-text>-->
+<!--        </ion-card-content>-->
+<!--      </ion-card>-->
+<!--    </ion-col>-->
+<!--  </ion-row>-->
+<!--}-->

@@ -1,0 +1,63 @@
+<ion-header [translucent]="true" class="ion-no-border">
+  <ion-toolbar color="primary">
+    <ion-item lines="none">
+      <ion-label>
+        <span>Location</span>
+        <p>
+          <ion-icon name="location"></ion-icon>
+          <ion-text>Algeria</ion-text>
+          <ion-button fill="clear" size="small" color="light">
+            <ion-icon name="chevron-down" slot="icon-only"></ion-icon>
+          </ion-button>
+        </p>
+      </ion-label>
+
+      <ion-button slot="end">
+        <ion-icon name="cart" slot="icon-only"></ion-icon>
+      </ion-button>
+
+      <ion-button slot="end" class="notification">
+        <ion-icon name="notifications" slot="icon-only"></ion-icon>
+      </ion-button>
+
+    </ion-item>
+
+    <ion-row>
+      <ion-col size="10">
+        <ion-searchbar
+          #searchInput
+          debounce="800"
+          color="light"
+          inputmode="search"
+          class="search-bar"
+          mode="ios"
+          placeholder="Search"
+        >
+        </ion-searchbar>
+      </ion-col>
+      <ion-col size="2">
+        <ion-button color="light">
+          <ion-icon name="options" slot="icon-only" color="primary"></ion-icon>
+        </ion-button>
+      </ion-col>
+    </ion-row>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  @if (banners().length > 0) {
+    <app-list-heading headingText="Special offers" buttonText="See More"></app-list-heading>
+    <app-banner [bannerImages]="banners()"></app-banner>
+  }
+
+  @if (categories().length > 0) {
+    <app-list-heading headingText="Categories" buttonText="See More"></app-list-heading>
+    <app-categories [categories]="categories()"></app-categories>
+  }
+
+  @if (products().length > 0) {
+    <app-list-heading headingText="Products" buttonText="See More"></app-list-heading>
+    <app-product-list-horizontal [products]="products()"></app-product-list-horizontal>
+  }
+
+</ion-content>

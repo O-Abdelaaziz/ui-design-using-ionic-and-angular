@@ -1,0 +1,120 @@
+@defer(when products()?.length! > 0) {
+  <div class="container ion-padding">
+    <swiper-container
+      [modules]="swiperModules"
+      [slidesPerView]="1.8"
+      [spaceBetween]="20"
+    >
+      @for(product of products(); track $index) {
+        <swiper-slide>
+          <app-product [item]="product"></app-product>
+        </swiper-slide>
+      }
+    </swiper-container>
+  </div>
+}
+
+<!--@defer (when products()?.length) {-->
+<!--  <div class="products-container">-->
+<!--    <swiper-container-->
+<!--      [modules]="swiperModules"-->
+<!--      [slidesPerView]="1.8"-->
+<!--      [spaceBetween]="16"-->
+<!--      [breakpoints]="breakpoints"-->
+<!--      [grabCursor]="true"-->
+<!--      [preloadImages]="false"-->
+<!--      [lazy]="true"-->
+<!--      class="products-swiper"-->
+<!--    >-->
+<!--      @for (product of products(); track trackByProductId($index, product)) {-->
+<!--        <swiper-slide class="product-slide">-->
+<!--          <div class="product-card" (click)="onProductClick(product, $event)">-->
+<!--            &lt;!&ndash; Wishlist Button &ndash;&gt;-->
+<!--            <button-->
+<!--              class="wishlist-button"-->
+<!--              (click)="onToggleWishlist(product, $event)"-->
+<!--              [attr.aria-label]="isInWishlist(product.id) ? 'Remove from wishlist' : 'Add to wishlist'"-->
+<!--            >-->
+<!--              <ion-icon-->
+<!--                [name]="isInWishlist(product.id) ? 'heart' : 'heart-outline'"-->
+<!--                [color]="isInWishlist(product.id) ? 'danger' : 'medium'"-->
+<!--              ></ion-icon>-->
+<!--            </button>-->
+
+<!--            &lt;!&ndash; Product Image &ndash;&gt;-->
+<!--            <div class="product-image-container">-->
+<!--              <img-->
+<!--                [src]="product.image || 'assets/images/placeholder.jpg'"-->
+<!--                [alt]="product.name"-->
+<!--                loading="lazy"-->
+<!--                class="product-image"-->
+<!--              >-->
+<!--              @if (product.discount) {-->
+<!--                <span class="discount-badge">-{{ product.discount }}%</span>-->
+<!--              }-->
+<!--            </div>-->
+
+<!--            &lt;!&ndash; Product Info &ndash;&gt;-->
+<!--            <div class="product-info">-->
+<!--              <h3 class="product-name">{{ product.name }}</h3>-->
+
+<!--              <div class="rating-container">-->
+<!--                <div class="stars">-->
+<!--                  @for (star of [1,2,3,4,5]; track $index) {-->
+<!--                    <ion-icon-->
+<!--                      [name]="star <= (product.rating || 0) ? 'star' : 'star-outline'"-->
+<!--                      class="star-icon"-->
+<!--                    ></ion-icon>-->
+<!--                  }-->
+<!--                </div>-->
+<!--                @if (product.reviewCount) {-->
+<!--                  <span class="rating-count">({{ product.reviewCount }})</span>-->
+<!--                }-->
+<!--              </div>-->
+
+<!--              <div class="price-container">-->
+<!--                <span class="current-price">{{ product.default_price | currency }}</span>-->
+<!--                @if (product.cut_price) {-->
+<!--                  <span class="original-price">{{ product.cut_price | currency }}</span>-->
+<!--                }-->
+<!--              </div>-->
+<!--            </div>-->
+
+<!--            &lt;!&ndash; Add to Cart Button &ndash;&gt;-->
+<!--            <button-->
+<!--              class="add-to-cart"-->
+<!--              (click)="onAddToCart(product, $event)"-->
+<!--              aria-label="Add to cart"-->
+<!--            >-->
+<!--              <ion-icon name="cart-outline"></ion-icon>-->
+<!--              <span>Add to Cart</span>-->
+<!--            </button>-->
+<!--          </div>-->
+<!--        </swiper-slide>-->
+<!--      }-->
+<!--    </swiper-container>-->
+<!--  </div>-->
+<!--} @placeholder (minimum 500ms) {-->
+<!--  <div class="skeleton-loader">-->
+<!--    @for (i of [1,2,3]; track i) {-->
+<!--      <div class="skeleton-card"></div>-->
+<!--    }-->
+<!--  </div>-->
+<!--} @error {-->
+<!--  <div class="error-state">-->
+<!--    <ion-icon name="alert-circle" class="error-icon"></ion-icon>-->
+<!--    <p>Unable to load products</p>-->
+<!--    <ion-button fill="clear" (click)="retryLoading()" class="retry-button">-->
+<!--      <ion-icon slot="start" name="refresh"></ion-icon>-->
+<!--      Try Again-->
+<!--    </ion-button>-->
+<!--  </div>-->
+<!--}-->
+
+
+<!--<app-product-list-horizontal-->
+<!--  [products]="products"-->
+<!--  (addToCart)="onAddToCart($event)"-->
+<!--  (toggleWishlist)="onToggleWishlist($event)"-->
+<!--  (productClick)="onProductClick($event)">-->
+<!--</app-product-list-horizontal>-->
