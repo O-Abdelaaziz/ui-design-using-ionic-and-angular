@@ -1,0 +1,30 @@
+ion-card.room-card {
+  border-radius: 25px;
+
+  ion-col {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    ion-avatar {
+      width: 4rem;
+      height: 4rem;
+      border: 1px solid var(--ion-color-primay);
+    }
+
+    ion-label {
+      ion-note {
+        --color: var(--ion-text-color);
+        font-size: 1.1rem;
+        font-weight: 500;
+      }
+
+      p {
+        margin-top: 5px;
+        font-size: 0.9rem;
+        font-weight: 400;
+      }
+    }
+  }
+}

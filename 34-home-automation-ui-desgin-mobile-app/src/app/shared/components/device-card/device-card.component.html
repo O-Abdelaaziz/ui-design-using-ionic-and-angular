@@ -1,0 +1,162 @@
+<!--@let deviceCard = device() ;-->
+<!--@defer (when deviceCard) {-->
+<!--  <ion-card>-->
+<!--    <ion-thumbnail>-->
+<!--      <ion-icon [name]="deviceCard?.icon"></ion-icon>-->
+<!--    </ion-thumbnail>-->
+
+<!--    <ion-label class="ion-margin-top">-->
+<!--      <ion-note color="dark">{{ deviceCard?.name }}</ion-note>-->
+<!--      <ion-text color="medium">-->
+<!--        <p>-->
+<!--          <ion-toggle-->
+<!--            name="status"-->
+<!--            color="success"-->
+<!--            checked="{{ deviceCard?.status }}"-->
+<!--            (ionChange)="onToggleChange(deviceCard, $event)"-->
+<!--          >-->
+<!--            {{ deviceCard?.status ? 'ON' : 'OFF' }}-->
+<!--          </ion-toggle>-->
+<!--        </p>-->
+<!--      </ion-text>-->
+<!--    </ion-label>-->
+<!--  </ion-card>-->
+<!--} @placeholder {-->
+<!--  <ion-card>-->
+<!--    <ion-label>-->
+<!--      <ion-note color="dark">Loading device</ion-note>-->
+<!--    </ion-label>-->
+<!--  </ion-card>-->
+<!--} @error {-->
+<!--  <ion-card>-->
+<!--    <ion-label>-->
+<!--      <ion-note color="dark">Error loading device</ion-note>-->
+<!--    </ion-label>-->
+<!--  </ion-card>-->
+<!--}-->
+
+<!--@let deviceCard = device();-->
+<!--@defer (when deviceCard) {-->
+<!--  <ion-card class="device-card" [class.active]="deviceCard?.status">-->
+<!--    <div class="card-content">-->
+<!--      <div class="device-icon">-->
+<!--        <ion-icon-->
+<!--          [name]="deviceCard?.icon"-->
+<!--          [color]="deviceCard?.status ? 'primary' : 'medium'">-->
+<!--        </ion-icon>-->
+<!--      </div>-->
+
+<!--      <div class="device-info">-->
+<!--        <ion-text class="device-name">{{ deviceCard?.name }}</ion-text>-->
+<!--        <ion-item lines="none" class="device-toggle">-->
+<!--          <ion-toggle-->
+<!--            slot="end"-->
+<!--            color="success"-->
+<!--            [checked]="deviceCard?.status"-->
+<!--            (ionChange)="onToggleChange(deviceCard, $event)">-->
+<!--            <ion-label class="status-text">-->
+<!--              {{ deviceCard?.status ? 'ON' : 'OFF' }}-->
+<!--            </ion-label>-->
+<!--          </ion-toggle>-->
+<!--        </ion-item>-->
+<!--      </div>-->
+<!--    </div>-->
+<!--  </ion-card>-->
+<!--}-->
+
+<!--@placeholder {-->
+<!--  <ion-card class="device-card loading">-->
+<!--    <ion-skeleton-text animated style="width: 80%"></ion-skeleton-text>-->
+<!--    <ion-skeleton-text animated style="width: 60%"></ion-skeleton-text>-->
+<!--  </ion-card>-->
+<!--}-->
+
+<!--@error {-->
+<!--  <ion-card class="device-card error">-->
+<!--    <ion-icon name="alert-circle" color="danger"></ion-icon>-->
+<!--    <ion-text color="danger">Error loading device</ion-text>-->
+<!--  </ion-card>-->
+<!--}-->
+
+
+<!--@let deviceCard = device();-->
+
+<!--@defer (when deviceCard) {-->
+<!--  <ion-card class="device-card" [class.active]="deviceCard?.status">-->
+<!--    <div class="card-content">-->
+<!--      <div class="device-icon">-->
+<!--        <ion-icon-->
+<!--          [name]="deviceCard?.icon"-->
+<!--          [color]="deviceCard?.status ? 'primary' : 'medium'">-->
+<!--        </ion-icon>-->
+<!--      </div>-->
+
+<!--      <div class="device-info">-->
+<!--        <ion-text class="device-name">{{ deviceCard?.name }}</ion-text>-->
+<!--        <ion-item lines="none" class="device-toggle">-->
+<!--          <ion-toggle-->
+<!--            [checked]="deviceCard?.status"-->
+<!--            (ionChange)="onToggleChange(deviceCard, $event)">-->
+<!--            <ion-label class="status-text">-->
+<!--              {{ deviceCard?.status ? 'ON' : 'OFF' }}-->
+<!--            </ion-label>-->
+<!--          </ion-toggle>-->
+<!--        </ion-item>-->
+<!--      </div>-->
+<!--    </div>-->
+<!--  </ion-card>-->
+<!--}-->
+
+<!--@placeholder {-->
+<!--  <ion-card class="device-card loading">-->
+<!--    <ion-skeleton-text animated></ion-skeleton-text>-->
+<!--    <ion-skeleton-text animated></ion-skeleton-text>-->
+<!--  </ion-card>-->
+<!--}-->
+
+<!--@error {-->
+<!--  <ion-card class="device-card error">-->
+<!--    <ion-icon name="alert-circle"></ion-icon>-->
+<!--    <ion-text>Error loading device</ion-text>-->
+<!--  </ion-card>-->
+<!--}-->
+
+
+@let deviceCard = device() ;
+
+@defer (when deviceCard) {
+  <ion-card class="device-card" [class.active]="deviceCard?.status">
+    <div class="card-content">
+      <div class="card-badge" [class.active]="deviceCard?.status">
+        <span>{{ deviceCard?.status ? 'ON' : 'OFF' }}</span>
+      </div>
+
+      <div class="device-icon">
+        <ion-icon
+          [name]="deviceCard?.icon"
+          [color]="deviceCard?.status ? 'primary' : 'medium'">
+        </ion-icon>
+      </div>
+
+      <h3 class="device-name">{{ deviceCard?.name }}</h3>
+
+      <div class="device-actions">
+        <ion-toggle
+          [checked]="deviceCard?.status"
+          (ionChange)="onToggleChange(deviceCard, $event)"
+          aria-label="Toggle device">
+        </ion-toggle>
+      </div>
+    </div>
+  </ion-card>
+} @placeholder {
+  <ion-card class="device-card loading">
+    <ion-skeleton-text animated class="skeleton-icon"></ion-skeleton-text>
+    <ion-skeleton-text animated class="skeleton-text"></ion-skeleton-text>
+  </ion-card>
+} @error {
+  <ion-card class="device-card error">
+    <ion-icon name="alert-circle" color="danger"></ion-icon>
+    <p>Error loading device</p>
+  </ion-card>
+}

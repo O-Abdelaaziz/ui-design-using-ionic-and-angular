@@ -1,0 +1,16 @@
+@defer (when room()) {
+  <ion-card
+    class="room-card"
+    [class.selected]="room()?.selected"
+    [routerLink]="['/rooms', room()?.id]">
+    <ion-col class="ion-margin-top ion-text-center">
+      <ion-avatar class="ion-align-self-center">
+        <img [src]="room()?.image" alt="room">
+      </ion-avatar>
+      <ion-label class="ion-margin-vertical">
+        <ion-note color="dark">{{ room()?.name }}</ion-note>
+        <p>{{ room()?.deviceCount }} Devices</p>
+      </ion-label>
+    </ion-col>
+  </ion-card>
+}

@@ -1,0 +1,59 @@
+ion-header {
+  ion-avatar {
+    padding: 10px;
+  }
+}
+
+ion-content {
+  ion-item.welcome-message {
+    --background: transparent;
+
+    ion-label {
+      ion-text {
+        font-size: 1.8rem;
+        font-weight: 600;
+      }
+
+      p {
+        font-size: 1rem;
+      }
+    }
+  }
+
+  ion-card.weather-card {
+    --background: transparent;
+    border-radius: 25px;
+
+    ion-item {
+      ion-icon {
+        font-size: 2.8rem;
+      }
+
+      ion-label {
+        font-size: 1.2rem;
+        font-weight: 500;
+
+        p {
+          margin-top: 5px;
+          font-size: 0.9rem;
+          font-weight: 400;
+        }
+      }
+
+      ion-text {
+        font-size: 2.2rem;
+        font-weight: 600;
+      }
+    }
+
+    .weather-details ion-col {
+      font-size: 0.9rem;
+    }
+
+    .label{
+      display: block;
+      font-size: 0.8rem;
+      color: #888;
+    }
+  }
+}

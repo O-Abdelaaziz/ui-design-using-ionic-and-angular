@@ -1,0 +1,54 @@
+<!--<ion-header [translucent]="true">-->
+<!--  <ion-toolbar class="ion-text-center">-->
+<!--    <ion-title>Room Details</ion-title>-->
+<!--    <ion-buttons slot="start">-->
+<!--      <ion-back-button defaultHref="/home"></ion-back-button>-->
+<!--    </ion-buttons>-->
+<!--  </ion-toolbar>-->
+<!--</ion-header>-->
+
+<!--<ion-content [fullscreen]="true">-->
+<!--   <ion-grid>-->
+<!--     <ion-row>-->
+<!--       @for(device of devices(); track device.id || $index){-->
+<!--         <ion-col size="6">-->
+<!--           <app-device-card [device]="device"></app-device-card>-->
+<!--         </ion-col>-->
+<!--       } @empty {-->
+
+<!--       }-->
+<!--     </ion-row>-->
+<!--   </ion-grid>-->
+<!--</ion-content>-->
+<ion-header [translucent]="true">
+  <ion-toolbar class="ion-text-center">
+    <ion-title>Room Details</ion-title>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/home"></ion-back-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-grid class="devices-grid">
+    @if (devices().length > 0) {
+      <ion-row>
+        @for(device of devices(); track device.id || $index) {
+          <ion-col size-xs="12" size-sm="6" size-md="4" size-lg="3">
+            <app-device-card [device]="device"></app-device-card>
+          </ion-col>
+        }
+      </ion-row>
+    } @else {
+      <div class="empty-state">
+        <ion-icon name="file-tray-stacked-outline"></ion-icon>
+        <h2>No Devices Yet</h2>
+        <p>This room doesn't have any devices added yet.</p>
+        <ion-button fill="solid" color="primary" (click)="addNewDevice()">
+          <ion-icon slot="start" name="add"></ion-icon>
+          Add Device
+        </ion-button>
+      </div>
+    }
+  </ion-grid>
+</ion-content>

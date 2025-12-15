@@ -1,0 +1,7 @@
+{
+  "name": "34-home-automation-ui-desgin-mobile-app",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular-standalone"
+}

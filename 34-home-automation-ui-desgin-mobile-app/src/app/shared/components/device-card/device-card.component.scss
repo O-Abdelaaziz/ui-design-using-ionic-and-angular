@@ -1,0 +1,343 @@
+//.device-card {
+//  margin: 12px;
+//  border-radius: 12px;
+//  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
+//  transition: all 0.3s ease;
+//  border-left: 4px solid var(--ion-color-danger);
+//  &.active {
+//    border-left: 4px solid var(--ion-color-success);
+//  }
+//
+//  .card-content {
+//    padding: 16px;
+//    display: flex;
+//    align-items: center;
+//    gap: 16px;
+//  }
+//
+//  .device-icon {
+//    ion-icon {
+//      font-size: 2.5rem;
+//    }
+//  }
+//
+//  .device-info {
+//    flex: 1;
+//  }
+//
+//  .device-name {
+//    font-weight: 500;
+//    font-size: 1.1rem;
+//    display: block;
+//    margin-bottom: 8px;
+//  }
+//
+//  .device-toggle {
+//    --min-height: auto;
+//    --padding-start: 0;
+//
+//    ion-toggle {
+//      --background: var(--ion-color-light);
+//      --background-checked: var(--ion-color-success);
+//      --handle-background: white;
+//      --handle-background-checked: white;
+//    }
+//
+//    .status-text {
+//      font-size: 0.9rem;
+//      color: var(--ion-color-medium);
+//    }
+//  }
+//
+//  &.loading {
+//    padding: 20px;
+//    ion-skeleton-text {
+//      margin: 8px 0;
+//    }
+//  }
+//
+//  &.error {
+//    text-align: center;
+//    padding: 20px;
+//    ion-icon {
+//      font-size: 2rem;
+//      margin-bottom: 8px;
+//    }
+//  }
+//}
+
+
+//
+//.device-card {
+//  margin: 12px;
+//  border-radius: 12px;
+//  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
+//  transition: all 0.3s ease;
+//  border-left: 4px solid var(--ion-color-danger);
+//  text-align: center; // Center align all text
+//  height: 100%;
+//  display: flex;
+//  flex-direction: column;
+//
+//  &.active {
+//    border-left: 4px solid var(--ion-color-success);
+//  }
+//
+//  .card-content {
+//    //padding: 16px;
+//    padding: 10px;
+//    padding-bottom: 0;
+//    display: flex;
+//    flex-direction: column;
+//    align-items: center;
+//    flex: 1;
+//  }
+//
+//  .device-icon {
+//    margin-bottom: 12px;
+//
+//    ion-icon {
+//      font-size: 2.5rem;
+//      background: var(--ion-color-light);
+//      padding: 12px;
+//      border-radius: 50%;
+//      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+//    }
+//  }
+//
+//  .device-info {
+//    width: 100%;
+//  }
+//
+//  .device-name {
+//    font-weight: 500;
+//    font-size: 1rem;
+//    //margin-bottom: 12px;
+//    display: -webkit-box;
+//    -webkit-line-clamp: 2;
+//    -webkit-box-orient: vertical;
+//    overflow: hidden;
+//    text-overflow: ellipsis;
+//    min-height: 2.4em; // Ensure consistent height for 2 lines
+//  }
+//
+//  .device-toggle {
+//    --min-height: auto;
+//    --padding-start: 0;
+//    --padding-end: 0;
+//    --inner-padding-start: 0;
+//    --inner-padding-end: 0;
+//    margin-top: auto; // Push toggle to bottom
+//
+//    ion-toggle {
+//      --background: var(--ion-color-light);
+//      --background-checked: var(--ion-color-success);
+//      --handle-background: white;
+//      --handle-background-checked: white;
+//      margin: 0 auto; // Center toggle
+//      background: white;
+//    }
+//
+//    .status-text {
+//      font-size: 0.9rem;
+//      color: var(--ion-color-medium);
+//      display: block;
+//      margin-top: 4px;
+//    }
+//  }
+//
+//  // Loading and error states
+//  &.loading {
+//    padding: 30px 20px;
+//    display: flex;
+//    flex-direction: column;
+//    justify-content: center;
+//    align-items: center;
+//
+//    ion-skeleton-text {
+//      margin: 8px 0;
+//      border-radius: 4px;
+//
+//      &:first-child {
+//        width: 60%;
+//      }
+//
+//      &:last-child {
+//        width: 40%;
+//      }
+//    }
+//  }
+//
+//  &.error {
+//    padding: 30px 20px;
+//    display: flex;
+//    flex-direction: column;
+//    justify-content: center;
+//    align-items: center;
+//
+//    ion-icon {
+//      font-size: 2.5rem;
+//      margin-bottom: 12px;
+//      color: var(--ion-color-danger);
+//    }
+//
+//    ion-text {
+//      font-size: 0.9rem;
+//    }
+//  }
+//}
+
+
+.device-card {
+  --border-radius: 16px;
+  --padding: 20px;
+  --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+
+  margin: 8px;
+  border-radius: var(--border-radius);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+  transition: var(--transition);
+  position: relative;
+  overflow: visible;
+  background: var(--ion-card-background, #fff);
+  border: 1px solid var(--ion-color-light-shade);
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+
+  &.active {
+    border-color: var(--ion-color-primary-tint);
+    box-shadow: 0 8px 25px rgba(var(--ion-color-primary-rgb), 0.1);
+  }
+
+  &:hover {
+    box-shadow: 0 8px 25px rgba(var(--ion-color-primary-rgb), 0.1);
+    transform: translateY(-4px);
+  }
+
+  .card-badge {
+    position: absolute;
+    top: 12px;
+    right: 12px;
+    background: var(--ion-color-light);
+    color: var(--ion-color-medium);
+    padding: 4px 10px;
+    border-radius: 12px;
+    font-size: 0.75rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    transition: var(--transition);
+
+    &.active {
+      background: rgba(var(--ion-color-primary-rgb), 0.1);
+      color: var(--ion-color-primary);
+    }
+  }
+
+  .card-content {
+    padding: var(--padding);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 100%;
+    position: relative;
+  }
+
+  .device-icon {
+    width: 72px;
+    height: 72px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: var(--ion-color-light-tint);
+    border-radius: 50%;
+    margin: 16px 0 24px;
+    transition: var(--transition);
+
+    ion-icon {
+      font-size: 2.2rem;
+      color: var(--ion-color-medium);
+      transition: var(--transition);
+    }
+  }
+
+  .device-name {
+    font-size: 1.1rem;
+    font-weight: 600;
+    margin: 0 0 24px;
+    color: var(--ion-color-dark);
+    text-align: center;
+    line-height: 1.4;
+  }
+
+  .device-actions {
+    margin-top: auto;
+    width: 100%;
+    padding-top: 12px;
+    border-top: 1px solid var(--ion-color-light-shade);
+
+    ion-toggle {
+      --background: var(--ion-color-light);
+      --background-checked: var(--ion-color-success);
+      --handle-background: white;
+      --handle-background-checked: white;
+      --handle-width: 24px;
+      --handle-height: 24px;
+      --handle-spacing: 2px;
+      width: 100%;
+      max-width: 120px;
+      margin: 0 auto;
+    }
+  }
+
+  // Active state styles
+  &.active {
+    .device-icon {
+      background: rgba(var(--ion-color-primary-rgb), 0.1);
+
+      ion-icon {
+        color: var(--ion-color-primary);
+        transform: scale(1.1);
+      }
+    }
+  }
+
+  // Loading state
+  &.loading {
+    .skeleton-icon {
+      width: 72px;
+      height: 72px;
+      border-radius: 50%;
+      margin: 16px auto 24px;
+    }
+
+    .skeleton-text {
+      width: 80%;
+      height: 1.2rem;
+      margin: 0 auto 24px;
+    }
+  }
+
+  // Error state
+  &.error {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 30px 20px;
+    text-align: center;
+
+    ion-icon {
+      font-size: 2.5rem;
+      margin-bottom: 12px;
+      color: var(--ion-color-danger);
+    }
+
+    p {
+      margin: 0;
+      color: var(--ion-color-danger);
+      font-size: 0.9rem;
+    }
+  }
+}
