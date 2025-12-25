@@ -1,0 +1,7 @@
+{
+  "name": "35-onboarding-ui-screens-mobile-app",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular-standalone"
+}

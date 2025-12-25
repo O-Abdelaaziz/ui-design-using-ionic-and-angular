@@ -1,0 +1,116 @@
+<!--<ion-content [fullscreen]="true">-->
+<!--  <div class="onboarding-container">-->
+
+<!--    <ion-fab vertical="bottom" horizontal="end" slot="fixed">-->
+<!--      <ion-fab-button color="primary" (click)="onGoNext()">-->
+<!--        <ion-icon name="chevron-forward" color="light"></ion-icon>-->
+<!--      </ion-fab-button>-->
+<!--    </ion-fab>-->
+
+<!--    <div class="onboarding-top">-->
+<!--      <ion-toolbar>-->
+<!--        <ion-buttons slot="start">-->
+<!--          <ion-button color="primary" (click)="onGoBack()">-->
+<!--            <ion-icon name="chevron-back"></ion-icon>-->
+<!--          </ion-button>-->
+<!--        </ion-buttons>-->
+
+<!--        <ion-buttons slot="end">-->
+<!--          <ion-button color="primary" fill="clear" (click)="onSkip()">-->
+<!--            Skip-->
+<!--          </ion-button>-->
+<!--        </ion-buttons>-->
+<!--      </ion-toolbar>-->
+<!--    </div>-->
+<!--    <div class="onboarding-bottom">-->
+<!--      <swiper-container-->
+<!--        #swiper-->
+<!--        [modules]="swiperModules"-->
+<!--        [slidesPerView]="1"-->
+<!--        [spaceBetween]="10"-->
+<!--        initial-slide="0"-->
+<!--        [centeredSlides]="true"-->
+<!--        center-slide="true"-->
+<!--        keyboard="true"-->
+<!--        [pagination]="true"-->
+<!--      >-->
+<!--        @for (screen of onboardingScreens; track $index) {-->
+<!--          <swiper-slide>-->
+<!--            <div class="onboarding-card">-->
+<!--              <div class="onboarding-image">-->
+<!--                <img src="{{ screen.image }}" alt="{{ screen.title }}">-->
+<!--              </div>-->
+<!--              <div class="onboarding-description ion-text-center">-->
+<!--                <h4 class="ion-text-capitalize ion-no-margin">{{ screen.title }}</h4>-->
+<!--                <p class="ion-text-wrap ion-no-margin">{{ screen.description }}</p>-->
+<!--              </div>-->
+<!--            </div>-->
+<!--          </swiper-slide>-->
+<!--        }-->
+
+<!--      </swiper-container>-->
+<!--    </div>-->
+<!--  </div>-->
+<!--</ion-content>-->
+
+<ion-content [fullscreen]="true" class="onboarding-content">
+  <!-- Background Gradient -->
+  <div class="background-gradient"></div>
+
+  <!-- Skip Button -->
+  <div class="skip-button">
+    <ion-button fill="clear" (click)="onSkip()">
+      Skip
+      <ion-icon slot="end" name="arrow-forward-outline"></ion-icon>
+    </ion-button>
+  </div>
+
+  <!-- Swiper Container -->
+  <swiper-container
+    #swiper
+    [loop]="false"
+    [modules]="swiperModules"
+    (swiperslidechange)="onSlideChange($event)"
+    class="swiper-full">
+
+    @for (screen of onboardingScreens; track $index) {
+      <swiper-slide class="slide">
+        <div class="slide-content">
+          <!-- Image with decorative border -->
+          <div class="image-wrapper">
+            <div class="decorative-border"></div>
+            <img [src]="screen.image" [alt]="screen.title" class="feature-image">
+          </div>
+
+          <!-- Content -->
+          <div class="content-wrapper">
+            <h2 class="title">{{ screen.title }}</h2>
+            <p class="description">{{ screen.description }}</p>
+
+            <!-- Progress Steps -->
+            <div class="progress-steps">
+              @for (item of onboardingScreens; track $index) {
+                <span class="step" [class.active]="$index === currentSlideIndex"></span>
+              }
+            </div>
+
+            <!-- CTA Buttons -->
+            <div class="cta-buttons">
+              @if (currentSlideIndex < onboardingScreens.length - 1) {
+                <ion-button expand="block" (click)="onGoNext()" class="next-button">
+                  Next
+                  <ion-icon slot="end" name="arrow-forward"></ion-icon>
+                </ion-button>
+              } @else {
+                <ion-button expand="block" (click)="onGetStarted()" class="get-started">
+                  Get Started
+                  <ion-icon slot="end" name="rocket-outline"></ion-icon>
+                </ion-button>
+              }
+            </div>
+          </div>
+        </div>
+      </swiper-slide>
+    }
+  </swiper-container>
+</ion-content>

@@ -75,7 +75,7 @@ ui-design-using-ionic-and-angular/
 ├── 03-pet-finder-mobile-app/
 ├── 04-car-selling-mobile-app/
 ├── ...
-├── 34-home-automation-ui-desgin-mobile-app/
+├── 35-onboarding-ui-screens-mobile-app/
 ├── screenshots/
 └── README.md
 ```
@@ -187,6 +187,7 @@ Find preview images for each UI example in the **screenshots/** directory.
 | **33. Bakery Home Screens (Screen 1)** <br> <img src="screenshots/33-01.png" width="200"> | **33. Bakery Home Screens (Screen 2)** <br> <img src="screenshots/33-02.png" width="200"> | **33. Bakery Home Screens (Screen 3)** <br> <img src="screenshots/33-03.png" width="200"> |
 | **33. Bakery Home Screens (Screen 4)** <br> <img src="screenshots/33-04.png" width="200"> | **33. Bakery Home Screens (Screen 5)** <br> <img src="screenshots/33-05.png" width="200"> | **33. Bakery Home Screens (Screen 6)** <br> <img src="screenshots/33-06.png" width="200"> |
 | **34. Home Automation UI Screens (Screen 1)** <br> <img src="screenshots/34-01.png" width="200"> | **34. Home Automation UI Screens (Screen 2)** <br> <img src="screenshots/34-02.png" width="200"> | **34. Home Automation UI Screens (Screen 3)** <br> <img src="screenshots/34-03.png" width="200"> |
+| **35. Onboarding UI V2 Screens (Screen 1)** <br> <img src="screenshots/35-01.png" width="200"> | **35. Onboarding UI V2 Screens (Screen 2)** <br> <img src="screenshots/35-02.png" width="200"> | **35. Onboarding UI V2 Screens (Screen 3)** <br> <img src="screenshots/35-03.png" width="200"> |
 | Coming Soon 👌 | Coming Soon 👌 | Coming Soon 👌 |
 
 [⬆ back to top](#ui-design-using-ionic-and-angular)
